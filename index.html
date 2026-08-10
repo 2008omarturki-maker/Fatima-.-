@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>لفاطمة ❤️</title>
+
+<title>آسف يا فاطمة ❤️‍🩹</title>
 
 <style>
 *{
@@ -14,14 +15,14 @@
 
 body{
   min-height:100vh;
-  background:
-    radial-gradient(circle at top,#6b164d,#210018 55%,#080008);
-  color:white;
   font-family:Arial,sans-serif;
+  color:white;
+  background:
+    radial-gradient(circle at top,#801f4f,#350b29 45%,#10000c);
   overflow:hidden;
 }
 
-.screen{
+.container{
   min-height:100vh;
   display:flex;
   align-items:center;
@@ -29,21 +30,31 @@ body{
   padding:20px;
 }
 
-.box{
+.card{
   width:100%;
-  max-width:430px;
+  max-width:440px;
+  padding:32px 24px;
   text-align:center;
-  background:rgba(255,255,255,.10);
-  border:1px solid rgba(255,255,255,.18);
   border-radius:30px;
-  padding:30px 22px;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.2);
   backdrop-filter:blur(15px);
+  -webkit-backdrop-filter:blur(15px);
   box-shadow:0 20px 70px rgba(0,0,0,.5);
 }
 
+.hidden{
+  display:none;
+}
+
 h1{
-  font-size:34px;
+  font-size:35px;
   margin-bottom:18px;
+}
+
+h2{
+  color:#ffb3c7;
+  margin-bottom:20px;
 }
 
 p{
@@ -51,61 +62,112 @@ p{
   line-height:2;
 }
 
-.hidden{
-  display:none!important;
+.envelope{
+  width:230px;
+  height:145px;
+  margin:30px auto;
+  position:relative;
+  background:#e83d62;
+  border-radius:12px;
+  cursor:pointer;
+  box-shadow:0 15px 40px rgba(0,0,0,.4);
+  transition:.3s;
+}
+
+.envelope:hover{
+  transform:scale(1.05);
+}
+
+.envelope:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  border-left:115px solid transparent;
+  border-right:115px solid transparent;
+  border-top:85px solid #ff7892;
+}
+
+.envelope:after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:0;
+  border-left:115px solid transparent;
+  border-right:115px solid transparent;
+  border-bottom:80px solid #c72d50;
+}
+
+.letterIcon{
+  position:absolute;
+  z-index:5;
+  left:0;
+  right:0;
+  top:43px;
+  font-size:48px;
+}
+
+.small{
+  opacity:.75;
+  font-size:14px;
+}
+
+.message{
+  min-height:280px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:15px 0;
+}
+
+#typing{
+  font-size:19px;
+  line-height:2.1;
 }
 
 button{
-  border:0;
+  border:none;
   border-radius:50px;
-  padding:14px 25px;
+  padding:15px 28px;
   margin-top:20px;
   font-size:17px;
   font-weight:bold;
   color:white;
-  background:linear-gradient(135deg,#ff416c,#e91e63);
+  background:linear-gradient(135deg,#ff416c,#d81b60);
   box-shadow:0 8px 25px rgba(255,65,108,.35);
   cursor:pointer;
+  transition:.25s;
 }
 
 button:active{
-  transform:scale(.95);
+  transform:scale(.94);
 }
 
-/* القلب */
-.bigHeart{
-  font-size:90px;
-  cursor:pointer;
+.question{
+  font-size:24px;
+  margin:20px 0;
+}
+
+.yes{
+  background:linear-gradient(135deg,#ff758c,#ff1744);
+}
+
+.no{
+  background:rgba(255,255,255,.13);
+}
+
+.finalHeart{
+  font-size:80px;
   animation:pulse 1.2s infinite;
-  margin:15px;
 }
 
 @keyframes pulse{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.15)}
-}
-
-/* الكتابة */
-.typing{
-  min-height:170px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-/* الاختيارات */
-.choice{
-  display:block;
-  width:100%;
-  margin:12px 0;
-  background:rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.2);
-}
-
-/* الرسالة الأخيرة */
-.finalHeart{
-  font-size:75px;
-  animation:pulse 1s infinite;
+  0%,100%{
+    transform:scale(1);
+  }
+  50%{
+    transform:scale(1.15);
+  }
 }
 
 .finalText{
@@ -114,14 +176,13 @@ button:active{
   margin-top:15px;
 }
 
-.secret{
-  color:#ffb6c9;
+.signature{
+  color:#ffb3c7;
   font-size:23px;
   font-weight:bold;
   margin-top:20px;
 }
 
-/* القلوب */
 .floating{
   position:fixed;
   top:-40px;
@@ -136,205 +197,165 @@ button:active{
     opacity:0;
   }
 }
-
-/* نجوم */
-.star{
-  position:fixed;
-  color:#fff;
-  animation:twinkle 1.5s infinite alternate;
-}
-
-@keyframes twinkle{
-  from{opacity:.2}
-  to{opacity:1}
-}
 </style>
 </head>
 
 <body>
 
+<div class="container">
+
 <!-- البداية -->
-<div class="screen" id="start">
 
-  <div class="box">
+<div class="card" id="start">
 
-    <h1>فاطمة ❤️</h1>
+  <h1>فاطمة ❤️‍🩹</h1>
 
-    <p>
-      عندك مفاجأة ثانية...
-      <br>
-      لكن هالمرة مختلفة شوي 👀
-      <br><br>
-      لا تستعجلين...
-    </p>
+  <p>
+    أدري إن عندي شيء لازم أقوله لك...
+    <br><br>
+    وأتمنى تفتحين هالرسالة قبل ما تحكمين عليّ 🥺
+  </p>
 
-    <div class="bigHeart" onclick="startSurprise()">
-      💌
-    </div>
-
-    <p>اضغطي على الرسالة ❤️</p>
-
+  <div class="envelope" onclick="openLetter()">
+    <div class="letterIcon">💌</div>
   </div>
+
+  <p class="small">
+    اضغطي على الظرف...
+  </p>
 
 </div>
 
 
-<!-- الرسالة -->
-<div class="screen hidden" id="letter">
+<!-- الاعتذار -->
 
-  <div class="box">
+<div class="card hidden" id="letter">
 
-    <h1>إلى فاطمة 🌹</h1>
+  <h1>آسف يا فاطمة ❤️‍🩹</h1>
 
-    <div class="typing">
-      <p id="typingText"></p>
-    </div>
-
-    <button onclick="goQuestion()">
-      كملي المفاجأة 🥹❤️
-    </button>
-
+  <div class="message">
+    <p id="typing"></p>
   </div>
+
+  <button onclick="showQuestion()">
+    عندي سؤال لك 🥺
+  </button>
 
 </div>
 
 
-<!-- السؤال الأول -->
-<div class="screen hidden" id="question">
+<!-- السؤال -->
 
-  <div class="box">
+<div class="card hidden" id="question">
 
-    <h1>سؤال لفاطمة 👀❤️</h1>
+  <div class="finalHeart">🥺</div>
 
-    <p>
-      لو كان عندك شخص واحد فقط
-      تقدرين تحتفظين فيه للأبد...
-      <br><br>
-      مين تختارين؟ 🥹
-    </p>
+  <h1>فاطمة...</h1>
 
-    <button class="choice" onclick="answer(1)">
-      شخص أحبه ❤️
-    </button>
+  <p class="question">
+    سامحتيني على تأخيري عليك؟ ❤️‍🩹
+  </p>
 
-    <button class="choice" onclick="answer(2)">
-      شخص يفهمني 🥹
-    </button>
+  <button class="yes" onclick="forgive()">
+    إيه سامحتك ❤️
+  </button>
 
-    <button class="choice" onclick="answer(3)">
-      عمر 😭❤️
-    </button>
+  <button class="no" onclick="tryAgain()">
+    لسه زعلانة 🥺
+  </button>
 
-    <p id="reply"></p>
-
-  </div>
-
-</div>
-
-
-<!-- السؤال الثاني -->
-<div class="screen hidden" id="question2">
-
-  <div class="box">
-
-    <h1>طيب سؤال ثاني 😏</h1>
-
-    <p>
-      وش أكثر شيء ممكن يخلي عمر يبتسم؟
-    </p>
-
-    <button class="choice" onclick="next(1)">
-      كلمة حلوة ❤️
-    </button>
-
-    <button class="choice" onclick="next(2)">
-      ضحكتي 😂
-    </button>
-
-    <button class="choice" onclick="next(3)">
-      إني أقول له أحبك 🥹❤️
-    </button>
-
-  </div>
+  <p id="reply"></p>
 
 </div>
 
 
 <!-- النهاية -->
-<div class="screen hidden" id="final">
 
-  <div class="box">
+<div class="card hidden" id="final">
 
-    <div class="finalHeart">
-      ❤️
-    </div>
-
-    <h1>وصلتي للنهاية يا فاطمة 🌹</h1>
-
-    <p class="finalText">
-
-      يمكن هذي مجرد صفحة على شاشة...
-      <br>
-      لكن كل كلمة فيها طالعة من قلبي.
-      <br><br>
-
-      فاطمة،
-      <br>
-      أنتِ مو مجرد شخص عابر بحياتي.
-      <br>
-      أنتِ شخص وجوده يفرق معي كثير ❤️
-      <br><br>
-
-      وأتمنى مهما مرت الأيام،
-      تظلين تبتسمين وتتذكرين
-      إن فيه شخص يحبك ويهتم لك.
-      
-    </p>
-
-    <div class="secret">
-
-      عمر بمووووت فيك
-      <br>
-      ويعشقك وااااايد ❤️‍🔥🌹
-
-    </div>
-
-    <button onclick="finalHearts()">
-      اضغطي هنا... آخر مفاجأة ❤️
-    </button>
-
+  <div class="finalHeart">
+    ❤️
   </div>
+
+  <h1>أحبك يا فاطمة 🌹</h1>
+
+  <p class="finalText">
+
+    شكرًا لأنك سامحتيني ❤️
+    <br><br>
+
+    وأبيك تعرفين إن تأخيري
+    ما كان أبدًا لأنك مو مهمة عندي.
+    <br><br>
+
+    بالعكس...
+    <br>
+    أنتِ من الأشخاص اللي أخاف أزعلهم
+    وأخاف أخليهم ينتظرون مني.
+    <br><br>
+
+    <strong>
+    وحقك عليّ يا فاطمة 🥺❤️‍🩹
+    </strong>
+
+  </p>
+
+  <div class="signature">
+    عمر يحبك واااايد ❤️‍🔥🌹
+  </div>
+
+  <button onclick="finalSurprise()">
+    آخر شيء لك 💌
+  </button>
+
+</div>
 
 </div>
 
 
 <script>
 
-/* بداية المفاجأة */
+/* فتح الرسالة */
 
-function startSurprise(){
+function openLetter(){
 
   document.getElementById("start").classList.add("hidden");
 
   document.getElementById("letter").classList.remove("hidden");
 
-  typeText();
+  typeMessage();
 
-  createStars();
+  createHearts();
 
 }
 
 
-/* الكتابة حرف حرف */
+/* كتابة الاعتذار */
 
-function typeText(){
+function typeMessage(){
 
   const text =
-  "فاطمة... يمكن ما أعرف أوصف كل اللي بقلبي، لكن أعرف شيء واحد: وجودك يعني لي الكثير ❤️";
+`فاطمة...
+
+أدري إني تأخرت عليك،
+وأدري إن الانتظار مو شيء حلو،
+وعشان كذا أنا آسف لك من قلبي. ❤️‍🩹
+
+ما كان قصدي أخليك تنتظرين،
+ولا كان قصدي أزعلك أو أخليك تحسين
+إني ما أهتم.
+
+حقك عليّ يا فاطمة 🥺
+
+أنتِ غالية عليّ،
+وآخر شيء أبيه إنك تزعلين مني.
+
+يمكن كلمة "آسف" بسيطة،
+لكن والله طالعة من قلبي. ❤️`;
+
+  const element=document.getElementById("typing");
 
   let i=0;
-
-  const element=document.getElementById("typingText");
 
   element.innerHTML="";
 
@@ -342,11 +363,14 @@ function typeText(){
 
     if(i<text.length){
 
-      element.innerHTML += text.charAt(i);
+      element.innerHTML +=
+      text.charAt(i) === "\n"
+      ? "<br>"
+      : text.charAt(i);
 
       i++;
 
-      setTimeout(write,55);
+      setTimeout(write,45);
 
     }
 
@@ -359,7 +383,7 @@ function typeText(){
 
 /* السؤال */
 
-function goQuestion(){
+function showQuestion(){
 
   document.getElementById("letter").classList.add("hidden");
 
@@ -368,55 +392,34 @@ function goQuestion(){
 }
 
 
-/* إجابة السؤال */
+/* سامحتيني */
 
-function answer(choice){
+function forgive(){
 
-  const reply=document.getElementById("reply");
+  document.getElementById("question").classList.add("hidden");
 
-  if(choice===3){
-
-    reply.innerHTML=
-    "ههههههه عرفتك 😂❤️ كنت أدري إنك بتختارين عمر.";
-
-    createHearts();
-
-    setTimeout(()=>{
-
-      document.getElementById("question").classList.add("hidden");
-
-      document.getElementById("question2").classList.remove("hidden");
-
-    },1800);
-
-  }else{
-
-    reply.innerHTML=
-    "إجابة حلوة... بس أحس فيه إجابة ثانية 😏❤️";
-
-  }
-
-}
-
-
-/* السؤال الثاني */
-
-function next(choice){
+  document.getElementById("final").classList.remove("hidden");
 
   createHearts();
 
-  setTimeout(()=>{
+}
 
-    document.getElementById("question2").classList.add("hidden");
 
-    document.getElementById("final").classList.remove("hidden");
+/* لسه زعلانة */
 
-  },500);
+function tryAgain(){
+
+  const reply=document.getElementById("reply");
+
+  reply.innerHTML=
+  "🥺 طيب أعطي عمر فرصة يراضيك أكثر... ❤️‍🩹";
+
+  createHearts();
 
 }
 
 
-/* قلوب */
+/* القلوب */
 
 function createHearts(){
 
@@ -430,12 +433,11 @@ function createHearts(){
 
       const icons=[
         "❤️",
-        "💖",
         "💕",
         "💗",
-        "💓",
-        "🌹",
-        "✨"
+        "💖",
+        "❤️‍🩹",
+        "🌹"
       ];
 
       heart.innerHTML=
@@ -445,7 +447,7 @@ function createHearts(){
       Math.random()*100+"vw";
 
       heart.style.fontSize=
-      (15+Math.random()*30)+"px";
+      (16+Math.random()*25)+"px";
 
       heart.style.animationDuration=
       (3+Math.random()*5)+"s";
@@ -463,52 +465,23 @@ function createHearts(){
 }
 
 
-/* النجوم */
-
-function createStars(){
-
-  for(let i=0;i<25;i++){
-
-    const star=document.createElement("div");
-
-    star.className="star";
-
-    star.innerHTML="✦";
-
-    star.style.left=
-    Math.random()*100+"vw";
-
-    star.style.top=
-    Math.random()*100+"vh";
-
-    star.style.fontSize=
-    (8+Math.random()*12)+"px";
-
-    star.style.animationDelay=
-    Math.random()*2+"s";
-
-    document.body.appendChild(star);
-
-  }
-
-}
-
-
 /* آخر مفاجأة */
 
-function finalHearts(){
+function finalSurprise(){
 
   createHearts();
 
   setTimeout(()=>{
 
     alert(
-      "فاطمة ❤️\n\n" +
-      "تذكري دايم إنك غالية على عمر وايد 🌹\n\n" +
-      "أحبك ❤️‍🔥"
+      "فاطمة ❤️‍🩹\n\n" +
+      "وعد مني أحاول ما أخليك تنتظرين مرة ثانية.\n\n" +
+      "وإذا زعلتك يوم...\n" +
+      "حقك عليّ من قبل لا تقولينها 🥺❤️\n\n" +
+      "أحبك وااايد يا فاطمة 🌹❤️‍🔥"
     );
 
-  },1200);
+  },700);
 
 }
 
