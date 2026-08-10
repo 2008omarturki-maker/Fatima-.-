@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>إلى فاطمة ❤️</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#16001f,#4b073c,#8b164f);
+    color:white;
+    font-family:Arial,sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.container{
+    width:90%;
+    max-width:430px;
+    text-align:center;
+}
+
+.envelope{
+    font-size:110px;
+    cursor:pointer;
+    animation:float 2s infinite ease-in-out;
+    filter:drop-shadow(0 10px 20px #0008);
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-15px)}
+}
+
+h1{
+    font-size:30px;
+    margin:20px 0 10px;
+}
+
+p{
+    font-size:18px;
+    line-height:1.8;
+}
+
+button{
+    border:0;
+    border-radius:30px;
+    padding:14px 25px;
+    margin:10px;
+    font-size:17px;
+    cursor:pointer;
+    background:white;
+    color:#8b164f;
+    font-weight:bold;
+    box-shadow:0 5px 20px #0005;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.hidden{
+    display:none;
+}
+
+.card{
+    background:#ffffff18;
+    border:1px solid #ffffff30;
+    backdrop-filter:blur(10px);
+    border-radius:25px;
+    padding:25px;
+    box-shadow:0 10px 40px #0006;
+}
+
+.heart{
+    position:fixed;
+    bottom:-30px;
+    animation:rise linear forwards;
+    pointer-events:none;
+}
+
+@keyframes rise{
+    from{
+        transform:translateY(0) rotate(0);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+.final{
+    font-size:22px;
+    line-height:2;
+}
+
+.big-heart{
+    font-size:75px;
+    animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+    50%{transform:scale(1.2)}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- البداية -->
+    <section id="start">
+
+        <div class="envelope" onclick="openLetter()">💌</div>
+
+        <h1>عندك رسالة سرية يا فاطمة ❤️</h1>
+
+        <p>اضغطي على الظرف عشان تعرفين وش داخله 👀</p>
+
+    </section>
+
+
+    <!-- الرسالة -->
+    <section id="message" class="card hidden">
+
+        <div class="big-heart">❤️</div>
+
+        <h1>إلى فاطمة 🌹</h1>
+
+        <p>
+        يمكن الكلام ما يوصف كل اللي بقلبي،
+        بس حبيت أسوي لك شيء بسيط يذكرك
+        قد إيش أنتِ غالية عليّ ❤️
+        </p>
+
+        <button onclick="nextQuestion()">
+            كملي المفاجأة 🥺❤️
+        </button>
+
+    </section>
+
+
+    <!-- السؤال -->
+    <section id="question" class="card hidden">
+
+        <h1>فاطمة.. سؤال مهم 👀❤️</h1>
+
+        <p>
+        تعرفين وش أكثر شيء أحبه فيك؟
+        </p>
+
+        <button onclick="wrong()">ضحكتك 😍</button>
+        <button onclick="correct()">كل شيء فيك ❤️</button>
+
+        <p id="answer"></p>
+
+    </section>
+
+
+    <!-- النهاية -->
+    <section id="final" class="card hidden">
+
+        <div class="big-heart">❤️</div>
+
+        <h1>فاطمة يا أجمل شيء 🌹</h1>
+
+        <p class="final">
+
+        وجودك بحياتي مو شيء عادي ❤️<br><br>
+
+        أنتِ الشخص اللي وجوده يخلّي
+        كل شيء أحلى وأجمل 🥺🌹<br><br>
+
+        وأتمنى مهما صار بيننا،
+        تظلين دايم عارفة مكانتك عندي ❤️<br><br>
+
+        <strong>
+        وتذكري دايم إن عمر يموووت فيك
+        ويعشقك وااااايد ❤️‍🔥🌹
+        </strong>
+
+        </p>
+
+        <br>
+
+        <button onclick="love()">اضغطي هنا ❤️</button>
+
+    </section>
+
+</div>
+
+
+<script>
+
+function openLetter(){
+
+    document.getElementById("start").classList.add("hidden");
+
+    document.getElementById("message").classList.remove("hidden");
+
+    hearts();
+
+}
+
+function nextQuestion(){
+
+    document.getElementById("message").classList.add("hidden");
+
+    document.getElementById("question").classList.remove("hidden");
+
+}
+
+function wrong(){
+
+    document.getElementById("answer").innerHTML =
+    "حلوة.. بس مو هي الإجابة 😏❤️ جربي الثانية";
+
+}
+
+function correct(){
+
+    document.getElementById("answer").innerHTML =
+    "صحححح ❤️ لأنك بكل تفاصيلك شيء أحبه وأقدّره 🌹";
+
+    setTimeout(function(){
+
+        document.getElementById("question").classList.add("hidden");
+
+        document.getElementById("final").classList.remove("hidden");
+
+        hearts();
+
+    },1500);
+
+}
+
+function love(){
+
+    for(let i=0;i<40;i++){
+
+        setTimeout(function(){
+
+            let heart=document.createElement("div");
+
+            heart.className="heart";
+
+            heart.innerHTML=
+            ["❤️","💗","💖","💕","🌹"][Math.floor(Math.random()*5)];
+
+            heart.style.left=Math.random()*100+"vw";
+
+            heart.style.fontSize=
+            (15+Math.random()*30)+"px";
+
+            heart.style.animationDuration=
+            (3+Math.random()*4)+"s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(function(){
+                heart.remove();
+            },7000);
+
+        },i*80);
+
+    }
+
+}
+
+function hearts(){
+
+    for(let i=0;i<15;i++){
+
+        setTimeout(function(){
+
+            let heart=document.createElement("div");
+
+            heart.className="heart";
+
+            heart.innerHTML="❤️";
+
+            heart.style.left=Math.random()*100+"vw";
+
+            heart.style.fontSize=
+            (15+Math.random()*25)+"px";
+
+            heart.style.animationDuration=
+            (4+Math.random()*3)+"s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(function(){
+                heart.remove();
+            },7000);
+
+        },i*200);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
