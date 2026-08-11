@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>آسف يا فاطمة ❤️‍🩹</title>
+<title>لفاطمة ❤️</title>
 
 <style>
 *{
@@ -14,7 +14,6 @@
 }
 
 html{
-  min-height:100%;
   scroll-behavior:smooth;
 }
 
@@ -24,7 +23,7 @@ body{
   color:white;
 
   background:
-    radial-gradient(circle at top,#8b2457,#3a0b2b 48%,#100008);
+    radial-gradient(circle at top,#741d52,#260b2c 55%,#09000c);
 
   overflow-x:hidden;
   overflow-y:auto;
@@ -35,41 +34,52 @@ body{
 .container{
   width:100%;
   min-height:100vh;
-
-  display:block;
-
-  padding:15px 12px 80px;
+  padding:20px 14px 80px;
 }
 
 .card{
   width:100%;
   max-width:440px;
-
-  margin:15px auto 40px;
-
+  margin:20px auto 40px;
   padding:30px 20px;
-
   text-align:center;
 
   background:rgba(255,255,255,.10);
-
-  border:1px solid rgba(255,255,255,.20);
-
-  border-radius:28px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:30px;
 
   backdrop-filter:blur(15px);
   -webkit-backdrop-filter:blur(15px);
 
-  box-shadow:0 20px 60px rgba(0,0,0,.45);
+  box-shadow:0 20px 70px rgba(0,0,0,.5);
+
+  animation:appear .7s ease;
 }
 
 .hidden{
   display:none !important;
 }
 
+@keyframes appear{
+  from{
+    opacity:0;
+    transform:translateY(25px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
 h1{
-  font-size:31px;
-  margin-bottom:20px;
+  font-size:32px;
+  margin-bottom:18px;
+}
+
+h2{
+  color:#ffb4c9;
+  margin-bottom:18px;
 }
 
 p{
@@ -77,152 +87,19 @@ p{
   line-height:2;
 }
 
-.small{
-  font-size:14px;
-  opacity:.7;
+.subtitle{
+  opacity:.8;
+  margin-bottom:25px;
 }
 
-/* الظرف */
+/* القلب الأول */
 
-.envelope{
-  width:210px;
-  height:132px;
-
-  margin:30px auto;
-
-  position:relative;
-
-  background:#e83d62;
-
-  border-radius:12px;
-
+.bigHeart{
+  font-size:90px;
+  margin:20px;
   cursor:pointer;
-
-  box-shadow:0 15px 35px rgba(0,0,0,.4);
-
-  transition:.3s;
-}
-
-.envelope:active{
-  transform:scale(.95);
-}
-
-.envelope:before{
-  content:"";
-
-  position:absolute;
-
-  top:0;
-  left:0;
-
-  border-left:105px solid transparent;
-  border-right:105px solid transparent;
-  border-top:78px solid #ff7892;
-}
-
-.envelope:after{
-  content:"";
-
-  position:absolute;
-
-  bottom:0;
-  left:0;
-
-  border-left:105px solid transparent;
-  border-right:105px solid transparent;
-  border-bottom:72px solid #c72d50;
-}
-
-.letterIcon{
-  position:absolute;
-
-  z-index:5;
-
-  left:0;
-  right:0;
-  top:39px;
-
-  font-size:45px;
-}
-
-/* الرسالة */
-
-.message{
-  width:100%;
-  margin:15px 0 10px;
-}
-
-#typing{
-  width:100%;
-
-  font-size:18px;
-
-  line-height:2.1;
-
-  text-align:right;
-
-  overflow-wrap:anywhere;
-}
-
-/* الأزرار */
-
-button{
-  width:auto;
-  max-width:100%;
-
-  border:none;
-
-  border-radius:50px;
-
-  padding:14px 24px;
-
-  margin-top:20px;
-
-  font-size:17px;
-
-  font-weight:bold;
-
-  color:white;
-
-  background:
-    linear-gradient(135deg,#ff416c,#d81b60);
-
-  box-shadow:0 8px 25px rgba(255,65,108,.3);
-
-  cursor:pointer;
-
-  transition:.25s;
-}
-
-button:active{
-  transform:scale(.95);
-}
-
-/* السؤال */
-
-.question{
-  font-size:22px;
-  line-height:1.8;
-  margin:20px 0;
-}
-
-.yes{
-  background:
-    linear-gradient(135deg,#ff758c,#ff1744);
-}
-
-.no{
-  background:rgba(255,255,255,.12);
-}
-
-/* القلب */
-
-.finalHeart{
-  font-size:70px;
-
-  margin-bottom:10px;
-
   animation:pulse 1.2s infinite;
+  user-select:none;
 }
 
 @keyframes pulse{
@@ -235,17 +112,100 @@ button:active{
   }
 }
 
-/* النهاية */
+/* الأزرار */
 
-.finalText{
-  font-size:18px;
-  line-height:2.1;
+button{
+  width:100%;
+  border:none;
+  border-radius:50px;
+  padding:15px 20px;
+  margin-top:15px;
+
+  color:white;
+  font-size:17px;
+  font-weight:bold;
+
+  background:
+    linear-gradient(135deg,#ff416c,#d81b60);
+
+  box-shadow:
+    0 8px 25px rgba(255,65,108,.3);
+
+  cursor:pointer;
+  transition:.2s;
+}
+
+button:active{
+  transform:scale(.95);
+}
+
+.option{
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.15);
+}
+
+/* شريط التقدم */
+
+.progress{
+  width:100%;
+  height:9px;
+
+  background:rgba(255,255,255,.12);
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  margin:20px 0 25px;
+}
+
+.progressBar{
+  height:100%;
+  width:0%;
+
+  background:
+    linear-gradient(90deg,#ff416c,#ff9ab1);
+
+  transition:.5s;
+}
+
+.number{
+  font-size:14px;
+  opacity:.65;
+}
+
+/* النتيجة */
+
+.resultHeart{
+  font-size:80px;
+  animation:pulse 1s infinite;
+}
+
+.percent{
+  font-size:65px;
+  font-weight:bold;
+  color:#ff9fba;
+  margin:10px 0;
+}
+
+/* الرسالة السرية */
+
+.secret{
+  padding:20px;
+  margin-top:20px;
+
+  border-radius:20px;
+
+  background:rgba(255,255,255,.08);
+
+  line-height:2;
+  font-size:19px;
 }
 
 .signature{
-  margin-top:20px;
+  margin-top:25px;
 
-  color:#ffb3c7;
+  color:#ffb4c9;
 
   font-size:22px;
 
@@ -254,19 +214,152 @@ button:active{
   line-height:1.8;
 }
 
-/* الرسالة بعد الاختيار */
+/* =========================
+   قلب الحب الكبير
+========================= */
 
-#answer{
-  margin-top:22px;
+.love-heart-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
 
-  color:#ffd1dc;
+  margin:35px auto;
+
+  cursor:pointer;
+
+  user-select:none;
+
+  -webkit-tap-highlight-color:transparent;
+}
+
+.love-heart{
+  width:230px;
+  height:230px;
+
+  position:relative;
+
+  transform:rotate(-45deg);
+
+  border-radius:25px;
+
+  border:5px solid #ff8fab;
+
+  background:rgba(255,255,255,.04);
+
+  overflow:hidden;
+
+  box-shadow:
+    0 0 30px rgba(255,65,108,.30);
+
+  transition:.15s;
+}
+
+.love-heart:before,
+.love-heart:after{
+  content:"";
+
+  position:absolute;
+
+  width:230px;
+  height:230px;
+
+  border-radius:50%;
+
+  border:5px solid #ff8fab;
+
+  background:rgba(255,255,255,.04);
+}
+
+.love-heart:before{
+  top:-115px;
+  left:-5px;
+}
+
+.love-heart:after{
+  left:115px;
+  top:-5px;
+}
+
+/* تعبئة القلب */
+
+.love-fill{
+  position:absolute;
+
+  left:0;
+  bottom:0;
+
+  width:100%;
+  height:0%;
+
+  background:
+    linear-gradient(
+      to top,
+      #ff1744,
+      #ff5c8a
+    );
+
+  transition:height .18s ease;
+
+  z-index:1;
+}
+
+/* كلمة حب */
+
+.love-text{
+  position:absolute;
+
+  z-index:5;
+
+  top:50%;
+  left:50%;
+
+  transform:
+    translate(-50%,-50%)
+    rotate(45deg);
+
+  font-size:30px;
+
+  font-weight:bold;
+
+  color:white;
+
+  text-shadow:
+    0 2px 8px rgba(0,0,0,.5);
+
+  pointer-events:none;
+}
+
+.love-heart-container:active .love-heart{
+  transform:
+    rotate(-45deg)
+    scale(.92);
+}
+
+/* النسبة */
+
+#lovePercent{
+  font-size:22px;
+  color:#ffb4c9;
+  font-weight:bold;
+}
+
+/* رسالة امتلاء القلب */
+
+#loveMessage{
+  margin-top:25px;
+
+  padding:20px;
+
+  border-radius:20px;
+
+  background:rgba(255,255,255,.08);
 
   font-size:19px;
 
   line-height:2;
 }
 
-/* القلوب */
+/* قلوب متطايرة */
 
 .floating{
   position:fixed;
@@ -275,7 +368,7 @@ button:active{
 
   pointer-events:none;
 
-  z-index:20;
+  z-index:100;
 
   animation:fall linear forwards;
 }
@@ -290,10 +383,18 @@ button:active{
   }
 }
 
-/* زر الهروب */
+/* قلوب عند الضغط */
 
-#angry{
-  transition:transform .25s ease;
+.tapHeart{
+  position:fixed;
+
+  pointer-events:none;
+
+  z-index:200;
+
+  font-size:25px;
+
+  transition:1s ease;
 }
 
 /* الجوال */
@@ -305,7 +406,6 @@ button:active{
   }
 
   .card{
-    margin:12px auto 35px;
     padding:27px 18px;
   }
 
@@ -317,18 +417,27 @@ button:active{
     font-size:17px;
   }
 
-  #typing{
-    font-size:17px;
-    line-height:2;
+  .percent{
+    font-size:55px;
   }
 
-  .question{
-    font-size:21px;
+  .love-heart{
+    width:210px;
+    height:210px;
   }
 
-  button{
-    font-size:16px;
-    padding:14px 20px;
+  .love-heart:before,
+  .love-heart:after{
+    width:210px;
+    height:210px;
+  }
+
+  .love-heart:before{
+    top:-105px;
+  }
+
+  .love-heart:after{
+    left:105px;
   }
 }
 </style>
@@ -338,172 +447,263 @@ button:active{
 
 <div class="container">
 
-<!-- =========================
-     البداية
-========================= -->
+<!-- البداية -->
 
 <div class="card" id="start">
 
   <h1>
-    فاطمة ❤️‍🩹
+    فاطمة 👀❤️
   </h1>
 
-  <p>
-    أدري إني اليوم زعلتك...
+  <p class="subtitle">
+
+    اليوم عندي لك اختبار...
+
+    <br>
+
+    لكن لا تخافين 😂
+
     <br><br>
 
-    وعندي شيء أبي أقوله لك
-    من قلبي 🥺
+    الاختبار بسيط جدًا...
+
+    <br>
+
+    أو يمكن لا 👀❤️
+
   </p>
 
   <div
-    class="envelope"
-    onclick="openLetter()"
+    class="bigHeart"
+    onclick="startTest()"
   >
-
-    <div class="letterIcon">
-      💌
-    </div>
-
+    ❤️
   </div>
-
-  <p class="small">
-    اضغطي على الظرف ❤️
-  </p>
-
-</div>
-
-
-<!-- =========================
-     الاعتذار
-========================= -->
-
-<div
-  class="card hidden"
-  id="letter"
->
-
-  <h1>
-    آسف يا فاطمة ❤️‍🩹
-  </h1>
-
-  <div class="message">
-
-    <p id="typing"></p>
-
-  </div>
-
-  <button onclick="showQuestion()">
-    كملي للآخر 🥺❤️
-  </button>
-
-</div>
-
-
-<!-- =========================
-     السؤال
-========================= -->
-
-<div
-  class="card hidden"
-  id="question"
->
-
-  <div class="finalHeart">
-    🥺
-  </div>
-
-  <h1>
-    فاطمة...
-  </h1>
-
-  <p class="question">
-    سامحيني يا فاطمة؟ ❤️‍🩹
-  </p>
 
   <p>
-    كنت أبي أسولف معك الصبح،
-    بس غلبني النوم بالغلط 😭
+    اضغطي على القلب وابدئي 🔥
   </p>
-
-  <button
-    class="yes"
-    onclick="forgive()"
-  >
-    إيه سامحتك يا عمر ❤️
-  </button>
-
-  <br>
-
-  <button
-    class="no"
-    id="angry"
-    onclick="tryAgain()"
-  >
-    لسه زعلانة منك 🥺
-  </button>
-
-  <p id="answer"></p>
 
 </div>
 
 
-<!-- =========================
-     النهاية
-========================= -->
+<!-- الاختبار -->
+
+<div
+  class="card hidden"
+  id="quiz"
+>
+
+  <div
+    class="number"
+    id="number"
+  >
+    السؤال 1 من 4
+  </div>
+
+  <div class="progress">
+
+    <div
+      class="progressBar"
+      id="progress"
+    ></div>
+
+  </div>
+
+  <h2 id="questionTitle">
+    سؤال
+  </h2>
+
+  <p id="questionText">
+    ...
+  </p>
+
+  <div id="options"></div>
+
+</div>
+
+
+<!-- النتيجة -->
+
+<div
+  class="card hidden"
+  id="result"
+>
+
+  <div class="resultHeart">
+    ❤️
+  </div>
+
+  <h1>
+    النتيجة وصلت 😭❤️
+  </h1>
+
+  <p>
+    نسبة حب عمر لفاطمة:
+  </p>
+
+  <div class="percent">
+    ∞%
+  </div>
+
+  <p>
+    للأسف...
+    <br>
+    النظام ما قدر يحسبها 😂❤️
+    <br>
+    لأن النسبة أكبر من 100%.
+  </p>
+
+  <button onclick="showSecret()">
+    عندي لك شيء أخير 🤫
+  </button>
+
+</div>
+
+
+<!-- الرسالة السرية -->
+
+<div
+  class="card hidden"
+  id="secret"
+>
+
+  <div class="resultHeart">
+    💌
+  </div>
+
+  <h1>
+    الرسالة السرية لفاطمة 🌹
+  </h1>
+
+  <div class="secret">
+
+    فاطمة...
+
+    <br><br>
+
+    يمكن دخلتي الموقع وأنتِ تحسبين
+    إنك داخلة تسوين اختبار 😂❤️
+
+    <br><br>
+
+    لكن الحقيقة؟
+
+    <br>
+
+    الاختبار كله كان مجرد حجة
+    عشان أقول لك شيء ❤️
+
+    <br><br>
+
+    أحبك.
+
+    <br><br>
+
+    أحب سوالفك،
+    أحب ضحكتك،
+    وأحب وجودك بحياتي.
+
+    <br><br>
+
+    ومهما حاولت أوصف لك،
+    الكلام ما راح يكفي.
+
+    <br><br>
+
+    أنتِ بالنسبة لي
+    مو مجرد إجابة في اختبار...
+
+    <br>
+
+    أنتِ الإجابة الصح من البداية ❤️‍🔥
+
+  </div>
+
+  <div class="signature">
+
+    من عمر إلى فاطمة ❤️
+    <br>
+    أحبك وااايد 🌹
+
+  </div>
+
+  <button onclick="showFinal()">
+    عندي لك آخر مفاجأة 👀❤️
+  </button>
+
+</div>
+
+
+<!-- قلب الحب النهائي -->
 
 <div
   class="card hidden"
   id="final"
 >
 
-  <div class="finalHeart">
-    ❤️
-  </div>
-
   <h1>
-    يااااا بعد قلبي 😭❤️
+    فطومتي ❤️
   </h1>
 
-  <p class="finalText">
-
-    شكرًا لأنك سامحتيني ❤️
-
-    <br><br>
-
-    والله كنت ناوي أصحى وأكلمك الصبح،
-    وكنت أبي أسولف معك،
-    بس غلبني النوم بالغلط 🥺
-
-    <br><br>
-
-    ما كان قصدي أتأخر عليك،
-    ولا أبي أخليك تزعلين مني.
-
-    <br><br>
-
-    أدري إن كلمة آسف ما ترجع
-    الوقت اللي انتظرتيني فيه،
-    لكن والله لو أقدر أرجع للصباح،
-    كان أول شيء أسويه إني أكلمك.
-
-    <br><br>
-
-    وحقك عليّ يا فاطمة ❤️‍🩹
-
+  <p>
+    هذا قلب عمر لك...
+    <br>
+    اضغطي عليه لين يمتلئ بالحب 🥹❤️
   </p>
 
-  <div class="signature">
+  <div
+    class="love-heart-container"
+    onclick="fillLove(event)"
+  >
 
-    عمر يحبك وااايد ❤️‍🔥
-    <br>
-    وما يهون عليه زعلك 🌹
+    <div class="love-heart">
+
+      <div
+        class="love-fill"
+        id="loveFill"
+      ></div>
+
+      <div class="love-text">
+        حب ❤️
+      </div>
+
+    </div>
 
   </div>
 
-  <button onclick="finalSurprise()">
-    آخر شيء لك 💌
-  </button>
+  <p id="lovePercent">
+    0% حب ❤️
+  </p>
+
+  <div
+    id="loveMessage"
+    class="hidden"
+  >
+
+    امتلأ القلب ❤️‍🔥
+
+    <br><br>
+
+    بس المشكلة...
+
+    <br>
+
+    حب عمر لك أكبر من القلب نفسه 😭❤️
+
+    <br><br>
+
+    فطومتي...
+
+    <br>
+
+    أحبك وااااايد 🌹❤️‍🔥
+
+    <br><br>
+
+    وهذا القلب ما يكفيك أصلًا 🥹❤️
+
+  </div>
 
 </div>
 
@@ -512,11 +712,75 @@ button:active{
 
 <script>
 
-/* =========================
-   فتح الرسالة
-========================= */
+/* الأسئلة */
 
-function openLetter(){
+const questions = [
+
+  {
+    title:"السؤال الأول 👀",
+
+    text:
+    "وش أكثر شيء تتوقعين عمر يحبه فيك؟",
+
+    options:[
+      "ضحكتي 😂❤️",
+      "شخصيتي 🥹",
+      "اهتمامي فيه 🌹",
+      "كل شيء فيني 😌❤️"
+    ]
+  },
+
+  {
+    title:"السؤال الثاني 😏",
+
+    text:
+    "لو عمر قال لك: اشتقت لك... وش بتسوين؟",
+
+    options:[
+      "أقول وأنا أكثر ❤️",
+      "أستحي 🥹",
+      "أضحك 😂",
+      "أخليه يشتاق أكثر 😏"
+    ]
+  },
+
+  {
+    title:"السؤال الثالث ❤️",
+
+    text:
+    "كم تتوقعين عمر يحبك؟",
+
+    options:[
+      "100% ❤️",
+      "500% ❤️‍🔥",
+      "1000% 😭❤️",
+      "ما لها نسبة أصلًا 😂"
+    ]
+  },
+
+  {
+    title:"السؤال الأخير 🔥",
+
+    text:
+    "جاهزة تعرفين الحقيقة؟",
+
+    options:[
+      "أكيد 😭❤️",
+      "يلاااا 👀",
+      "ورني الحقيقة 😂",
+      "أخاف من النتيجة 🥹"
+    ]
+  }
+
+];
+
+
+let currentQuestion = 0;
+
+
+/* بداية الاختبار */
+
+function startTest(){
 
   document
     .getElementById("start")
@@ -524,11 +788,109 @@ function openLetter(){
     .add("hidden");
 
   document
-    .getElementById("letter")
+    .getElementById("quiz")
     .classList
     .remove("hidden");
 
-  typeMessage();
+  showQuestion();
+}
+
+
+/* عرض السؤال */
+
+function showQuestion(){
+
+  const q =
+    questions[currentQuestion];
+
+  document
+    .getElementById("number")
+    .innerText =
+    "السؤال " +
+    (currentQuestion + 1) +
+    " من " +
+    questions.length;
+
+  document
+    .getElementById("questionTitle")
+    .innerText =
+    q.title;
+
+  document
+    .getElementById("questionText")
+    .innerText =
+    q.text;
+
+  document
+    .getElementById("progress")
+    .style.width =
+    (
+      currentQuestion /
+      questions.length *
+      100
+    ) + "%";
+
+  const options =
+    document.getElementById("options");
+
+  options.innerHTML = "";
+
+  q.options.forEach(
+    function(option){
+
+      const button =
+        document.createElement("button");
+
+      button.className = "option";
+
+      button.innerText = option;
+
+      button.onclick =
+        function(){
+          nextQuestion();
+        };
+
+      options.appendChild(button);
+
+    }
+  );
+}
+
+
+/* السؤال التالي */
+
+function nextQuestion(){
+
+  currentQuestion++;
+
+  if(
+    currentQuestion >=
+    questions.length
+  ){
+
+    showResult();
+
+  }else{
+
+    showQuestion();
+
+  }
+}
+
+
+/* النتيجة */
+
+function showResult(){
+
+  document
+    .getElementById("quiz")
+    .classList
+    .add("hidden");
+
+  document
+    .getElementById("result")
+    .classList
+    .remove("hidden");
 
   createHearts();
 
@@ -539,81 +901,21 @@ function openLetter(){
 }
 
 
-/* =========================
-   كتابة الاعتذار
-========================= */
+/* الرسالة السرية */
 
-function typeMessage(){
-
-  const text =
-`فاطمة...
-
-والله كنت ناوي أصحى وأكلمك الصبح،
-وكنت متحمس لسوالفنا.
-
-بس غلبني النوم بالغلط 😭
-
-ما كان قصدي أتأخر عليك،
-ولا كان قصدي أزعلك.
-
-وأعرف إنك كنتِ تنتظريني،
-وهذا أكثر شيء مضايقني.
-
-حقك عليّ يا فاطمة 🥺❤️‍🩹
-
-أنتِ غالية عليّ،
-وآخر شيء أبيه أشوفك زعلانة مني.
-
-سامحيني ❤️`;
-
-  const element =
-    document.getElementById("typing");
-
-  let i=0;
-
-  element.innerHTML="";
-
-  function write(){
-
-    if(i < text.length){
-
-      if(text.charAt(i)==="\n"){
-
-        element.innerHTML += "<br>";
-
-      }else{
-
-        element.innerHTML +=
-          text.charAt(i);
-
-      }
-
-      i++;
-
-      setTimeout(write,35);
-
-    }
-  }
-
-  write();
-}
-
-
-/* =========================
-   الانتقال للسؤال
-========================= */
-
-function showQuestion(){
+function showSecret(){
 
   document
-    .getElementById("letter")
+    .getElementById("result")
     .classList
     .add("hidden");
 
   document
-    .getElementById("question")
+    .getElementById("secret")
     .classList
     .remove("hidden");
+
+  createHearts();
 
   window.scrollTo({
     top:0,
@@ -622,14 +924,12 @@ function showQuestion(){
 }
 
 
-/* =========================
-   سامحتيني
-========================= */
+/* قلب الحب */
 
-function forgive(){
+function showFinal(){
 
   document
-    .getElementById("question")
+    .getElementById("secret")
     .classList
     .add("hidden");
 
@@ -638,8 +938,6 @@ function forgive(){
     .classList
     .remove("hidden");
 
-  createHearts();
-
   window.scrollTo({
     top:0,
     behavior:"smooth"
@@ -647,115 +945,164 @@ function forgive(){
 }
 
 
-/* =========================
-   لسه زعلانة
-========================= */
+/* تعبئة القلب
+   كل ضغطة = 10%
+*/
 
-function tryAgain(){
+let love = 0;
 
-  const button =
-    document.getElementById("angry");
+function fillLove(event){
 
-  const answer =
-    document.getElementById("answer");
+  if(love >= 100){
+    return;
+  }
 
-  answer.innerHTML =
-    "طيب طيب 😭❤️‍🩹<br>" +
-    "عطيني فرصة أراضيك، ما أبيك تزعلين مني 🥺🌹";
+  love += 10;
 
-  /*
-   * حركة بسيطة للزر
-   */
+  if(love > 100){
+    love = 100;
+  }
 
-  const x =
-    Math.random()*80 - 40;
+  document
+    .getElementById("loveFill")
+    .style.height =
+    love + "%";
 
-  const y =
-    Math.random()*40 - 20;
+  document
+    .getElementById("lovePercent")
+    .innerText =
+    love + "% حب ❤️";
 
-  button.style.transform =
-    "translate("+x+"px,"+y+"px)";
+  createTapHeart(event);
 
-  createHearts();
-}
+  if(love >= 100){
 
+    document
+      .getElementById("lovePercent")
+      .innerText =
+      "100% ❤️‍🔥";
 
-/* =========================
-   القلوب
-========================= */
+    document
+      .getElementById("loveMessage")
+      .classList
+      .remove("hidden");
 
-function createHearts(){
-
-  for(let i=0;i<30;i++){
-
-    setTimeout(()=>{
-
-      const heart =
-        document.createElement("div");
-
-      heart.className =
-        "floating";
-
-      const icons=[
-        "❤️",
-        "💕",
-        "💗",
-        "💖",
-        "❤️‍🩹",
-        "🌹"
-      ];
-
-      heart.innerHTML =
-        icons[
-          Math.floor(
-            Math.random()*
-            icons.length
-          )
-        ];
-
-      heart.style.left =
-        Math.random()*100+"vw";
-
-      heart.style.fontSize =
-        (16+Math.random()*24)+"px";
-
-      heart.style.animationDuration =
-        (3+Math.random()*4)+"s";
-
-      document.body.appendChild(
-        heart
-      );
-
-      setTimeout(()=>{
-
-        heart.remove();
-
-      },7500);
-
-    },i*100);
+    createHearts();
   }
 }
 
 
-/* =========================
-   آخر مفاجأة
-========================= */
+/* قلب صغير عند الضغط */
 
-function finalSurprise(){
+function createTapHeart(event){
 
-  createHearts();
+  const heart =
+    document.createElement("div");
 
-  setTimeout(()=>{
+  heart.className =
+    "tapHeart";
 
-    alert(
-      "فاطمة ❤️‍🩹\n\n"+
-      "كنت أبي أسولف معك الصبح، "+
-      "بس غلبني النوم بالغلط 😭\n\n"+
-      "حقك عليّ يا فاطمة ❤️\n\n"+
-      "أحبك وااايد 🌹❤️‍🔥"
+  heart.innerText =
+    "❤️";
+
+  heart.style.left =
+    event.clientX + "px";
+
+  heart.style.top =
+    event.clientY + "px";
+
+  document.body.appendChild(heart);
+
+  setTimeout(
+    function(){
+
+      heart.style.transform =
+        "translateY(-100px) scale(1.5)";
+
+      heart.style.opacity =
+        "0";
+
+    },
+    50
+  );
+
+  setTimeout(
+    function(){
+
+      heart.remove();
+
+    },
+    1100
+  );
+}
+
+
+/* قلوب كثيرة */
+
+function createHearts(){
+
+  for(
+    let i=0;
+    i<40;
+    i++
+  ){
+
+    setTimeout(
+      function(){
+
+        const heart =
+          document.createElement("div");
+
+        heart.className =
+          "floating";
+
+        const icons = [
+          "❤️",
+          "💖",
+          "💕",
+          "💗",
+          "💓",
+          "🌹",
+          "✨"
+        ];
+
+        heart.innerText =
+          icons[
+            Math.floor(
+              Math.random() *
+              icons.length
+            )
+          ];
+
+        heart.style.left =
+          Math.random()*100 +
+          "vw";
+
+        heart.style.fontSize =
+          (16 +
+          Math.random()*25) +
+          "px";
+
+        heart.style.animationDuration =
+          (3 +
+          Math.random()*5) +
+          "s";
+
+        document.body.appendChild(
+          heart
+        );
+
+        setTimeout(
+          function(){
+            heart.remove();
+          },
+          8000
+        );
+
+      },
+      i * 80
     );
-
-  },700);
+  }
 }
 
 </script>
