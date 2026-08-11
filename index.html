@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
 <title>لفاطمة ❤️</title>
 
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -23,12 +25,9 @@ body{
   color:white;
 
   background:
-    radial-gradient(circle at top,#741d52,#260b2c 55%,#09000c);
+    radial-gradient(circle at top,#7b1e55,#2b0b30 55%,#090009);
 
   overflow-x:hidden;
-  overflow-y:auto;
-
-  -webkit-overflow-scrolling:touch;
 }
 
 .container{
@@ -40,12 +39,16 @@ body{
 .card{
   width:100%;
   max-width:440px;
+
   margin:20px auto 40px;
   padding:30px 20px;
+
   text-align:center;
 
   background:rgba(255,255,255,.10);
+
   border:1px solid rgba(255,255,255,.18);
+
   border-radius:30px;
 
   backdrop-filter:blur(15px);
@@ -88,21 +91,27 @@ p{
 }
 
 .subtitle{
-  opacity:.8;
+  opacity:.85;
   margin-bottom:25px;
 }
 
-/* القلب الأول */
+
+/* =========================
+   القلب الأول
+========================= */
 
 .bigHeart{
   font-size:90px;
   margin:20px;
   cursor:pointer;
+
   animation:pulse 1.2s infinite;
+
   user-select:none;
 }
 
 @keyframes pulse{
+
   0%,100%{
     transform:scale(1);
   }
@@ -110,28 +119,41 @@ p{
   50%{
     transform:scale(1.15);
   }
+
 }
 
-/* الأزرار */
+
+/* =========================
+   الأزرار
+========================= */
 
 button{
   width:100%;
+
   border:none;
   border-radius:50px;
+
   padding:15px 20px;
   margin-top:15px;
 
   color:white;
+
   font-size:17px;
   font-weight:bold;
 
   background:
-    linear-gradient(135deg,#ff416c,#d81b60);
+    linear-gradient(
+      135deg,
+      #ff416c,
+      #d81b60
+    );
 
   box-shadow:
-    0 8px 25px rgba(255,65,108,.3);
+    0 8px 25px
+    rgba(255,65,108,.3);
 
   cursor:pointer;
+
   transition:.2s;
 }
 
@@ -140,17 +162,25 @@ button:active{
 }
 
 .option{
-  background:rgba(255,255,255,.10);
-  border:1px solid rgba(255,255,255,.15);
+  background:
+    rgba(255,255,255,.10);
+
+  border:
+    1px solid
+    rgba(255,255,255,.15);
 }
 
-/* شريط التقدم */
+
+/* =========================
+   التقدم
+========================= */
 
 .progress{
   width:100%;
   height:9px;
 
-  background:rgba(255,255,255,.12);
+  background:
+    rgba(255,255,255,.12);
 
   border-radius:20px;
 
@@ -164,7 +194,11 @@ button:active{
   width:0%;
 
   background:
-    linear-gradient(90deg,#ff416c,#ff9ab1);
+    linear-gradient(
+      90deg,
+      #ff416c,
+      #ff9ab1
+    );
 
   transition:.5s;
 }
@@ -174,7 +208,10 @@ button:active{
   opacity:.65;
 }
 
-/* النتيجة */
+
+/* =========================
+   النتيجة
+========================= */
 
 .resultHeart{
   font-size:80px;
@@ -184,11 +221,16 @@ button:active{
 .percent{
   font-size:65px;
   font-weight:bold;
+
   color:#ff9fba;
+
   margin:10px 0;
 }
 
-/* الرسالة السرية */
+
+/* =========================
+   الرسالة
+========================= */
 
 .secret{
   padding:20px;
@@ -196,9 +238,11 @@ button:active{
 
   border-radius:20px;
 
-  background:rgba(255,255,255,.08);
+  background:
+    rgba(255,255,255,.08);
 
   line-height:2;
+
   font-size:19px;
 }
 
@@ -214,16 +258,19 @@ button:active{
   line-height:1.8;
 }
 
-/* =========================
-   قلب الحب الكبير
-========================= */
+
+/* =================================================
+   ❤️ القلب النهائي الحقيقي
+================================================= */
 
 .love-heart-container{
+
   display:flex;
+
   justify-content:center;
   align-items:center;
 
-  margin:35px auto;
+  margin:45px auto 30px;
 
   cursor:pointer;
 
@@ -232,63 +279,110 @@ button:active{
   -webkit-tap-highlight-color:transparent;
 }
 
+
+/*
+   القلب مصنوع من قلب CSS حقيقي:
+   مربع + دائرتين
+*/
+
 .love-heart{
-  width:230px;
-  height:230px;
 
   position:relative;
 
+  width:150px;
+  height:150px;
+
   transform:rotate(-45deg);
 
-  border-radius:25px;
+  background:transparent;
 
-  border:5px solid #ff8fab;
+  transition:
+    transform .15s ease;
 
-  background:rgba(255,255,255,.04);
-
-  overflow:hidden;
-
-  box-shadow:
-    0 0 30px rgba(255,65,108,.30);
-
-  transition:.15s;
 }
 
-.love-heart:before,
-.love-heart:after{
+
+/* جسم القلب */
+
+.love-heart::before{
+
   content:"";
 
   position:absolute;
 
-  width:230px;
-  height:230px;
+  width:150px;
+  height:150px;
+
+  left:0;
+  top:0;
+
+  background:
+    rgba(255,255,255,.06);
+
+  border:
+
+    5px solid
+    #ff8fab;
+
+  border-radius:
+    15px 0 15px 15px;
+
+  overflow:hidden;
+
+}
+
+
+/* الدائرة اليسرى */
+
+.love-heart::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:150px;
+  height:150px;
+
+  left:0;
+  top:-75px;
+
+  background:
+    rgba(255,255,255,.06);
+
+  border:
+
+    5px solid
+    #ff8fab;
 
   border-radius:50%;
 
-  border:5px solid #ff8fab;
-
-  background:rgba(255,255,255,.04);
 }
 
-.love-heart:before{
-  top:-115px;
-  left:-5px;
+
+/*
+   الدائرة الثانية
+*/
+
+.love-heart-container
+.love-heart
+{
+  isolation:isolate;
 }
 
-.love-heart:after{
-  left:115px;
-  top:-5px;
-}
 
-/* تعبئة القلب */
+/* التعبئة */
 
 .love-fill{
+
   position:absolute;
+
+  z-index:3;
 
   left:0;
   bottom:0;
 
   width:100%;
+
   height:0%;
 
   background:
@@ -298,70 +392,103 @@ button:active{
       #ff5c8a
     );
 
-  transition:height .18s ease;
+  transition:
+    height .25s ease;
 
-  z-index:1;
+  border-radius:
+    0 0 10px 10px;
+
 }
 
-/* كلمة حب */
 
-.love-text{
-  position:absolute;
+/*
+   نخلي القلب النهائي أجمل
+*/
 
-  z-index:5;
+.love-heart-box{
 
-  top:50%;
-  left:50%;
+  position:relative;
 
-  transform:
-    translate(-50%,-50%)
-    rotate(45deg);
+  width:220px;
+  height:220px;
 
-  font-size:30px;
-
-  font-weight:bold;
-
-  color:white;
-
-  text-shadow:
-    0 2px 8px rgba(0,0,0,.5);
-
-  pointer-events:none;
 }
 
-.love-heart-container:active .love-heart{
-  transform:
-    rotate(-45deg)
-    scale(.92);
+
+/* قلب مرئي باستخدام SVG */
+
+.heart-svg{
+
+  width:230px;
+  height:210px;
+
+  filter:
+    drop-shadow(
+      0 0 18px
+      rgba(255,65,108,.35)
+    );
+
+  transition:.15s;
+
 }
+
 
 /* النسبة */
 
 #lovePercent{
-  font-size:22px;
+
+  font-size:23px;
+
   color:#ffb4c9;
+
   font-weight:bold;
+
+  margin-top:15px;
 }
 
-/* رسالة امتلاء القلب */
+
+/* النص داخل القلب */
+
+.heart-label{
+
+  font-size:28px;
+
+  font-weight:bold;
+
+  fill:white;
+
+  text-shadow:
+    0 2px 5px rgba(0,0,0,.5);
+}
+
+
+/* رسالة الامتلاء */
 
 #loveMessage{
+
   margin-top:25px;
 
-  padding:20px;
+  padding:22px;
 
-  border-radius:20px;
+  border-radius:22px;
 
-  background:rgba(255,255,255,.08);
+  background:
+    rgba(255,255,255,.08);
 
   font-size:19px;
 
   line-height:2;
+
+  animation:appear .7s ease;
 }
 
-/* قلوب متطايرة */
+
+/* =========================
+   القلوب المتطايرة
+========================= */
 
 .floating{
+
   position:fixed;
 
   top:-40px;
@@ -370,40 +497,48 @@ button:active{
 
   z-index:100;
 
-  animation:fall linear forwards;
+  animation:
+    fall linear forwards;
 }
 
 @keyframes fall{
+
   to{
+
     transform:
       translateY(110vh)
       rotate(360deg);
 
     opacity:0;
+
   }
+
 }
 
-/* قلوب عند الضغط */
+
+/* =========================
+   قلب عند الضغط
+========================= */
 
 .tapHeart{
+
   position:fixed;
 
-  pointer-events:none;
-
   z-index:200;
+
+  pointer-events:none;
 
   font-size:25px;
 
   transition:1s ease;
 }
 
-/* الجوال */
+
+/* =========================
+   الجوال
+========================= */
 
 @media(max-width:500px){
-
-  .container{
-    padding:10px 12px 70px;
-  }
 
   .card{
     padding:27px 18px;
@@ -421,35 +556,32 @@ button:active{
     font-size:55px;
   }
 
-  .love-heart{
-    width:210px;
-    height:210px;
+  .heart-svg{
+    width:220px;
+    height:200px;
   }
 
-  .love-heart:before,
-  .love-heart:after{
-    width:210px;
-    height:210px;
-  }
-
-  .love-heart:before{
-    top:-105px;
-  }
-
-  .love-heart:after{
-    left:105px;
-  }
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="container">
 
-<!-- البداية -->
 
-<div class="card" id="start">
+<!-- =================================================
+     البداية
+================================================= -->
+
+<div
+  class="card"
+  id="start"
+>
 
   <h1>
     فاطمة 👀❤️
@@ -473,12 +605,14 @@ button:active{
 
   </p>
 
+
   <div
     class="bigHeart"
     onclick="startTest()"
   >
     ❤️
   </div>
+
 
   <p>
     اضغطي على القلب وابدئي 🔥
@@ -487,7 +621,10 @@ button:active{
 </div>
 
 
-<!-- الاختبار -->
+
+<!-- =================================================
+     الاختبار
+================================================= -->
 
 <div
   class="card hidden"
@@ -501,6 +638,7 @@ button:active{
     السؤال 1 من 4
   </div>
 
+
   <div class="progress">
 
     <div
@@ -510,20 +648,26 @@ button:active{
 
   </div>
 
+
   <h2 id="questionTitle">
     سؤال
   </h2>
 
+
   <p id="questionText">
     ...
   </p>
+
 
   <div id="options"></div>
 
 </div>
 
 
-<!-- النتيجة -->
+
+<!-- =================================================
+     النتيجة
+================================================= -->
 
 <div
   class="card hidden"
@@ -534,25 +678,36 @@ button:active{
     ❤️
   </div>
 
+
   <h1>
     النتيجة وصلت 😭❤️
   </h1>
+
 
   <p>
     نسبة حب عمر لفاطمة:
   </p>
 
+
   <div class="percent">
     ∞%
   </div>
 
+
   <p>
+
     للأسف...
+
     <br>
+
     النظام ما قدر يحسبها 😂❤️
+
     <br>
+
     لأن النسبة أكبر من 100%.
+
   </p>
+
 
   <button onclick="showSecret()">
     عندي لك شيء أخير 🤫
@@ -561,7 +716,10 @@ button:active{
 </div>
 
 
-<!-- الرسالة السرية -->
+
+<!-- =================================================
+     الرسالة السرية
+================================================= -->
 
 <div
   class="card hidden"
@@ -572,9 +730,11 @@ button:active{
     💌
   </div>
 
+
   <h1>
     الرسالة السرية لفاطمة 🌹
   </h1>
+
 
   <div class="secret">
 
@@ -620,22 +780,31 @@ button:active{
 
   </div>
 
+
   <div class="signature">
 
     من عمر إلى فاطمة ❤️
+
     <br>
+
     أحبك وااايد 🌹
 
   </div>
 
+
   <button onclick="showFinal()">
+
     عندي لك آخر مفاجأة 👀❤️
+
   </button>
 
 </div>
 
 
-<!-- قلب الحب النهائي -->
+
+<!-- =================================================
+     ❤️ النهاية - قلب الحب
+================================================= -->
 
 <div
   class="card hidden"
@@ -646,35 +815,152 @@ button:active{
     فطومتي ❤️
   </h1>
 
+
   <p>
-    هذا قلب عمر لك...
+
+    وصلنا لآخر مفاجأة...
+
+    <br><br>
+
+    هذا قلب عمر لك ❤️
+
     <br>
-    اضغطي عليه لين يمتلئ بالحب 🥹❤️
+
+    اضغطي عليه لين يمتلئ بالحب 🥹
+
   </p>
+
+
+  <!-- القلب الحقيقي -->
 
   <div
     class="love-heart-container"
     onclick="fillLove(event)"
   >
 
-    <div class="love-heart">
+    <svg
+      class="heart-svg"
+      viewBox="0 0 200 180"
+      xmlns="http://www.w3.org/2000/svg"
+    >
 
-      <div
-        class="love-fill"
+      <!-- القلب الفاضي -->
+
+      <defs>
+
+        <clipPath id="heartClip">
+
+          <path
+            d="
+            M100 170
+            C90 160 20 105 20 55
+            C20 25 42 10 65 10
+            C82 10 94 19 100 34
+            C106 19 118 10 135 10
+            C158 10 180 25 180 55
+            C180 105 110 160 100 170
+            Z
+            "
+          />
+
+        </clipPath>
+
+        <linearGradient
+          id="heartFill"
+          x1="0"
+          y1="1"
+          x2="0"
+          y2="0"
+        >
+
+          <stop
+            offset="0%"
+            stop-color="#ff1744"
+          />
+
+          <stop
+            offset="100%"
+            stop-color="#ff75a0"
+          />
+
+        </linearGradient>
+
+      </defs>
+
+
+      <!-- الخلفية -->
+
+      <path
+        d="
+        M100 170
+        C90 160 20 105 20 55
+        C20 25 42 10 65 10
+        C82 10 94 19 100 34
+        C106 19 118 10 135 10
+        C158 10 180 25 180 55
+        C180 105 110 160 100 170
+        Z
+        "
+        fill="rgba(255,255,255,0.04)"
+        stroke="#ff8fab"
+        stroke-width="6"
+      />
+
+
+      <!-- التعبئة -->
+
+      <rect
         id="loveFill"
-      ></div>
+        x="0"
+        y="180"
+        width="200"
+        height="0"
+        fill="url(#heartFill)"
+        clip-path="url(#heartClip)"
+      />
 
-      <div class="love-text">
+
+      <!-- إطار داخلي -->
+
+      <path
+        d="
+        M100 170
+        C90 160 20 105 20 55
+        C20 25 42 10 65 10
+        C82 10 94 19 100 34
+        C106 19 118 10 135 10
+        C158 10 180 25 180 55
+        C180 105 110 160 100 170
+        Z
+        "
+        fill="none"
+        stroke="#ff8fab"
+        stroke-width="6"
+      />
+
+
+      <!-- كلمة حب -->
+
+      <text
+        x="100"
+        y="105"
+        text-anchor="middle"
+        class="heart-label"
+      >
         حب ❤️
-      </div>
+      </text>
 
-    </div>
+    </svg>
 
   </div>
+
 
   <p id="lovePercent">
     0% حب ❤️
   </p>
+
+
+  <!-- الرسالة بعد الامتلاء -->
 
   <div
     id="loveMessage"
@@ -703,16 +989,25 @@ button:active{
 
     وهذا القلب ما يكفيك أصلًا 🥹❤️
 
+    <br><br>
+
+    ❤️ أحبك ❤️
+
   </div>
 
 </div>
 
+
 </div>
+
 
 
 <script>
 
-/* الأسئلة */
+
+/* =================================================
+   الأسئلة
+================================================= */
 
 const questions = [
 
@@ -730,6 +1025,7 @@ const questions = [
     ]
   },
 
+
   {
     title:"السؤال الثاني 😏",
 
@@ -744,6 +1040,7 @@ const questions = [
     ]
   },
 
+
   {
     title:"السؤال الثالث ❤️",
 
@@ -757,6 +1054,7 @@ const questions = [
       "ما لها نسبة أصلًا 😂"
     ]
   },
+
 
   {
     title:"السؤال الأخير 🔥",
@@ -778,7 +1076,9 @@ const questions = [
 let currentQuestion = 0;
 
 
-/* بداية الاختبار */
+/* =================================================
+   بداية
+================================================= */
 
 function startTest(){
 
@@ -787,81 +1087,109 @@ function startTest(){
     .classList
     .add("hidden");
 
+
   document
     .getElementById("quiz")
     .classList
     .remove("hidden");
 
+
   showQuestion();
+
 }
 
 
-/* عرض السؤال */
+/* =================================================
+   عرض السؤال
+================================================= */
 
 function showQuestion(){
 
   const q =
     questions[currentQuestion];
 
+
   document
     .getElementById("number")
     .innerText =
-    "السؤال " +
-    (currentQuestion + 1) +
-    " من " +
-    questions.length;
+
+      "السؤال " +
+      (currentQuestion + 1) +
+      " من " +
+      questions.length;
+
 
   document
     .getElementById("questionTitle")
     .innerText =
-    q.title;
+      q.title;
+
 
   document
     .getElementById("questionText")
     .innerText =
-    q.text;
+      q.text;
+
 
   document
     .getElementById("progress")
     .style.width =
-    (
-      currentQuestion /
-      questions.length *
-      100
-    ) + "%";
+
+      (
+        currentQuestion /
+        questions.length *
+        100
+      ) + "%";
+
 
   const options =
     document.getElementById("options");
 
+
   options.innerHTML = "";
 
+
   q.options.forEach(
+
     function(option){
 
       const button =
         document.createElement("button");
 
-      button.className = "option";
 
-      button.innerText = option;
+      button.className =
+        "option";
+
+
+      button.innerText =
+        option;
+
 
       button.onclick =
         function(){
+
           nextQuestion();
+
         };
+
 
       options.appendChild(button);
 
     }
+
   );
+
 }
 
 
-/* السؤال التالي */
+/* =================================================
+   السؤال التالي
+================================================= */
 
 function nextQuestion(){
 
   currentQuestion++;
+
 
   if(
     currentQuestion >=
@@ -870,15 +1198,20 @@ function nextQuestion(){
 
     showResult();
 
-  }else{
+  }
+
+  else{
 
     showQuestion();
 
   }
+
 }
 
 
-/* النتيجة */
+/* =================================================
+   النتيجة
+================================================= */
 
 function showResult(){
 
@@ -887,21 +1220,27 @@ function showResult(){
     .classList
     .add("hidden");
 
+
   document
     .getElementById("result")
     .classList
     .remove("hidden");
 
+
   createHearts();
+
 
   window.scrollTo({
     top:0,
     behavior:"smooth"
   });
+
 }
 
 
-/* الرسالة السرية */
+/* =================================================
+   الرسالة
+================================================= */
 
 function showSecret(){
 
@@ -910,21 +1249,27 @@ function showSecret(){
     .classList
     .add("hidden");
 
+
   document
     .getElementById("secret")
     .classList
     .remove("hidden");
 
+
   createHearts();
+
 
   window.scrollTo({
     top:0,
     behavior:"smooth"
   });
+
 }
 
 
-/* قلب الحب */
+/* =================================================
+   النهاية
+================================================= */
 
 function showFinal(){
 
@@ -933,23 +1278,28 @@ function showFinal(){
     .classList
     .add("hidden");
 
+
   document
     .getElementById("final")
     .classList
     .remove("hidden");
 
+
   window.scrollTo({
     top:0,
     behavior:"smooth"
   });
+
 }
 
 
-/* تعبئة القلب
+/* =================================================
+   ❤️ تعبئة القلب
    كل ضغطة = 10%
-*/
+================================================= */
 
 let love = 0;
+
 
 function fillLove(event){
 
@@ -957,87 +1307,143 @@ function fillLove(event){
     return;
   }
 
+
   love += 10;
+
 
   if(love > 100){
     love = 100;
   }
 
-  document
-    .getElementById("loveFill")
-    .style.height =
-    love + "%";
+
+  /*
+    SVG ارتفاعه 180.
+    كلما زادت النسبة يرتفع الماء.
+  */
+
+  const fill =
+    document.getElementById("loveFill");
+
+
+  const height =
+    180 * (love / 100);
+
+
+  const y =
+    180 - height;
+
+
+  fill.setAttribute(
+    "y",
+    y
+  );
+
+
+  fill.setAttribute(
+    "height",
+    height
+  );
+
 
   document
     .getElementById("lovePercent")
     .innerText =
-    love + "% حب ❤️";
+
+      love +
+      "% حب ❤️";
+
 
   createTapHeart(event);
+
 
   if(love >= 100){
 
     document
       .getElementById("lovePercent")
       .innerText =
-      "100% ❤️‍🔥";
+        "100% ❤️‍🔥";
+
 
     document
       .getElementById("loveMessage")
       .classList
       .remove("hidden");
 
+
     createHearts();
+
   }
+
 }
 
 
-/* قلب صغير عند الضغط */
+/* =================================================
+   قلب صغير عند الضغط
+================================================= */
 
 function createTapHeart(event){
 
   const heart =
     document.createElement("div");
 
+
   heart.className =
     "tapHeart";
+
 
   heart.innerText =
     "❤️";
 
+
   heart.style.left =
     event.clientX + "px";
+
 
   heart.style.top =
     event.clientY + "px";
 
-  document.body.appendChild(heart);
+
+  document.body.appendChild(
+    heart
+  );
+
 
   setTimeout(
+
     function(){
 
       heart.style.transform =
         "translateY(-100px) scale(1.5)";
 
+
       heart.style.opacity =
         "0";
 
     },
+
     50
+
   );
 
+
   setTimeout(
+
     function(){
 
       heart.remove();
 
     },
+
     1100
+
   );
+
 }
 
 
-/* قلوب كثيرة */
+/* =================================================
+   قلوب كثيرة
+================================================= */
 
 function createHearts(){
 
@@ -1048,15 +1454,19 @@ function createHearts(){
   ){
 
     setTimeout(
+
       function(){
 
         const heart =
           document.createElement("div");
 
+
         heart.className =
           "floating";
 
+
         const icons = [
+
           "❤️",
           "💖",
           "💕",
@@ -1064,9 +1474,12 @@ function createHearts(){
           "💓",
           "🌹",
           "✨"
+
         ];
 
+
         heart.innerText =
+
           icons[
             Math.floor(
               Math.random() *
@@ -1074,35 +1487,52 @@ function createHearts(){
             )
           ];
 
+
         heart.style.left =
-          Math.random()*100 +
+
+          Math.random() * 100 +
           "vw";
 
+
         heart.style.fontSize =
+
           (16 +
-          Math.random()*25) +
+          Math.random() * 25) +
           "px";
 
+
         heart.style.animationDuration =
+
           (3 +
-          Math.random()*5) +
+          Math.random() * 5) +
           "s";
+
 
         document.body.appendChild(
           heart
         );
 
+
         setTimeout(
+
           function(){
+
             heart.remove();
+
           },
+
           8000
+
         );
 
       },
+
       i * 80
+
     );
+
   }
+
 }
 
 </script>
