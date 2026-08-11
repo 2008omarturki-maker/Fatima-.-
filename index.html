@@ -22,6 +22,7 @@ body{
   min-height:100vh;
   font-family:Arial,sans-serif;
   color:white;
+
   background:
     radial-gradient(circle at top,#8b2457,#3a0b2b 48%,#100008);
 
@@ -37,14 +38,14 @@ body{
 
   display:block;
 
-  padding:20px 14px 70px;
+  padding:15px 12px 80px;
 }
 
 .card{
   width:100%;
   max-width:440px;
 
-  margin:20px auto 40px;
+  margin:15px auto 40px;
 
   padding:30px 20px;
 
@@ -67,8 +68,8 @@ body{
 }
 
 h1{
-  font-size:32px;
-  margin-bottom:18px;
+  font-size:31px;
+  margin-bottom:20px;
 }
 
 p{
@@ -148,7 +149,6 @@ p{
 
 .message{
   width:100%;
-
   margin:15px 0 10px;
 }
 
@@ -164,7 +164,7 @@ p{
   overflow-wrap:anywhere;
 }
 
-/* الزر */
+/* الأزرار */
 
 button{
   width:auto;
@@ -176,7 +176,7 @@ button{
 
   padding:14px 24px;
 
-  margin-top:22px;
+  margin-top:20px;
 
   font-size:17px;
 
@@ -190,6 +190,8 @@ button{
   box-shadow:0 8px 25px rgba(255,65,108,.3);
 
   cursor:pointer;
+
+  transition:.25s;
 }
 
 button:active{
@@ -217,6 +219,7 @@ button:active{
 
 .finalHeart{
   font-size:70px;
+
   margin-bottom:10px;
 
   animation:pulse 1.2s infinite;
@@ -251,7 +254,19 @@ button:active{
   line-height:1.8;
 }
 
-/* القلوب المتحركة */
+/* الرسالة بعد الاختيار */
+
+#answer{
+  margin-top:22px;
+
+  color:#ffd1dc;
+
+  font-size:19px;
+
+  line-height:2;
+}
+
+/* القلوب */
 
 .floating{
   position:fixed;
@@ -275,12 +290,18 @@ button:active{
   }
 }
 
+/* زر الهروب */
+
+#angry{
+  transition:transform .25s ease;
+}
+
 /* الجوال */
 
 @media(max-width:500px){
 
   .container{
-    padding:10px 12px 60px;
+    padding:10px 12px 70px;
   }
 
   .card{
@@ -307,7 +328,7 @@ button:active{
 
   button{
     font-size:16px;
-    padding:14px 22px;
+    padding:14px 20px;
   }
 }
 </style>
@@ -317,152 +338,183 @@ button:active{
 
 <div class="container">
 
-  <!-- البداية -->
+<!-- =========================
+     البداية
+========================= -->
 
-  <div class="card" id="start">
+<div class="card" id="start">
 
-    <h1>
-      فاطمة ❤️‍🩹
-    </h1>
+  <h1>
+    فاطمة ❤️‍🩹
+  </h1>
 
-    <p>
-      أدري إني تأخرت عليك...
-      <br><br>
-      وعندي شيء أبي أقوله لك من قلبي 🥺
-    </p>
+  <p>
+    أدري إني اليوم زعلتك...
+    <br><br>
 
-    <div
-      class="envelope"
-      onclick="openLetter()"
-    >
-      <div class="letterIcon">
-        💌
-      </div>
+    وعندي شيء أبي أقوله لك
+    من قلبي 🥺
+  </p>
+
+  <div
+    class="envelope"
+    onclick="openLetter()"
+  >
+
+    <div class="letterIcon">
+      💌
     </div>
-
-    <p class="small">
-      اضغطي على الظرف ❤️
-    </p>
 
   </div>
 
+  <p class="small">
+    اضغطي على الظرف ❤️
+  </p>
 
-  <!-- الاعتذار -->
+</div>
 
-  <div class="card hidden" id="letter">
 
-    <h1>
-      آسف يا فاطمة ❤️‍🩹
-    </h1>
+<!-- =========================
+     الاعتذار
+========================= -->
 
-    <div class="message">
+<div
+  class="card hidden"
+  id="letter"
+>
 
-      <p id="typing"></p>
+  <h1>
+    آسف يا فاطمة ❤️‍🩹
+  </h1>
 
-    </div>
+  <div class="message">
 
-    <button onclick="showQuestion()">
-      عندي سؤال لك 🥺
-    </button>
+    <p id="typing"></p>
 
   </div>
 
+  <button onclick="showQuestion()">
+    كملي للآخر 🥺❤️
+  </button>
 
-  <!-- السؤال -->
+</div>
 
-  <div class="card hidden" id="question">
 
-    <div class="finalHeart">
-      🥺
-    </div>
+<!-- =========================
+     السؤال
+========================= -->
 
-    <h1>
-      فاطمة...
-    </h1>
+<div
+  class="card hidden"
+  id="question"
+>
 
-    <p class="question">
-      سامحتيني على تأخيري عليك؟ ❤️‍🩹
-    </p>
+  <div class="finalHeart">
+    🥺
+  </div>
 
-    <button
-      class="yes"
-      onclick="forgive()"
-    >
-      إيه سامحتك ❤️
-    </button>
+  <h1>
+    فاطمة...
+  </h1>
 
+  <p class="question">
+    سامحيني يا فاطمة؟ ❤️‍🩹
+  </p>
+
+  <p>
+    كنت أبي أسولف معك الصبح،
+    بس غلبني النوم بالغلط 😭
+  </p>
+
+  <button
+    class="yes"
+    onclick="forgive()"
+  >
+    إيه سامحتك يا عمر ❤️
+  </button>
+
+  <br>
+
+  <button
+    class="no"
+    id="angry"
+    onclick="tryAgain()"
+  >
+    لسه زعلانة منك 🥺
+  </button>
+
+  <p id="answer"></p>
+
+</div>
+
+
+<!-- =========================
+     النهاية
+========================= -->
+
+<div
+  class="card hidden"
+  id="final"
+>
+
+  <div class="finalHeart">
+    ❤️
+  </div>
+
+  <h1>
+    يااااا بعد قلبي 😭❤️
+  </h1>
+
+  <p class="finalText">
+
+    شكرًا لأنك سامحتيني ❤️
+
+    <br><br>
+
+    والله كنت ناوي أصحى وأكلمك الصبح،
+    وكنت أبي أسولف معك،
+    بس غلبني النوم بالغلط 🥺
+
+    <br><br>
+
+    ما كان قصدي أتأخر عليك،
+    ولا أبي أخليك تزعلين مني.
+
+    <br><br>
+
+    أدري إن كلمة آسف ما ترجع
+    الوقت اللي انتظرتيني فيه،
+    لكن والله لو أقدر أرجع للصباح،
+    كان أول شيء أسويه إني أكلمك.
+
+    <br><br>
+
+    وحقك عليّ يا فاطمة ❤️‍🩹
+
+  </p>
+
+  <div class="signature">
+
+    عمر يحبك وااايد ❤️‍🔥
     <br>
-
-    <button
-      class="no"
-      onclick="tryAgain()"
-    >
-      لسه زعلانة 🥺
-    </button>
-
-    <p id="reply"></p>
+    وما يهون عليه زعلك 🌹
 
   </div>
 
+  <button onclick="finalSurprise()">
+    آخر شيء لك 💌
+  </button>
 
-  <!-- النهاية -->
-
-  <div class="card hidden" id="final">
-
-    <div class="finalHeart">
-      ❤️
-    </div>
-
-    <h1>
-      شكرًا يا فاطمة 🌹
-    </h1>
-
-    <p class="finalText">
-
-      شكرًا لأنك سامحتيني ❤️
-
-      <br><br>
-
-      أدري إن التأخير مو شيء حلو،
-      وحقك عليّ يا فاطمة 🥺
-
-      <br><br>
-
-      ما كان قصدي أخليك تنتظرين،
-      ولا أبيك تزعلين مني.
-
-      <br><br>
-
-      أنتِ غالية عليّ،
-      وآخر شيء أبيه أشوفك زعلانة.
-
-      <br><br>
-
-      ووعد مني أحاول ما أخليك
-      تنتظرين مرة ثانية ❤️‍🩹
-
-    </p>
-
-    <div class="signature">
-
-      عمر يحبك وااايد ❤️‍🔥
-      <br>
-      ويعشقك وااايد 🌹
-
-    </div>
-
-    <button onclick="finalSurprise()">
-      آخر شيء لك 💌
-    </button>
-
-  </div>
+</div>
 
 </div>
 
 
 <script>
 
-/* فتح الرسالة */
+/* =========================
+   فتح الرسالة
+========================= */
 
 function openLetter(){
 
@@ -487,30 +539,32 @@ function openLetter(){
 }
 
 
-/* كتابة الاعتذار */
+/* =========================
+   كتابة الاعتذار
+========================= */
 
 function typeMessage(){
 
   const text =
 `فاطمة...
 
-أدري إني تأخرت عليك،
-وأدري إن الانتظار مو شيء حلو،
-وعشان كذا أنا آسف لك من قلبي. ❤️‍🩹
+والله كنت ناوي أصحى وأكلمك الصبح،
+وكنت متحمس لسوالفنا.
 
-ما كان قصدي أخليك تنتظرين،
+بس غلبني النوم بالغلط 😭
+
+ما كان قصدي أتأخر عليك،
 ولا كان قصدي أزعلك.
 
-حقك عليّ يا فاطمة 🥺
+وأعرف إنك كنتِ تنتظريني،
+وهذا أكثر شيء مضايقني.
+
+حقك عليّ يا فاطمة 🥺❤️‍🩹
 
 أنتِ غالية عليّ،
-وآخر شيء أبيه إنك تزعلين مني.
+وآخر شيء أبيه أشوفك زعلانة مني.
 
-يمكن كلمة "آسف" بسيطة،
-لكن والله طالعة من قلبي. ❤️
-
-وأوعدك إني أحاول
-ما أخليك تنتظرين مرة ثانية.`;
+سامحيني ❤️`;
 
   const element =
     document.getElementById("typing");
@@ -524,9 +578,14 @@ function typeMessage(){
     if(i < text.length){
 
       if(text.charAt(i)==="\n"){
+
         element.innerHTML += "<br>";
+
       }else{
-        element.innerHTML += text.charAt(i);
+
+        element.innerHTML +=
+          text.charAt(i);
+
       }
 
       i++;
@@ -540,7 +599,9 @@ function typeMessage(){
 }
 
 
-/* السؤال */
+/* =========================
+   الانتقال للسؤال
+========================= */
 
 function showQuestion(){
 
@@ -561,7 +622,9 @@ function showQuestion(){
 }
 
 
-/* سامحتيني */
+/* =========================
+   سامحتيني
+========================= */
 
 function forgive(){
 
@@ -584,20 +647,42 @@ function forgive(){
 }
 
 
-/* لسه زعلانة */
+/* =========================
+   لسه زعلانة
+========================= */
 
 function tryAgain(){
 
-  document
-    .getElementById("reply")
-    .innerHTML =
-    "🥺 طيب أعطي عمر فرصة يراضيك أكثر ❤️‍🩹";
+  const button =
+    document.getElementById("angry");
+
+  const answer =
+    document.getElementById("answer");
+
+  answer.innerHTML =
+    "طيب طيب 😭❤️‍🩹<br>" +
+    "عطيني فرصة أراضيك، ما أبيك تزعلين مني 🥺🌹";
+
+  /*
+   * حركة بسيطة للزر
+   */
+
+  const x =
+    Math.random()*80 - 40;
+
+  const y =
+    Math.random()*40 - 20;
+
+  button.style.transform =
+    "translate("+x+"px,"+y+"px)";
 
   createHearts();
 }
 
 
-/* القلوب */
+/* =========================
+   القلوب
+========================= */
 
 function createHearts(){
 
@@ -608,7 +693,8 @@ function createHearts(){
       const heart =
         document.createElement("div");
 
-      heart.className="floating";
+      heart.className =
+        "floating";
 
       const icons=[
         "❤️",
@@ -622,7 +708,8 @@ function createHearts(){
       heart.innerHTML =
         icons[
           Math.floor(
-            Math.random()*icons.length
+            Math.random()*
+            icons.length
           )
         ];
 
@@ -635,10 +722,14 @@ function createHearts(){
       heart.style.animationDuration =
         (3+Math.random()*4)+"s";
 
-      document.body.appendChild(heart);
+      document.body.appendChild(
+        heart
+      );
 
       setTimeout(()=>{
+
         heart.remove();
+
       },7500);
 
     },i*100);
@@ -646,7 +737,9 @@ function createHearts(){
 }
 
 
-/* آخر مفاجأة */
+/* =========================
+   آخر مفاجأة
+========================= */
 
 function finalSurprise(){
 
@@ -656,10 +749,10 @@ function finalSurprise(){
 
     alert(
       "فاطمة ❤️‍🩹\n\n"+
-      "وعد مني أحاول ما أخليك تنتظرين مرة ثانية.\n\n"+
-      "وإذا زعلتك يوم...\n"+
-      "حقك عليّ 🥺❤️\n\n"+
-      "أحبك وااايد يا فاطمة 🌹❤️‍🔥"
+      "كنت أبي أسولف معك الصبح، "+
+      "بس غلبني النوم بالغلط 😭\n\n"+
+      "حقك عليّ يا فاطمة ❤️\n\n"+
+      "أحبك وااايد 🌹❤️‍🔥"
     );
 
   },700);
