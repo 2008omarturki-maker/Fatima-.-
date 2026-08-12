@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
 <title>إلى فاطمة ❤️</title>
 
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -34,6 +36,7 @@ body.loveMode{
     #b5165b 70%,
     #4b0730 100%
   );
+
   animation:flash .8s ease;
 }
 
@@ -77,6 +80,7 @@ body.loveMode{
     opacity:0;
     transform:translateY(30px);
   }
+
   to{
     opacity:1;
     transform:translateY(0);
@@ -85,11 +89,6 @@ body.loveMode{
 
 h1{
   font-size:32px;
-  margin-bottom:20px;
-}
-
-h2{
-  font-size:25px;
   margin-bottom:20px;
 }
 
@@ -103,7 +102,9 @@ p{
   font-size:14px;
 }
 
+
 /* القلب الأول */
+
 .startHeart{
   font-size:100px;
   margin:30px;
@@ -113,11 +114,18 @@ p{
 }
 
 @keyframes pulse{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.15)}
+  0%,100%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.15);
+  }
 }
 
+
 /* الأزرار */
+
 button{
   width:100%;
   padding:16px;
@@ -153,7 +161,9 @@ button:active{
   );
 }
 
+
 /* كلام المقلب */
+
 .fakeText{
   margin-top:25px;
   padding:25px;
@@ -177,20 +187,29 @@ button:active{
   font-weight:bold;
 }
 
+
 /* صدقتي */
+
 .bigQuestion{
   font-size:36px;
   color:#ff9dbb;
   margin:25px 0;
 }
 
+
 /* وضع الحب */
+
 .loveTitle{
   color:white;
-  text-shadow:0 3px 15px rgba(120,0,50,.7);
+
+  text-shadow:
+    0 3px 15px
+    rgba(120,0,50,.7);
 }
 
+
 /* القلب الحقيقي */
+
 .realHeart{
   position:relative;
 
@@ -229,7 +248,8 @@ button:active{
   top:50%;
   left:50%;
 
-  transform:translate(-50%,-50%);
+  transform:
+    translate(-50%,-50%);
 
   z-index:5;
 
@@ -241,17 +261,25 @@ button:active{
   white-space:nowrap;
 
   text-shadow:
-    0 2px 8px rgba(0,0,0,.7);
+    0 2px 8px
+    rgba(0,0,0,.7);
 
   pointer-events:none;
 }
 
 @keyframes heartBeat{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.08)}
+  0%,100%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.08);
+  }
 }
 
-/* الرسالة */
+
+/* الرسائل */
+
 .loveMessage{
   padding:25px;
 
@@ -263,9 +291,12 @@ button:active{
   line-height:2.2;
 }
 
-/* القلوب */
+
+/* القلوب الطائرة */
+
 .floatingHeart{
   position:fixed;
+
   top:-60px;
 
   z-index:1000;
@@ -285,7 +316,9 @@ button:active{
   }
 }
 
+
 /* اللمعات */
+
 .sparkle{
   position:fixed;
 
@@ -301,16 +334,24 @@ button:active{
 @keyframes sparkle{
   0%{
     opacity:1;
-    transform:scale(.3) translateY(0);
+
+    transform:
+      scale(.3)
+      translateY(0);
   }
 
   100%{
     opacity:0;
-    transform:scale(1.5) translateY(-100px);
+
+    transform:
+      scale(1.5)
+      translateY(-100px);
   }
 }
 
-/* للجوال */
+
+/* الجوال */
+
 @media(max-width:500px){
 
   h1{
@@ -328,8 +369,11 @@ button:active{
   .realHeartName{
     font-size:24px;
   }
+
 }
+
 </style>
+
 </head>
 
 
@@ -337,7 +381,10 @@ button:active{
 
 <div class="container">
 
-<!-- البداية -->
+
+<!-- =========================
+     البداية
+========================= -->
 
 <div class="card" id="start">
 
@@ -357,17 +404,26 @@ button:active{
   </div>
 
   <p>
+
     اضغطي على القلب...
+
     <br>
+
     بس لا تلوميني على اللي بيصير 😂
+
   </p>
 
 </div>
 
 
-<!-- الصفحة الأولى -->
+<!-- =========================
+     الصفحة الأولى
+========================= -->
 
-<div class="card hidden" id="page1">
+<div
+  class="card hidden"
+  id="page1"
+>
 
   <h1>
     فاطمة...
@@ -391,15 +447,22 @@ button:active{
     class="prankButton"
     onclick="openSecond()"
   >
+
     كملي...
+
   </button>
 
 </div>
 
 
-<!-- المقلب -->
+<!-- =========================
+     المقلب
+========================= -->
 
-<div class="card hidden" id="page2">
+<div
+  class="card hidden"
+  id="page2"
+>
 
   <h1>
     عندي اعتراف 😐
@@ -447,16 +510,25 @@ button:active{
 
   </div>
 
-  <button onclick="openTruth()">
+  <button
+    onclick="openTruth()"
+  >
+
     كملي وشوفي النهاية 👀
+
   </button>
 
 </div>
 
 
-<!-- صدقتي -->
+<!-- =========================
+     صدقتي؟
+========================= -->
 
-<div class="card hidden" id="truth">
+<div
+  class="card hidden"
+  id="truth"
+>
 
   <div class="bigQuestion">
     صدقتي؟ 😂😂
@@ -476,6 +548,7 @@ button:active{
 
   </p>
 
+
   <div class="loveMessage">
 
     <strong>
@@ -491,21 +564,34 @@ button:active{
     عمر يحبك، وعمر ما يقدر يشوفك
     إلا بعين الحب 🥹❤️‍🔥
 
+    <br><br>
+
+    وأنتِ بالنسبة لعمر شيء مختلف تمامًا،
+    ما تشبهين أي أحد ❤️🌹
+
   </div>
+
 
   <button
     class="prankButton"
     onclick="turnLove()"
   >
+
     اضغطي وشوفي الحقيقة ❤️
+
   </button>
 
 </div>
 
 
-<!-- الحب -->
+<!-- =========================
+     الحب
+========================= -->
 
-<div class="card hidden" id="lovePage">
+<div
+  class="card hidden"
+  id="lovePage"
+>
 
   <p class="small">
     الحقيقة التي كنت أخفيها...
@@ -516,7 +602,7 @@ button:active{
   </h1>
 
 
-  <!-- قلب حقيقي -->
+  <!-- القلب الحقيقي -->
 
   <div class="realHeart">
 
@@ -558,16 +644,25 @@ button:active{
   </div>
 
 
-  <button onclick="finalSurprise()">
+  <button
+    onclick="finalSurprise()"
+  >
+
     عندي آخر شيء لك 👀❤️
+
   </button>
 
 </div>
 
 
-<!-- النهاية -->
+<!-- =========================
+     النهاية
+========================= -->
 
-<div class="card hidden" id="finalPage">
+<div
+  class="card hidden"
+  id="finalPage"
+>
 
   <div class="startHeart">
     ❤️
@@ -615,12 +710,15 @@ button:active{
 
 </div>
 
+
 </div>
 
 
 <script>
 
-/* إخفاء */
+/* =========================
+   إخفاء
+========================= */
 
 function hide(id){
 
@@ -632,7 +730,9 @@ function hide(id){
 }
 
 
-/* إظهار */
+/* =========================
+   إظهار
+========================= */
 
 function show(id){
 
@@ -649,7 +749,9 @@ function show(id){
 }
 
 
-/* البداية */
+/* =========================
+   البداية
+========================= */
 
 function openFirst(){
 
@@ -660,7 +762,9 @@ function openFirst(){
 }
 
 
-/* الصفحة الثانية */
+/* =========================
+   الصفحة الثانية
+========================= */
 
 function openSecond(){
 
@@ -671,7 +775,9 @@ function openSecond(){
 }
 
 
-/* المقلب */
+/* =========================
+   المقلب
+========================= */
 
 function openTruth(){
 
@@ -682,7 +788,9 @@ function openTruth(){
 }
 
 
-/* قلب الموقع للحب */
+/* =========================
+   التحول للحب
+========================= */
 
 function turnLove(){
 
@@ -702,7 +810,9 @@ function turnLove(){
 }
 
 
-/* النهاية */
+/* =========================
+   النهاية
+========================= */
 
 function finalSurprise(){
 
@@ -717,7 +827,9 @@ function finalSurprise(){
 }
 
 
-/* قلوب كثيرة */
+/* =========================
+   قلوب كثيرة
+========================= */
 
 function massiveHearts(){
 
@@ -737,6 +849,7 @@ function massiveHearts(){
 
 
       const icons = [
+
         "❤️",
         "💖",
         "💕",
@@ -746,6 +859,7 @@ function massiveHearts(){
         "💘",
         "🌹",
         "✨"
+
       ];
 
 
@@ -797,7 +911,9 @@ function massiveHearts(){
 }
 
 
-/* اللمعات */
+/* =========================
+   اللمعات
+========================= */
 
 function sparkles(){
 
