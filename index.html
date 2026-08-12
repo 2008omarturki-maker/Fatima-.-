@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>لفاطمة ❤️</title>
+<title>إلى فطامي ❤️</title>
 
 <style>
 
@@ -21,52 +21,72 @@ html{
 
 body{
   min-height:100vh;
+  overflow-x:hidden;
   font-family:Arial,sans-serif;
   color:white;
 
   background:
-    radial-gradient(
-      circle at top,
-      #7b1e55,
-      #2b0b30 55%,
-      #090009
-    );
+    radial-gradient(circle at 50% 15%,
+      #3d2267 0%,
+      #18112f 42%,
+      #070914 100%);
+}
 
-  overflow-x:hidden;
-  overflow-y:auto;
+/* النجوم */
+
+.star{
+  position:fixed;
+  width:3px;
+  height:3px;
+  background:white;
+  border-radius:50%;
+  opacity:.8;
+  animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+  from{
+    opacity:.2;
+    transform:scale(.7);
+  }
+  to{
+    opacity:1;
+    transform:scale(1.4);
+  }
 }
 
 .container{
   width:100%;
   min-height:100vh;
-  padding:20px 14px 80px;
+  padding:25px 15px 70px;
 }
 
 .card{
   width:100%;
-  max-width:440px;
+  max-width:450px;
+  margin:20px auto;
 
-  margin:20px auto 40px;
   padding:30px 20px;
 
   text-align:center;
 
-  background:rgba(255,255,255,.10);
+  background:rgba(255,255,255,.08);
 
-  border:1px solid rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.15);
 
   border-radius:30px;
 
   backdrop-filter:blur(15px);
   -webkit-backdrop-filter:blur(15px);
 
-  box-shadow:0 20px 70px rgba(0,0,0,.5);
+  box-shadow:
+    0 20px 70px rgba(0,0,0,.45);
 
   animation:appear .7s ease;
 }
 
 .hidden{
-  display:none !important;
+  display:none!important;
 }
 
 @keyframes appear{
@@ -87,7 +107,7 @@ h1{
 }
 
 h2{
-  color:#ffb4c9;
+  color:#ffb8cf;
   margin-bottom:18px;
 }
 
@@ -96,32 +116,78 @@ p{
   line-height:2;
 }
 
-.subtitle{
-  opacity:.85;
-  margin-bottom:25px;
+.small{
+  opacity:.7;
+  font-size:15px;
 }
 
 
-/* القلب الأول */
+/* القمر */
 
-.bigHeart{
-  font-size:90px;
-  margin:20px;
+.moon{
+  width:125px;
+  height:125px;
+
+  margin:25px auto;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #fff,
+      #ffe9a8 55%,
+      #d7b75c
+    );
+
+  box-shadow:
+    0 0 30px #ffe9a8,
+    0 0 80px rgba(255,233,168,.35);
+
   cursor:pointer;
-  animation:pulse 1.2s infinite;
-  user-select:none;
+
+  animation:moonFloat 3s ease-in-out infinite;
 }
 
-@keyframes pulse{
+@keyframes moonFloat{
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+}
+
+
+/* النجمة */
+
+.starButton{
+  width:75px;
+  height:75px;
+
+  margin:30px auto;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:42px;
+
+  cursor:pointer;
+
+  animation:starPulse 1.5s infinite;
+}
+
+@keyframes starPulse{
 
   0%,100%{
     transform:scale(1);
   }
 
   50%{
-    transform:scale(1.15);
+    transform:scale(1.2);
   }
-
 }
 
 
@@ -130,27 +196,29 @@ p{
 button{
   width:100%;
 
-  border:none;
+  border:0;
+
   border-radius:50px;
 
   padding:15px 20px;
+
   margin-top:15px;
 
   color:white;
 
   font-size:17px;
+
   font-weight:bold;
 
   background:
     linear-gradient(
       135deg,
-      #ff416c,
-      #d81b60
+      #ff477e,
+      #c2185b
     );
 
   box-shadow:
-    0 8px 25px
-    rgba(255,65,108,.3);
+    0 8px 25px rgba(255,65,108,.25);
 
   cursor:pointer;
 
@@ -161,722 +229,520 @@ button:active{
   transform:scale(.95);
 }
 
-.option{
-  background:
-    rgba(255,255,255,.10);
 
-  border:
-    1px solid
-    rgba(255,255,255,.15);
-}
+/* الرسائل */
 
-
-/* شريط التقدم */
-
-.progress{
-  width:100%;
-  height:9px;
-
-  background:
-    rgba(255,255,255,.12);
-
-  border-radius:20px;
-
-  overflow:hidden;
-
-  margin:20px 0 25px;
-}
-
-.progressBar{
-  height:100%;
-  width:0%;
-
-  background:
-    linear-gradient(
-      90deg,
-      #ff416c,
-      #ff9ab1
-    );
-
-  transition:.5s;
-}
-
-.number{
-  font-size:14px;
-  opacity:.65;
-}
-
-
-/* النتيجة */
-
-.resultHeart{
-  font-size:80px;
-  animation:pulse 1s infinite;
-}
-
-.percent{
-  font-size:65px;
-  font-weight:bold;
-  color:#ff9fba;
-  margin:10px 0;
-}
-
-
-/* الرسالة */
-
-.secret{
-  padding:20px;
+.message{
   margin-top:20px;
-
-  border-radius:20px;
-
-  background:
-    rgba(255,255,255,.08);
-
-  line-height:2;
-  font-size:19px;
-}
-
-.signature{
-  margin-top:25px;
-
-  color:#ffb4c9;
-
-  font-size:22px;
-
-  font-weight:bold;
-
-  line-height:1.8;
-}
-
-
-/* ==========================================
-   ❤️❤️❤️ القلب النهائي
-========================================== */
-
-.heart-area{
-
-  display:flex;
-
-  flex-direction:column;
-
-  align-items:center;
-
-  justify-content:center;
-
-  margin:35px auto;
-
-  cursor:pointer;
-
-  user-select:none;
-
-  -webkit-tap-highlight-color:transparent;
-
-}
-
-.heart-svg{
-
-  width:260px;
-
-  height:240px;
-
-  display:block;
-
-  overflow:visible;
-
-  filter:
-    drop-shadow(
-      0 0 18px
-      rgba(255,60,110,.35)
-    );
-
-  transition:
-    transform .15s ease;
-
-}
-
-.heart-area:active .heart-svg{
-
-  transform:scale(.92);
-
-}
-
-
-/* النسبة */
-
-#lovePercent{
-
-  margin-top:15px;
-
-  font-size:24px;
-
-  font-weight:bold;
-
-  color:#ffb4c9;
-
-}
-
-
-/* الرسالة النهائية */
-
-#loveMessage{
-
-  margin-top:25px;
 
   padding:22px;
 
   border-radius:22px;
 
   background:
-    rgba(255,255,255,.08);
-
-  font-size:19px;
+    rgba(255,255,255,.07);
 
   line-height:2;
 
-  animation:appear .7s ease;
-
+  font-size:19px;
 }
 
 
-/* قلوب متطايرة */
+/* عداد الحب */
 
-.floating{
+.loveNumber{
+  font-size:65px;
 
+  font-weight:bold;
+
+  color:#ff9fbd;
+
+  margin:15px 0;
+}
+
+.loveBar{
+  width:100%;
+  height:12px;
+
+  background:rgba(255,255,255,.1);
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  margin:20px 0;
+}
+
+.loveProgress{
+  height:100%;
+  width:0%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff1744,
+      #ff8fab
+    );
+
+  transition:width .5s;
+}
+
+
+/* الهدايا */
+
+.gifts{
+  display:flex;
+
+  justify-content:center;
+
+  gap:12px;
+
+  margin-top:25px;
+}
+
+.gift{
+  width:90px;
+  height:100px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  font-size:50px;
+
+  background:
+    rgba(255,255,255,.08);
+
+  border:
+    1px solid
+    rgba(255,255,255,.15);
+
+  border-radius:20px;
+
+  cursor:pointer;
+
+  transition:.2s;
+}
+
+.gift:active{
+  transform:scale(.9);
+}
+
+
+/* الرسالة الأخيرة */
+
+.finalHeart{
+  font-size:90px;
+
+  animation:heartBeat 1.2s infinite;
+}
+
+@keyframes heartBeat{
+
+  0%,100%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.15);
+  }
+}
+
+
+/* القلوب الطائرة */
+
+.floatingHeart{
   position:fixed;
 
   top:-50px;
 
-  pointer-events:none;
-
   z-index:100;
 
-  animation:fall linear forwards;
+  pointer-events:none;
 
+  animation:fall linear forwards;
 }
 
 @keyframes fall{
 
   to{
-
     transform:
       translateY(110vh)
       rotate(360deg);
 
     opacity:0;
-
   }
-
 }
 
 
-/* قلب عند الضغط */
+/* زر الابتسامة */
 
-.tapHeart{
-
-  position:fixed;
-
-  z-index:200;
-
-  pointer-events:none;
-
-  font-size:25px;
-
-  transition:1s ease;
-
+.smileButton{
+  font-size:20px;
 }
 
-
-@media(max-width:500px){
-
-  .card{
-    padding:27px 18px;
-  }
-
-  h1{
-    font-size:29px;
-  }
-
-  p{
-    font-size:17px;
-  }
-
-  .heart-svg{
-
-    width:235px;
-
-    height:220px;
-
-  }
-
+#smileMessage{
+  animation:appear .7s ease;
 }
 
 </style>
-
 </head>
 
 
 <body>
 
+
+<!-- النجوم -->
+
+<script>
+
+for(let i=0;i<70;i++){
+
+  const star=document.createElement("div");
+
+  star.className="star";
+
+  star.style.left=
+    Math.random()*100+"vw";
+
+  star.style.top=
+    Math.random()*100+"vh";
+
+  star.style.animationDelay=
+    Math.random()*2+"s";
+
+  document.body.appendChild(star);
+
+}
+
+</script>
+
+
 <div class="container">
 
 
-<!-- ==========================================
+<!-- ======================================
      البداية
-========================================== -->
+====================================== -->
 
 <div class="card" id="start">
 
+  <p class="small">
+    وصلت رسالة قبل ما تصحين... 🌙
+  </p>
+
   <h1>
-    فاطمة 👀❤️
+    فطامي ❤️
   </h1>
 
-  <p class="subtitle">
+  <div class="moon"></div>
 
-    اليوم عندي لك اختبار...
-
+  <p>
+    إذا صحيتِ من النوم وشفتِ هالموقع...
     <br>
+    فمعناه إن فيه شخص كان يفكر فيك قبل ما تصحين 🥹
+  </p>
 
-    لكن لا تخافين 😂
+  <div
+    class="starButton"
+    onclick="openMessage()"
+  >
+    ⭐
+  </div>
+
+  <p class="small">
+    اضغطي على النجمة ✨
+  </p>
+
+</div>
+
+
+<!-- ======================================
+     الرسالة الأولى
+====================================== -->
+
+<div class="card hidden" id="message1">
+
+  <h1>
+    صباح الخير يا فطامي 🌹
+  </h1>
+
+  <div class="message">
+
+    يمكن أنتِ الحين توك صاحيه
+    <br>
+    ويمكن لسا نص نايمه 😂❤️
 
     <br><br>
 
-    الاختبار بسيط جدًا...
+    بس أنا حبيت يكون أول شيء تشوفينه
+    شيء بسيط مني لك.
 
-    <br>
+    <br><br>
 
-    أو يمكن لا 👀❤️
-
-  </p>
-
-  <div
-    class="bigHeart"
-    onclick="startTest()"
-  >
-    ❤️
-  </div>
-
-  <p>
-    اضغطي على القلب وابدئي 🔥
-  </p>
-
-</div>
-
-
-<!-- ==========================================
-     الاختبار
-========================================== -->
-
-<div class="card hidden" id="quiz">
-
-  <div
-    class="number"
-    id="number"
-  >
-    السؤال 1 من 4
-  </div>
-
-  <div class="progress">
-
-    <div
-      class="progressBar"
-      id="progress"
-    ></div>
+    وأبيك تعرفين إنك كنتِ في بالي
+    حتى وإنتِ نايمة 🥹❤️
 
   </div>
 
-  <h2 id="questionTitle">
-    سؤال
-  </h2>
-
-  <p id="questionText">
-    ...
-  </p>
-
-  <div id="options"></div>
-
-</div>
-
-
-<!-- ==========================================
-     النتيجة
-========================================== -->
-
-<div class="card hidden" id="result">
-
-  <div class="resultHeart">
-    ❤️
-  </div>
-
-  <h1>
-    النتيجة وصلت 😭❤️
-  </h1>
-
-  <p>
-    نسبة حب عمر لفاطمة:
-  </p>
-
-  <div class="percent">
-    ∞%
-  </div>
-
-  <p>
-
-    للأسف...
-
-    <br>
-
-    النظام ما قدر يحسبها 😂❤️
-
-    <br>
-
-    لأن النسبة أكبر من 100%.
-
-  </p>
-
-  <button onclick="showSecret()">
-    عندي لك شيء أخير 🤫
+  <button onclick="openMessage2()">
+    فيه شيء ثاني مخبيه لك 👀
   </button>
 
 </div>
 
 
-<!-- ==========================================
-     الرسالة
-========================================== -->
+<!-- ======================================
+     الرسالة الثانية
+====================================== -->
 
-<div class="card hidden" id="secret">
-
-  <div class="resultHeart">
-    💌
-  </div>
+<div class="card hidden" id="message2">
 
   <h1>
-    الرسالة السرية لفاطمة 🌹
+    بس قبل... ❤️
   </h1>
 
-  <div class="secret">
+  <p>
 
-    فاطمة...
-
-    <br><br>
-
-    يمكن دخلتي الموقع وأنتِ تحسبين
-    إنك داخلة تسوين اختبار 😂❤️
+    عندي سؤال صغير جدًا...
 
     <br><br>
 
-    لكن الحقيقة؟
+    مستعدة؟
+
+  </p>
+
+  <button onclick="startLove()">
+    مستعدة 😭❤️
+  </button>
+
+</div>
+
+
+<!-- ======================================
+     عداد الحب
+====================================== -->
+
+<div class="card hidden" id="love">
+
+  <h1>
+    مقياس حب عمر لفطامي ❤️
+  </h1>
+
+  <p>
+
+    اضغطي على القلب...
 
     <br>
 
-    الاختبار كله كان مجرد حجة
-    عشان أقول لك شيء ❤️
+    وكل ضغطة تزيد الحب 10% ❤️
+
+  </p>
+
+  <div
+    class="finalHeart"
+    onclick="addLove()"
+    style="cursor:pointer;"
+  >
+    ❤️
+  </div>
+
+  <div class="loveNumber" id="loveNumber">
+    0%
+  </div>
+
+  <div class="loveBar">
+
+    <div
+      class="loveProgress"
+      id="loveProgress"
+    ></div>
+
+  </div>
+
+  <p id="loveText">
+    باقي كثير... 👀
+  </p>
+
+</div>
+
+
+<!-- ======================================
+     بعد 100%
+====================================== -->
+
+<div class="card hidden" id="afterLove">
+
+  <div class="finalHeart">
+    ❤️‍🔥
+  </div>
+
+  <h1>
+    100%؟ 😂
+  </h1>
+
+  <div class="message">
+
+    لا لا...
 
     <br><br>
 
-    أحبك.
+    الموقع غلطان 😭
+
+    <br><br>
+
+    حب عمر لفطامي
+    ما له 100%.
+
+    <br><br>
+
+    لأنه ببساطة...
+
+    <br>
+
+    <strong>
+      ما له نهاية ❤️‍🔥
+    </strong>
+
+  </div>
+
+  <button onclick="openGifts()">
+    باقي لك ثلاث هدايا 🎁
+  </button>
+
+</div>
+
+
+<!-- ======================================
+     الهدايا
+====================================== -->
+
+<div class="card hidden" id="gifts">
+
+  <h1>
+    اختاري هديتك يا فطامي 🎁
+  </h1>
+
+  <p>
+    كل هدية فيها شيء مختلف ❤️
+  </p>
+
+  <div class="gifts">
+
+    <div
+      class="gift"
+      onclick="gift(1)"
+    >
+      🎁
+    </div>
+
+    <div
+      class="gift"
+      onclick="gift(2)"
+    >
+      🎀
+    </div>
+
+    <div
+      class="gift"
+      onclick="gift(3)"
+    >
+      💝
+    </div>
+
+  </div>
+
+  <div
+    id="giftMessage"
+    class="message hidden"
+  ></div>
+
+  <button
+    id="lastButton"
+    class="hidden"
+    onclick="lastPage()"
+  >
+    آخر شيء ❤️
+  </button>
+
+</div>
+
+
+<!-- ======================================
+     النهاية
+====================================== -->
+
+<div class="card hidden" id="final">
+
+  <div class="finalHeart">
+    ❤️
+  </div>
+
+  <h1>
+    فطامي...
+  </h1>
+
+  <div class="message">
+
+    إذا وصلتي لهنا...
+
+    <br><br>
+
+    فأنا أبي أقول لك شيء من قلبي:
+
+    <br><br>
+
+    وجودك بحياتي شيء أنا ممتن له
+    كل يوم.
 
     <br><br>
 
     أحب سوالفك،
     أحب ضحكتك،
-    وأحب وجودك بحياتي.
+    أحب تفاصيلك الصغيرة،
+    وأحب شعوري وأنا أكلمك.
 
     <br><br>
 
-    ومهما حاولت أوصف لك،
-    الكلام ما راح يكفي.
+    وإذا صحيتِ اليوم
+    وأول شيء شفتِ هالمفاجأة...
 
     <br><br>
 
-    أنتِ بالنسبة لي
-    مو مجرد إجابة في اختبار...
+    فأتمنى إنها خلتك تبتسمين
+    ولو ابتسامة صغيرة 🥹❤️
 
-    <br>
+    <br><br>
 
-    أنتِ الإجابة الصح من البداية ❤️‍🔥
-
-  </div>
-
-  <div class="signature">
-
-    من عمر إلى فاطمة ❤️
-
-    <br>
-
-    أحبك وااايد 🌹
+    صباحك أنا يا فطامي 🌹
 
   </div>
 
-  <button onclick="showFinal()">
-    عندي لك آخر مفاجأة 👀❤️
-  </button>
-
-</div>
-
-
-<!-- ==========================================
-     ❤️ القلب الحقيقي
-========================================== -->
-
-<div class="card hidden" id="final">
-
-  <h1>
-    فطومتي ❤️
-  </h1>
+  <br>
 
   <p>
-
-    وصلنا لآخر مفاجأة...
-
-    <br><br>
-
-    هذا قلب عمر لك ❤️
-
-    <br>
-
-    اضغطي عليه لين يمتلئ بالحب 🥹
-
+    وتذكري دائمًا...
   </p>
 
+  <h2>
+    عمر بموووت فيك ويعشقك وااااايد ❤️‍🔥
+  </h2>
+
+  <button
+    class="smileButton"
+    onclick="smile()"
+  >
+    ضغطت إذا ابتسمتي 😭❤️
+  </button>
 
   <div
-    class="heart-area"
-    onclick="fillLove(event)"
+    id="smileMessage"
+    class="hidden message"
   >
-
-    <svg
-      class="heart-svg"
-      viewBox="0 0 200 180"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-
-      <defs>
-
-        <!-- شكل القلب -->
-
-        <clipPath id="heartClip">
-
-          <path
-            d="
-            M100 170
-
-            C94 164
-            20 108
-            20 55
-
-            C20 27
-            40 10
-            65 10
-
-            C82 10
-            94 20
-            100 37
-
-            C106 20
-            118 10
-            135 10
-
-            C160 10
-            180 27
-            180 55
-
-            C180 108
-            106 164
-            100 170
-
-            Z
-            "
-          />
-
-        </clipPath>
-
-
-        <!-- لون التعبئة -->
-
-        <linearGradient
-          id="redFill"
-          x1="0"
-          y1="1"
-          x2="0"
-          y2="0"
-        >
-
-          <stop
-            offset="0%"
-            stop-color="#ff1744"
-          />
-
-          <stop
-            offset="100%"
-            stop-color="#ff6f9c"
-          />
-
-        </linearGradient>
-
-      </defs>
-
-
-      <!-- القلب الفاضي -->
-
-      <path
-        d="
-        M100 170
-
-        C94 164
-        20 108
-        20 55
-
-        C20 27
-        40 10
-        65 10
-
-        C82 10
-        94 20
-        100 37
-
-        C106 20
-        118 10
-        135 10
-
-        C160 10
-        180 27
-        180 55
-
-        C180 108
-        106 164
-        100 170
-
-        Z
-        "
-
-        fill="rgba(255,255,255,0.05)"
-
-        stroke="#ff8fab"
-
-        stroke-width="6"
-      />
-
-
-      <!-- التعبئة -->
-
-      <rect
-        id="loveFill"
-        x="0"
-        y="180"
-        width="200"
-        height="0"
-        fill="url(#redFill)"
-        clip-path="url(#heartClip)"
-      />
-
-
-      <!-- إطار القلب فوق التعبئة -->
-
-      <path
-        d="
-        M100 170
-
-        C94 164
-        20 108
-        20 55
-
-        C20 27
-        40 10
-        65 10
-
-        C82 10
-        94 20
-        100 37
-
-        C106 20
-        118 10
-        135 10
-
-        C160 10
-        180 27
-        180 55
-
-        C180 108
-        106 164
-        100 170
-
-        Z
-        "
-
-        fill="none"
-
-        stroke="#ff8fab"
-
-        stroke-width="6"
-      />
-
-
-      <!-- كلمة حب -->
-
-      <text
-        x="100"
-        y="103"
-        text-anchor="middle"
-
-        fill="white"
-
-        font-size="24"
-
-        font-weight="bold"
-
-        style="
-          text-shadow:
-          0 2px 7px rgba(0,0,0,.6);
-        "
-      >
-        حب ❤️
-      </text>
-
-    </svg>
-
-  </div>
-
-
-  <p id="lovePercent">
-    0% حب ❤️
-  </p>
-
-
-  <!-- الرسالة بعد 100% -->
-
-  <div
-    id="loveMessage"
-    class="hidden"
-  >
-
-    امتلأ القلب ❤️‍🔥
-
+    عرفت إنك ابتسمتي 😂❤️
     <br><br>
-
-    بس المشكلة...
-
-    <br>
-
-    حب عمر لك أكبر من القلب نفسه 😭❤️
-
-    <br><br>
-
-    فطومتي...
-
-    <br>
-
-    أحبك وااااايد 🌹❤️‍🔥
-
-    <br><br>
-
-    وهذا القلب ما يكفيك أصلًا 🥹❤️
-
-    <br><br>
-
-    ❤️ أحبك ❤️
-
+    خلاص... كذا أنا فزت اليوم 🥹🌹
   </div>
 
 </div>
@@ -888,466 +754,388 @@ button:active{
 <script>
 
 
-/* ==========================================
-   الأسئلة
-========================================== */
+/* ======================================
+   إظهار بطاقة
+====================================== */
 
-const questions = [
+function show(id){
 
-  {
-    title:"السؤال الأول 👀",
+  document
+    .getElementById(id)
+    .classList
+    .remove("hidden");
 
-    text:
-    "وش أكثر شيء تتوقعين عمر يحبه فيك؟",
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 
-    options:[
-      "ضحكتي 😂❤️",
-      "شخصيتي 🥹",
-      "اهتمامي فيه 🌹",
-      "كل شيء فيني 😌❤️"
-    ]
-  },
-
-  {
-    title:"السؤال الثاني 😏",
-
-    text:
-    "لو عمر قال لك: اشتقت لك... وش بتسوين؟",
-
-    options:[
-      "أقول وأنا أكثر ❤️",
-      "أستحي 🥹",
-      "أضحك 😂",
-      "أخليه يشتاق أكثر 😏"
-    ]
-  },
-
-  {
-    title:"السؤال الثالث ❤️",
-
-    text:
-    "كم تتوقعين عمر يحبك؟",
-
-    options:[
-      "100% ❤️",
-      "500% ❤️‍🔥",
-      "1000% 😭❤️",
-      "ما لها نسبة أصلًا 😂"
-    ]
-  },
-
-  {
-    title:"السؤال الأخير 🔥",
-
-    text:
-    "جاهزة تعرفين الحقيقة؟",
-
-    options:[
-      "أكيد 😭❤️",
-      "يلاااا 👀",
-      "ورني الحقيقة 😂",
-      "أخاف من النتيجة 🥹"
-    ]
-  }
-
-];
+}
 
 
-let currentQuestion = 0;
+/* ======================================
+   الرسائل
+====================================== */
 
-
-/* ==========================================
-   بداية الاختبار
-========================================== */
-
-function startTest(){
+function openMessage(){
 
   document
     .getElementById("start")
     .classList
     .add("hidden");
 
-  document
-    .getElementById("quiz")
-    .classList
-    .remove("hidden");
+  show("message1");
 
-  showQuestion();
+  hearts();
 
 }
 
 
-/* ==========================================
-   عرض السؤال
-========================================== */
-
-function showQuestion(){
-
-  const q =
-    questions[currentQuestion];
+function openMessage2(){
 
   document
-    .getElementById("number")
-    .innerText =
-    "السؤال " +
-    (currentQuestion + 1) +
-    " من " +
-    questions.length;
-
-  document
-    .getElementById("questionTitle")
-    .innerText =
-    q.title;
-
-  document
-    .getElementById("questionText")
-    .innerText =
-    q.text;
-
-  document
-    .getElementById("progress")
-    .style.width =
-    (
-      currentQuestion /
-      questions.length *
-      100
-    ) + "%";
-
-  const options =
-    document.getElementById("options");
-
-  options.innerHTML = "";
-
-  q.options.forEach(
-    function(option){
-
-      const button =
-        document.createElement("button");
-
-      button.className =
-        "option";
-
-      button.innerText =
-        option;
-
-      button.onclick =
-        function(){
-          nextQuestion();
-        };
-
-      options.appendChild(button);
-
-    }
-  );
-
-}
-
-
-/* ==========================================
-   السؤال التالي
-========================================== */
-
-function nextQuestion(){
-
-  currentQuestion++;
-
-  if(
-    currentQuestion >=
-    questions.length
-  ){
-
-    showResult();
-
-  }else{
-
-    showQuestion();
-
-  }
-
-}
-
-
-/* ==========================================
-   النتيجة
-========================================== */
-
-function showResult(){
-
-  document
-    .getElementById("quiz")
+    .getElementById("message1")
     .classList
     .add("hidden");
 
-  document
-    .getElementById("result")
-    .classList
-    .remove("hidden");
-
-  createHearts();
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+  show("message2");
 
 }
 
 
-/* ==========================================
-   الرسالة
-========================================== */
-
-function showSecret(){
+function startLove(){
 
   document
-    .getElementById("result")
+    .getElementById("message2")
     .classList
     .add("hidden");
 
-  document
-    .getElementById("secret")
-    .classList
-    .remove("hidden");
-
-  createHearts();
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+  show("love");
 
 }
 
 
-/* ==========================================
-   القلب النهائي
-========================================== */
+/* ======================================
+   عداد الحب
+====================================== */
 
-function showFinal(){
-
-  document
-    .getElementById("secret")
-    .classList
-    .add("hidden");
-
-  document
-    .getElementById("final")
-    .classList
-    .remove("hidden");
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
-}
+let love=0;
 
 
-/* ==========================================
-   ❤️ تعبئة القلب
-   10% كل ضغطة
-========================================== */
+function addLove(){
 
-let love = 0;
-
-
-function fillLove(event){
-
-  if(love >= 100){
+  if(love>=100){
     return;
   }
 
+  love+=10;
 
-  /* كل ضغطة = 10% */
+  document
+    .getElementById("loveNumber")
+    .innerText=
+      love+"%";
 
-  love += 10;
+  document
+    .getElementById("loveProgress")
+    .style.width=
+      love+"%";
 
 
-  if(love > 100){
-    love = 100;
+  if(love===10){
+
+    document
+      .getElementById("loveText")
+      .innerText=
+      "بدأنا... ❤️";
+
+  }
+
+  if(love===30){
+
+    document
+      .getElementById("loveText")
+      .innerText=
+      "واضح إن القلب يحبك 😂❤️";
+
+  }
+
+  if(love===50){
+
+    document
+      .getElementById("loveText")
+      .innerText=
+      "نص القلب صار لك 🥹❤️";
+
+  }
+
+  if(love===70){
+
+    document
+      .getElementById("loveText")
+      .innerText=
+      "قربناااا ❤️‍🔥";
+
+  }
+
+  if(love===90){
+
+    document
+      .getElementById("loveText")
+      .innerText=
+      "باقي ضغطة وحدة يا فطامي 👀";
+
   }
 
 
-  /*
-    ارتفاع القلب = 180
-    نرفع التعبئة من الأسفل
-  */
-
-  const fill =
-    document.getElementById("loveFill");
+  createClickHeart();
 
 
-  const height =
-    180 * (love / 100);
-
-
-  const y =
-    180 - height;
-
-
-  fill.setAttribute(
-    "y",
-    y
-  );
-
-
-  fill.setAttribute(
-    "height",
-    height
-  );
-
-
-  document
-    .getElementById("lovePercent")
-    .innerText =
-    love + "% حب ❤️";
-
-
-  createTapHeart(event);
-
-
-  /* عند 100% */
-
-  if(love >= 100){
+  if(love>=100){
 
     document
-      .getElementById("lovePercent")
-      .innerText =
-      "100% ❤️‍🔥";
+      .getElementById("loveText")
+      .innerText=
+      "امتلأ القلب... ❤️‍🔥";
 
+
+    setTimeout(
+
+      function(){
+
+        document
+          .getElementById("love")
+          .classList
+          .add("hidden");
+
+        show("afterLove");
+
+        hearts();
+
+      },
+
+      800
+
+    );
+
+  }
+
+}
+
+
+/* ======================================
+   قلب عند الضغط
+====================================== */
+
+function createClickHeart(){
+
+  const heart=
+    document.createElement("div");
+
+  heart.innerText="❤️";
+
+  heart.style.position="fixed";
+
+  heart.style.left=
+    (40+Math.random()*20)+"%";
+
+  heart.style.top="50%";
+
+  heart.style.fontSize=
+    "25px";
+
+  heart.style.zIndex="200";
+
+  heart.style.pointerEvents="none";
+
+  heart.style.transition=
+    "1s ease";
+
+  document.body.appendChild(heart);
+
+
+  setTimeout(function(){
+
+    heart.style.transform=
+      "translateY(-100px) scale(1.5)";
+
+    heart.style.opacity="0";
+
+  },50);
+
+
+  setTimeout(function(){
+
+    heart.remove();
+
+  },1100);
+
+}
+
+
+/* ======================================
+   الهدايا
+====================================== */
+
+let chosen=0;
+
+
+function gift(number){
+
+  chosen++;
+
+  const box=
+    document.getElementById("giftMessage");
+
+
+  box.classList.remove("hidden");
+
+
+  if(number===1){
+
+    box.innerHTML=
+      `
+      🎁
+      <br><br>
+      هديتك الأولى:
+      <br><br>
+      أنتِ أجمل صدفة دخلت حياتي ❤️
+      `;
+
+  }
+
+
+  if(number===2){
+
+    box.innerHTML=
+      `
+      🎀
+      <br><br>
+      هديتك الثانية:
+      <br><br>
+      لو أقدر أعطيك شيء من قلبي،
+      بعطيك كل الحب اللي فيه ❤️‍🔥
+      `;
+
+  }
+
+
+  if(number===3){
+
+    box.innerHTML=
+      `
+      💝
+      <br><br>
+      هديتك الثالثة:
+      <br><br>
+      فطامي...
+      <br><br>
+      أنتِ الهدية الحقيقية أصلًا 🥹❤️
+      `;
+
+  }
+
+
+  if(chosen>=1){
 
     document
-      .getElementById("loveMessage")
+      .getElementById("lastButton")
       .classList
       .remove("hidden");
 
-
-    createHearts();
-
   }
 
-}
 
-
-/* ==========================================
-   قلب صغير عند الضغط
-========================================== */
-
-function createTapHeart(event){
-
-  const heart =
-    document.createElement("div");
-
-  heart.className =
-    "tapHeart";
-
-  heart.innerText =
-    "❤️";
-
-  heart.style.left =
-    event.clientX + "px";
-
-  heart.style.top =
-    event.clientY + "px";
-
-  document.body.appendChild(
-    heart
-  );
-
-
-  setTimeout(
-    function(){
-
-      heart.style.transform =
-        "translateY(-100px) scale(1.5)";
-
-      heart.style.opacity =
-        "0";
-
-    },
-    50
-  );
-
-
-  setTimeout(
-    function(){
-
-      heart.remove();
-
-    },
-    1100
-  );
+  hearts();
 
 }
 
 
-/* ==========================================
-   قلوب متطايرة
-========================================== */
+/* ======================================
+   الصفحة الأخيرة
+====================================== */
 
-function createHearts(){
+function lastPage(){
 
-  for(
-    let i=0;
-    i<40;
-    i++
-  ){
+  document
+    .getElementById("gifts")
+    .classList
+    .add("hidden");
 
-    setTimeout(
-      function(){
+  show("final");
 
-        const heart =
-          document.createElement("div");
+  hearts();
 
-        heart.className =
-          "floating";
+}
 
-        const icons = [
-          "❤️",
-          "💖",
-          "💕",
-          "💗",
-          "💓",
-          "🌹",
-          "✨"
+
+/* ======================================
+   زر ابتسمتي
+====================================== */
+
+function smile(){
+
+  document
+    .getElementById("smileMessage")
+    .classList
+    .remove("hidden");
+
+  hearts();
+
+}
+
+
+/* ======================================
+   قلوب كثيرة
+====================================== */
+
+function hearts(){
+
+  for(let i=0;i<35;i++){
+
+    setTimeout(function(){
+
+      const heart=
+        document.createElement("div");
+
+      heart.className=
+        "floatingHeart";
+
+      const icons=[
+        "❤️",
+        "💖",
+        "💕",
+        "💗",
+        "🌹",
+        "✨"
+      ];
+
+      heart.innerText=
+        icons[
+          Math.floor(
+            Math.random()*
+            icons.length
+          )
         ];
 
-        heart.innerText =
-          icons[
-            Math.floor(
-              Math.random() *
-              icons.length
-            )
-          ];
+      heart.style.left=
+        Math.random()*100+"vw";
 
-        heart.style.left =
-          Math.random() * 100 +
-          "vw";
+      heart.style.fontSize=
+        (16+Math.random()*25)+"px";
 
-        heart.style.fontSize =
-          (16 +
-          Math.random() * 25) +
-          "px";
+      heart.style.animationDuration=
+        (3+Math.random()*4)+"s";
 
-        heart.style.animationDuration =
-          (3 +
-          Math.random() * 5) +
-          "s";
+      document.body.appendChild(heart);
 
-        document.body.appendChild(
-          heart
-        );
 
-        setTimeout(
-          function(){
-            heart.remove();
-          },
-          8000
-        );
+      setTimeout(function(){
 
-      },
-      i * 80
-    );
+        heart.remove();
+
+      },8000);
+
+    },i*80);
 
   }
 
