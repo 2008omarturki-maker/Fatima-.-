@@ -3,9 +3,9 @@
 
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>رسالة لفاطمة ❤️</title>
+<title>إلى فاطمة ❤️</title>
 
 <style>
 
@@ -15,33 +15,43 @@
   padding:0;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   min-height:100vh;
   overflow-x:hidden;
   font-family:Arial,sans-serif;
-
-  background:
-    radial-gradient(circle at top,#202020,#080808 70%);
-
   color:white;
 
-  transition:
-    background 1s ease;
+  background:
+    radial-gradient(
+      circle at top,
+      #202020,
+      #080808 70%
+    );
+
+  transition:background 1s ease;
 }
+
+
+/* =========================
+   وضع الحب
+========================= */
 
 body.loveMode{
 
   background:
     radial-gradient(
       circle at center,
-      #ff9fbd 0%,
-      #ff4f82 35%,
-      #b41458 70%,
+      #ffb0c8 0%,
+      #ff5688 35%,
+      #b5165b 70%,
       #4b0730 100%
     );
 
   animation:loveFlash .8s ease;
-
 }
 
 @keyframes loveFlash{
@@ -51,7 +61,7 @@ body.loveMode{
   }
 
   50%{
-    filter:brightness(1.8);
+    filter:brightness(1.7);
   }
 
   100%{
@@ -61,15 +71,26 @@ body.loveMode{
 }
 
 
+/* =========================
+   الحاوية
+========================= */
+
 .container{
 
   width:100%;
   min-height:100vh;
 
-  padding:25px 15px 80px;
+  padding:
+    25px
+    15px
+    80px;
 
 }
 
+
+/* =========================
+   البطاقات
+========================= */
 
 .card{
 
@@ -78,7 +99,9 @@ body.loveMode{
 
   margin:20px auto;
 
-  padding:30px 20px;
+  padding:
+    30px
+    20px;
 
   text-align:center;
 
@@ -92,6 +115,7 @@ body.loveMode{
   border-radius:30px;
 
   backdrop-filter:blur(15px);
+  -webkit-backdrop-filter:blur(15px);
 
   box-shadow:
     0 20px 70px
@@ -102,7 +126,7 @@ body.loveMode{
 }
 
 .hidden{
-  display:none!important;
+  display:none !important;
 }
 
 @keyframes appear{
@@ -120,6 +144,10 @@ body.loveMode{
 }
 
 
+/* =========================
+   النصوص
+========================= */
+
 h1{
 
   font-size:32px;
@@ -130,7 +158,7 @@ h1{
 
 h2{
 
-  font-size:24px;
+  font-size:25px;
 
   margin-bottom:20px;
 
@@ -144,7 +172,6 @@ p{
 
 }
 
-
 .small{
 
   opacity:.65;
@@ -154,7 +181,9 @@ p{
 }
 
 
-/* القلب */
+/* =========================
+   القلب الأول
+========================= */
 
 .startHeart{
 
@@ -165,6 +194,8 @@ p{
   cursor:pointer;
 
   animation:pulse 1.3s infinite;
+
+  user-select:none;
 
 }
 
@@ -181,7 +212,9 @@ p{
 }
 
 
-/* الأزرار */
+/* =========================
+   الأزرار
+========================= */
 
 button{
 
@@ -220,9 +253,6 @@ button:active{
 
 }
 
-
-/* زر المقلب */
-
 .prankButton{
 
   background:
@@ -235,7 +265,9 @@ button:active{
 }
 
 
-/* كلام المقلب */
+/* =========================
+   نص المقلب
+========================= */
 
 .fakeText{
 
@@ -273,11 +305,13 @@ button:active{
 }
 
 
-/* سؤال صدقتي */
+/* =========================
+   صدقتي؟
+========================= */
 
 .bigQuestion{
 
-  font-size:34px;
+  font-size:36px;
 
   color:#ff9dbb;
 
@@ -286,7 +320,9 @@ button:active{
 }
 
 
-/* وضع الحب */
+/* =========================
+   وضع الحب
+========================= */
 
 .loveTitle{
 
@@ -299,17 +335,25 @@ button:active{
 }
 
 
-/* القلب الكبير */
+/* =========================
+   ❤️ القلب الحقيقي
+========================= */
 
-.bigLoveHeart{
+/*
+   مهم:
+   ما فيه أي مربع أو رسم CSS للقلب.
+   القلب هنا إيموجي حقيقي.
+*/
+
+.realHeart{
 
   position:relative;
 
-  width:270px;
+  width:100%;
 
-  height:250px;
+  min-height:230px;
 
-  margin:35px auto;
+  margin:30px auto;
 
   display:flex;
 
@@ -317,89 +361,62 @@ button:active{
 
   justify-content:center;
 
-  animation:heartBeat 1.2s infinite;
+  flex-direction:column;
+
+  animation:realHeartBeat 1.2s infinite;
+
+  user-select:none;
 
 }
 
-.bigLoveHeart::before{
-
-  content:"";
-
-  position:absolute;
-
-  width:190px;
-
-  height:190px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ff1744,
-      #ff75a5
-    );
-
-  transform:rotate(45deg);
-
-  border-radius:25px;
-
-  box-shadow:
-    0 0 40px
-    rgba(255,0,80,.7);
-
-}
-
-.bigLoveHeart::after{
-
-  content:"";
-
-  position:absolute;
-
-  width:190px;
-
-  height:190px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ff1744,
-      #ff75a5
-    );
-
-  border-radius:50%;
-
-  top:25px;
-
-  left:40px;
-
-  box-shadow:
-    105px 0 0
-    #ff477b;
-
-}
-
-
-.heartName{
+.realHeartEmoji{
 
   position:relative;
 
-  z-index:5;
+  font-size:180px;
 
-  font-size:34px;
+  line-height:1;
 
-  font-weight:bold;
+  display:block;
 
-  color:white;
-
-  text-shadow:
-    0 3px 10px
-    rgba(0,0,0,.45);
+  filter:
+    drop-shadow(
+      0 0 25px
+      rgba(255,0,80,.7)
+    );
 
 }
 
+.realHeartName{
 
-/* نبض */
+  position:absolute;
 
-@keyframes heartBeat{
+  top:50%;
+
+  left:50%;
+
+  transform:
+    translate(-50%,-50%);
+
+  z-index:5;
+
+  color:white;
+
+  font-size:27px;
+
+  font-weight:bold;
+
+  white-space:nowrap;
+
+  text-shadow:
+    0 2px 8px
+    rgba(0,0,0,.7);
+
+  pointer-events:none;
+
+}
+
+@keyframes realHeartBeat{
 
   0%,100%{
     transform:scale(1);
@@ -412,7 +429,9 @@ button:active{
 }
 
 
-/* الرسالة النهائية */
+/* =========================
+   رسالة الحب
+========================= */
 
 .loveMessage{
 
@@ -430,7 +449,9 @@ button:active{
 }
 
 
-/* القلوب الطائرة */
+/* =========================
+   القلوب الطائرة
+========================= */
 
 .floatingHeart{
 
@@ -461,7 +482,9 @@ button:active{
 }
 
 
-/* وميض */
+/* =========================
+   وميض
+========================= */
 
 .sparkle{
 
@@ -502,7 +525,9 @@ button:active{
 }
 
 
-/* اهتزاز */
+/* =========================
+   اهتزاز
+========================= */
 
 .shake{
 
@@ -535,7 +560,9 @@ button:active{
 }
 
 
-/* الجوال */
+/* =========================
+   الجوال
+========================= */
 
 @media(max-width:500px){
 
@@ -547,10 +574,12 @@ button:active{
     font-size:17px;
   }
 
-  .bigLoveHeart{
+  .realHeartEmoji{
+    font-size:155px;
+  }
 
-    transform:scale(.85);
-
+  .realHeartName{
+    font-size:24px;
   }
 
 }
@@ -566,9 +595,9 @@ button:active{
 <div class="container">
 
 
-<!-- ======================================
+<!-- =================================
      البداية
-====================================== -->
+================================= -->
 
 <div class="card" id="start">
 
@@ -588,17 +617,21 @@ button:active{
   </div>
 
   <p>
+
     اضغطي على القلب...
+
     <br>
+
     بس لا تلوميني على اللي بيصير 😂
+
   </p>
 
 </div>
 
 
-<!-- ======================================
-     البداية الثانية
-====================================== -->
+<!-- =================================
+     الصفحة الأولى
+================================= -->
 
 <div
   class="card hidden"
@@ -627,15 +660,17 @@ button:active{
     class="prankButton"
     onclick="openSecond()"
   >
+
     كملي...
+
   </button>
 
 </div>
 
 
-<!-- ======================================
+<!-- =================================
      المقلب
-====================================== -->
+================================= -->
 
 <div
   class="card hidden"
@@ -691,15 +726,17 @@ button:active{
   <button
     onclick="openTruth()"
   >
+
     كملي وشوفي النهاية 👀
+
   </button>
 
 </div>
 
 
-<!-- ======================================
+<!-- =================================
      صدقتي؟
-====================================== -->
+================================= -->
 
 <div
   class="card hidden"
@@ -728,15 +765,17 @@ button:active{
     class="prankButton"
     onclick="turnLove()"
   >
+
     اضغطي وشوفي الحقيقة ❤️
+
   </button>
 
 </div>
 
 
-<!-- ======================================
+<!-- =================================
      الحب
-====================================== -->
+================================= -->
 
 <div
   class="card hidden"
@@ -752,11 +791,17 @@ button:active{
   </h1>
 
 
-  <div class="bigLoveHeart">
+  <!-- ❤️ قلب حقيقي -->
 
-    <div class="heartName">
+  <div class="realHeart">
+
+    <span class="realHeartEmoji">
+      ❤️
+    </span>
+
+    <span class="realHeartName">
       فاطمة
-    </div>
+    </span>
 
   </div>
 
@@ -791,15 +836,17 @@ button:active{
   <button
     onclick="finalSurprise()"
   >
+
     عندي آخر شيء لك 👀❤️
+
   </button>
 
 </div>
 
 
-<!-- ======================================
+<!-- =================================
      النهاية
-====================================== -->
+================================= -->
 
 <div
   class="card hidden"
@@ -843,6 +890,7 @@ button:active{
     <br>
 
     حتى لو امتلأت الدنيا قلوب،
+
     <br>
 
     ما راح تكفي الحب اللي لك ❤️
@@ -858,9 +906,9 @@ button:active{
 <script>
 
 
-/* ======================================
-   إخفاء وإظهار
-====================================== */
+/* =========================
+   إخفاء
+========================= */
 
 function hide(id){
 
@@ -871,6 +919,10 @@ function hide(id){
 
 }
 
+
+/* =========================
+   إظهار
+========================= */
 
 function show(id){
 
@@ -887,9 +939,9 @@ function show(id){
 }
 
 
-/* ======================================
-   الصفحة الأولى
-====================================== */
+/* =========================
+   البداية
+========================= */
 
 function openFirst(){
 
@@ -900,9 +952,9 @@ function openFirst(){
 }
 
 
-/* ======================================
+/* =========================
    الصفحة الثانية
-====================================== */
+========================= */
 
 function openSecond(){
 
@@ -913,9 +965,9 @@ function openSecond(){
 }
 
 
-/* ======================================
+/* =========================
    المقلب
-====================================== */
+========================= */
 
 function openTruth(){
 
@@ -926,9 +978,9 @@ function openTruth(){
 }
 
 
-/* ======================================
-   قلب الموقع كله
-====================================== */
+/* =========================
+   التحول للحب
+========================= */
 
 function turnLove(){
 
@@ -943,12 +995,14 @@ function turnLove(){
 
   massiveHearts();
 
+  sparkles();
+
 }
 
 
-/* ======================================
+/* =========================
    النهاية
-====================================== */
+========================= */
 
 function finalSurprise(){
 
@@ -958,12 +1012,14 @@ function finalSurprise(){
 
   massiveHearts();
 
+  sparkles();
+
 }
 
 
-/* ======================================
-   قلوب كثيرة جدًا
-====================================== */
+/* =========================
+   قلوب كثيرة
+========================= */
 
 function massiveHearts(){
 
@@ -977,14 +1033,14 @@ function massiveHearts(){
 
       function(){
 
-        const heart=
+        const heart =
           document.createElement("div");
 
-        heart.className=
+        heart.className =
           "floatingHeart";
 
 
-        const icons=[
+        const icons = [
 
           "❤️",
           "💖",
@@ -999,27 +1055,34 @@ function massiveHearts(){
         ];
 
 
-        heart.innerText=
+        heart.innerText =
           icons[
             Math.floor(
-              Math.random()*
+              Math.random() *
               icons.length
             )
           ];
 
 
-        heart.style.left=
-          Math.random()*100+"vw";
+        heart.style.left =
+          Math.random() * 100 +
+          "vw";
 
 
-        heart.style.fontSize=
-          (18+
-          Math.random()*35)+"px";
+        heart.style.fontSize =
+          (
+            18 +
+            Math.random() * 35
+          ) +
+          "px";
 
 
-        heart.style.animationDuration=
-          (3+
-          Math.random()*5)+"s";
+        heart.style.animationDuration =
+          (
+            3 +
+            Math.random() * 5
+          ) +
+          "s";
 
 
         document.body.appendChild(
@@ -1039,10 +1102,9 @@ function massiveHearts(){
 
         );
 
-
       },
 
-      i*30
+      i * 30
 
     );
 
@@ -1051,15 +1113,15 @@ function massiveHearts(){
 }
 
 
-/* ======================================
-   وميض النجوم
-====================================== */
+/* =========================
+   اللمعات
+========================= */
 
 function sparkles(){
 
   for(
     let i=0;
-    i<30;
+    i<40;
     i++
   ){
 
@@ -1067,31 +1129,46 @@ function sparkles(){
 
       function(){
 
-        const s=
+        const sparkle =
           document.createElement("div");
 
-        s.className="sparkle";
+        sparkle.className =
+          "sparkle";
 
-        s.innerText="✨";
+        sparkle.innerText =
+          "✨";
 
-        s.style.left=
-          Math.random()*100+"vw";
 
-        s.style.top=
-          Math.random()*100+"vh";
+        sparkle.style.left =
+          Math.random() * 100 +
+          "vw";
 
-        document.body.appendChild(s);
+
+        sparkle.style.top =
+          Math.random() * 100 +
+          "vh";
+
+
+        document.body.appendChild(
+          sparkle
+        );
+
 
         setTimeout(
+
           function(){
-            s.remove();
+
+            sparkle.remove();
+
           },
+
           1000
+
         );
 
       },
 
-      i*50
+      i * 50
 
     );
 
@@ -1099,32 +1176,8 @@ function sparkles(){
 
 }
 
-
-/* ======================================
-   تأثير الانفجار
-====================================== */
-
-function explosion(){
-
-  document.body.classList.add("shake");
-
-  setTimeout(
-    function(){
-
-      document.body.classList.remove("shake");
-
-    },
-    500
-  );
-
-  massiveHearts();
-
-  sparkles();
-
-}
-
-
 </script>
 
 </body>
+
 </html>
