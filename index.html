@@ -1,84 +1,55 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>إلى فاطمة ❤️</title>
+<title>كم تعرفين عمر؟ ❤️</title>
 
 <style>
-
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
 }
 
-html{
-  scroll-behavior:smooth;
-}
-
 body{
   min-height:100vh;
-  overflow-x:hidden;
   font-family:Arial,sans-serif;
-  color:white;
-  background:radial-gradient(circle at top,#202020,#080808 70%);
-  transition:background 1s ease;
-}
+  color:#fff;
+  overflow-x:hidden;
 
-body.loveMode{
-  background:radial-gradient(
-    circle at center,
-    #ffb0c8 0%,
-    #ff5688 35%,
-    #b5165b 70%,
-    #4b0730 100%
-  );
-
-  animation:flash .8s ease;
-}
-
-@keyframes flash{
-  0%{filter:brightness(.2)}
-  50%{filter:brightness(1.7)}
-  100%{filter:brightness(1)}
+  background:
+    radial-gradient(circle at top,#3a1025,#090909 70%);
 }
 
 .container{
   width:100%;
-  min-height:100vh;
-  padding:25px 15px 80px;
+  max-width:500px;
+  margin:auto;
+  padding:25px 15px 70px;
 }
 
 .card{
-  width:100%;
-  max-width:450px;
-  margin:20px auto;
-  padding:30px 20px;
-  text-align:center;
-
-  background:rgba(255,255,255,.07);
+  background:rgba(255,255,255,.09);
   border:1px solid rgba(255,255,255,.15);
   border-radius:30px;
+  padding:30px 20px;
+  margin-top:20px;
+  text-align:center;
 
   backdrop-filter:blur(15px);
   -webkit-backdrop-filter:blur(15px);
 
-  box-shadow:0 20px 70px rgba(0,0,0,.45);
+  box-shadow:0 20px 60px rgba(0,0,0,.4);
 
-  animation:appear .7s ease;
-}
-
-.hidden{
-  display:none!important;
+  animation:appear .6s ease;
 }
 
 @keyframes appear{
   from{
     opacity:0;
-    transform:translateY(30px);
+    transform:translateY(25px);
   }
 
   to{
@@ -87,8 +58,17 @@ body.loveMode{
   }
 }
 
+.hidden{
+  display:none!important;
+}
+
 h1{
-  font-size:32px;
+  font-size:30px;
+  margin-bottom:20px;
+}
+
+h2{
+  font-size:25px;
   margin-bottom:20px;
 }
 
@@ -98,19 +78,14 @@ p{
 }
 
 .small{
-  opacity:.65;
+  opacity:.7;
   font-size:14px;
 }
 
-
-/* القلب الأول */
-
-.startHeart{
+.heart{
   font-size:100px;
-  margin:30px;
-  cursor:pointer;
+  margin:20px;
   animation:pulse 1.3s infinite;
-  user-select:none;
 }
 
 @keyframes pulse{
@@ -119,189 +94,135 @@ p{
   }
 
   50%{
-    transform:scale(1.15);
+    transform:scale(1.12);
   }
 }
 
-
-/* الأزرار */
-
 button{
   width:100%;
-  padding:16px;
-  margin-top:20px;
-
   border:0;
   border-radius:50px;
+  padding:16px;
+  margin-top:15px;
 
   color:white;
-  font-size:18px;
+  font-size:17px;
   font-weight:bold;
 
+  background:
+    linear-gradient(
+      135deg,
+      #ff477e,
+      #a90042
+    );
+
   cursor:pointer;
-
-  background:linear-gradient(
-    135deg,
-    #444,
-    #111
-  );
-
   transition:.2s;
 }
 
 button:active{
-  transform:scale(.94);
+  transform:scale(.95);
 }
 
-.prankButton{
-  background:linear-gradient(
-    135deg,
-    #ff1744,
-    #9c001e
-  );
+.option{
+  width:100%;
+  padding:16px;
+  margin:10px 0;
+
+  border-radius:20px;
+
+  background:rgba(255,255,255,.1);
+
+  border:1px solid rgba(255,255,255,.12);
+
+  color:white;
+
+  font-size:17px;
+
+  cursor:pointer;
+
+  transition:.2s;
 }
 
+.option:hover{
+  background:rgba(255,255,255,.2);
+}
 
-/* كلام المقلب */
+.option.correct{
+  background:#159447;
+}
 
-.fakeText{
+.option.wrong{
+  background:#a71935;
+}
+
+.progress{
+  width:100%;
+  height:9px;
+
+  background:rgba(255,255,255,.15);
+
+  border-radius:20px;
+
+  margin:20px 0;
+  overflow:hidden;
+}
+
+.progressBar{
+  height:100%;
+  width:0%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff477e,
+      #ffb1c9
+    );
+
+  transition:.4s;
+}
+
+.questionNumber{
+  color:#ffabc5;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.question{
+  font-size:23px;
+  font-weight:bold;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.resultNumber{
+  font-size:70px;
+  font-weight:bold;
+  color:#ffabc5;
+
+  text-shadow:
+    0 0 25px
+    rgba(255,70,130,.7);
+}
+
+.finalMessage{
   margin-top:25px;
   padding:25px;
 
   border-radius:25px;
 
-  background:rgba(255,255,255,.06);
-
-  line-height:2.2;
-  font-size:20px;
-}
-
-.bad{
-  color:#ff4b65;
-  font-weight:bold;
-  font-size:26px;
-}
-
-.wait{
-  color:#ffc107;
-  font-weight:bold;
-}
-
-
-/* صدقتي */
-
-.bigQuestion{
-  font-size:36px;
-  color:#ff9dbb;
-  margin:25px 0;
-}
-
-
-/* وضع الحب */
-
-.loveTitle{
-  color:white;
-
-  text-shadow:
-    0 3px 15px
-    rgba(120,0,50,.7);
-}
-
-
-/* القلب الحقيقي */
-
-.realHeart{
-  position:relative;
-
-  width:100%;
-  min-height:230px;
-
-  margin:30px auto;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  animation:heartBeat 1.2s infinite;
-
-  user-select:none;
-}
-
-.realHeartEmoji{
-  position:relative;
-
-  font-size:180px;
-  line-height:1;
-
-  display:block;
-
-  filter:
-    drop-shadow(
-      0 0 25px
-      rgba(255,0,80,.7)
-    );
-}
-
-.realHeartName{
-  position:absolute;
-
-  top:50%;
-  left:50%;
-
-  transform:
-    translate(-50%,-50%);
-
-  z-index:5;
-
-  color:white;
-
-  font-size:27px;
-  font-weight:bold;
-
-  white-space:nowrap;
-
-  text-shadow:
-    0 2px 8px
-    rgba(0,0,0,.7);
-
-  pointer-events:none;
-}
-
-@keyframes heartBeat{
-  0%,100%{
-    transform:scale(1);
-  }
-
-  50%{
-    transform:scale(1.08);
-  }
-}
-
-
-/* الرسائل */
-
-.loveMessage{
-  padding:25px;
-
-  border-radius:25px;
-
-  background:rgba(255,255,255,.15);
+  background:rgba(255,255,255,.12);
 
   font-size:20px;
   line-height:2.2;
 }
-
-
-/* القلوب الطائرة */
 
 .floatingHeart{
   position:fixed;
-
-  top:-60px;
-
-  z-index:1000;
+  top:-50px;
 
   pointer-events:none;
+  z-index:1000;
 
   animation:fall linear forwards;
 }
@@ -316,64 +237,18 @@ button:active{
   }
 }
 
-
-/* اللمعات */
-
-.sparkle{
-  position:fixed;
-
-  pointer-events:none;
-
-  z-index:900;
-
-  font-size:25px;
-
-  animation:sparkle 1s ease forwards;
-}
-
-@keyframes sparkle{
-  0%{
-    opacity:1;
-
-    transform:
-      scale(.3)
-      translateY(0);
-  }
-
-  100%{
-    opacity:0;
-
-    transform:
-      scale(1.5)
-      translateY(-100px);
-  }
-}
-
-
-/* الجوال */
-
 @media(max-width:500px){
 
   h1{
-    font-size:29px;
+    font-size:27px;
   }
 
-  p{
-    font-size:17px;
-  }
-
-  .realHeartEmoji{
-    font-size:155px;
-  }
-
-  .realHeartName{
-    font-size:24px;
+  .question{
+    font-size:21px;
   }
 
 }
-
 </style>
-
 </head>
 
 
@@ -382,334 +257,119 @@ button:active{
 <div class="container">
 
 
-<!-- =========================
-     البداية
-========================= -->
+<!-- البداية -->
 
 <div class="card" id="start">
 
-  <p class="small">
-    رسالة خاصة جدًا...
-  </p>
+  <div class="heart">
+    ❤️
+  </div>
 
   <h1>
-    إلى فاطمة 👀
+    اختبار عمر وفاطمة 👑❤️
   </h1>
+
+  <p>
+    نشوف فطومتي تعرف عمر
+    قد إيش؟ 👀
+  </p>
+
+  <br>
+
+  <p class="small">
+    30 سؤال... وكل سؤال يكشف
+    شيء عن عمر 🥹
+  </p>
+
+  <button onclick="startQuiz()">
+    يلا نبدأ ❤️
+  </button>
+
+</div>
+
+
+<!-- الاختبار -->
+
+<div class="card hidden" id="quiz">
+
+  <div class="questionNumber" id="number">
+    السؤال 1 من 30
+  </div>
+
+  <div class="progress">
+    <div
+      class="progressBar"
+      id="progress"
+    ></div>
+  </div>
 
   <div
-    class="startHeart"
-    onclick="openFirst()"
-  >
-    ❤️
-  </div>
+    class="question"
+    id="question"
+  ></div>
 
-  <p>
-
-    اضغطي على القلب...
-
-    <br>
-
-    بس لا تلوميني على اللي بيصير 😂
-
-  </p>
+  <div id="options"></div>
 
 </div>
 
 
-<!-- =========================
-     الصفحة الأولى
-========================= -->
+<!-- النتيجة -->
 
-<div
-  class="card hidden"
-  id="page1"
->
+<div class="card hidden" id="result">
 
-  <h1>
-    فاطمة...
-  </h1>
-
-  <p>
-
-    فيه شيء لازم أقولك إياه...
-
-    <br><br>
-
-    وفكرت كثير قبل ما أكتبه.
-
-    <br><br>
-
-    لذلك تكفين كملي للنهاية.
-
-  </p>
-
-  <button
-    class="prankButton"
-    onclick="openSecond()"
-  >
-
-    كملي...
-
-  </button>
-
-</div>
-
-
-<!-- =========================
-     المقلب
-========================= -->
-
-<div
-  class="card hidden"
-  id="page2"
->
-
-  <h1>
-    عندي اعتراف 😐
-  </h1>
-
-  <div class="fakeText">
-
-    فاطمة...
-
-    <br><br>
-
-    بصراحة؟
-
-    <br><br>
-
-    <span class="bad">
-      أنتِ كريهة 😭
-    </span>
-
-    <br><br>
-
-    وتسوين نفسك بريئة 😂
-
-    <br><br>
-
-    وتخليني أشتاق لك
-
-    <br>
-
-    وتخليني أفكر فيك
-
-    <br>
-
-    وتخليني أبتسم بدون سبب 😭
-
-    <br><br>
-
-    والله إنك مشكلة 😂❤️
-
-    <br><br>
-
-    <span class="wait">
-      انتظري... باقي شيء.
-    </span>
-
-  </div>
-
-  <button
-    onclick="openTruth()"
-  >
-
-    كملي وشوفي النهاية 👀
-
-  </button>
-
-</div>
-
-
-<!-- =========================
-     صدقتي؟
-========================= -->
-
-<div
-  class="card hidden"
-  id="truth"
->
-
-  <div class="bigQuestion">
-    صدقتي؟ 😂😂
-  </div>
-
-  <p>
-
-    لااااااااااا 😭
-
-    <br><br>
-
-    والله إني أمزح معك 😂❤️
-
-    <br><br>
-
-    كنت أبي أشوف ردة فعلك بس 👀
-
-  </p>
-
-
-  <div class="loveMessage">
-
-    <strong>
-      أي واحد كان بيقولك هذا الكلام...
-    </strong>
-
-    <br><br>
-
-    بس عمر مو أي أحد ❤️
-
-    <br><br>
-
-    عمر يحبك، وعمر ما يقدر يشوفك
-    إلا بعين الحب 🥹❤️‍🔥
-
-    <br><br>
-
-    وأنتِ بالنسبة لعمر شيء مختلف تمامًا،
-    ما تشبهين أي أحد ❤️🌹
-
-  </div>
-
-
-  <button
-    class="prankButton"
-    onclick="turnLove()"
-  >
-
-    اضغطي وشوفي الحقيقة ❤️
-
-  </button>
-
-</div>
-
-
-<!-- =========================
-     الحب
-========================= -->
-
-<div
-  class="card hidden"
-  id="lovePage"
->
-
-  <p class="small">
-    الحقيقة التي كنت أخفيها...
-  </p>
-
-  <h1 class="loveTitle">
-    فاطمة ❤️
-  </h1>
-
-
-  <!-- القلب الحقيقي -->
-
-  <div class="realHeart">
-
-    <span class="realHeartEmoji">
-      ❤️
-    </span>
-
-    <span class="realHeartName">
-      فاطمة
-    </span>
-
-  </div>
-
-
-  <div class="loveMessage">
-
-    <strong>
-      أنتِ مو كريهة أبدًا 😭❤️
-    </strong>
-
-    <br><br>
-
-    أنتِ الشخص اللي أحب أتكلم معه،
-    وأحب أسمع صوته،
-    وأحب وجوده بحياتي.
-
-    <br><br>
-
-    وإذا قلت إنك كريهة...
-
-    <br>
-
-    فأنتِ كريهة من كثر ما أحبك 😂❤️‍🔥
-
-    <br><br>
-
-    أحبك يا فاطمة 🌹
-
-  </div>
-
-
-  <button
-    onclick="finalSurprise()"
-  >
-
-    عندي آخر شيء لك 👀❤️
-
-  </button>
-
-</div>
-
-
-<!-- =========================
-     النهاية
-========================= -->
-
-<div
-  class="card hidden"
-  id="finalPage"
->
-
-  <div class="startHeart">
+  <div class="heart">
     ❤️
   </div>
 
   <h1>
-    مفاجأة أخيرة لفاطمة 🌹
+    النتيجة يا فطومتي 🥹
   </h1>
 
-  <div class="loveMessage">
+  <div class="resultNumber">
+    <span id="score">
+      0
+    </span>/30
+  </div>
 
-    إذا وصلتي لهنا...
+  <p id="resultText"></p>
 
-    <br><br>
-
-    فمعناه إنك تحملتي المقلب كله 😂❤️
-
-    <br><br>
-
-    والحقيقة الوحيدة اللي أبيك تعرفينها:
-
-    <br><br>
+  <div class="finalMessage">
 
     <strong>
-      عمر يحب فاطمة ❤️‍🔥
+      وفي النهاية...
     </strong>
 
     <br><br>
 
-    ويعشقها وااااايد 🌹
+    حتى لو ما عرفتي كل الإجابات،
+
+    <br>
+
+    فيه شيء واحد مستحيل يختلف:
 
     <br><br>
 
-    وتذكري...
+    ❤️ <strong>أحبك بكل ذرة فالأرض</strong> ❤️
+
+    <br><br>
+
+    ما قد حبيت أحد زيك،
 
     <br>
 
-    حتى لو امتلأت الدنيا قلوب،
+    وأنتِ كل شيء بالنسبة لي 🥹
 
-    <br>
+    <br><br>
 
-    ما راح تكفي الحب اللي لك ❤️
+    **أ ح ب ك** ❤️‍🔥
 
   </div>
 
-</div>
+  <button onclick="makeItRain()">
+    اضغطي للمفاجأة ❤️
+  </button>
 
+</div>
 
 </div>
 
@@ -717,194 +377,539 @@ button:active{
 <script>
 
 /* =========================
-   إخفاء
+   الأسئلة
 ========================= */
 
-function hide(id){
+const questions = [
+
+{
+ q:"وش أكثر شيء يحبه عمر في الدنيا؟",
+ options:[
+   "النوم 😴",
+   "الأكل 🍔",
+   "الألعاب 🎮",
+   "فاطمة ❤️"
+ ],
+ answer:3
+},
+
+{
+ q:"وش أكثر شيء يفرّح عمر إذا سوته فاطمة؟",
+ options:[
+   "تضحك 😂",
+   "تقول له: عموررري ❤️",
+   "ترسل صورة",
+   "تنام"
+ ],
+ answer:1
+},
+
+{
+ q:"وش أكثر شيء يزعّل عمر من فاطمة؟",
+ options:[
+   "إذا ما ردت",
+   "إذا تأخرت",
+   "ولا شيء ❤️",
+   "إذا نامت"
+ ],
+ answer:2
+},
+
+{
+ q:"وش أكثر كلمة يحب عمر يسمعها من فاطمة؟",
+ options:[
+   "هلا",
+   "تفضقضلي ❤️",
+   "باي",
+   "تصبح على خير"
+ ],
+ answer:1
+},
+
+{
+ q:"وش أكثر شيء يحب عمر يسويه مع فاطمة؟",
+ options:[
+   "يلعب معها",
+   "يسافر معها",
+   "يسألها عن يومها ويسمع تفاصيله ❤️",
+   "يشوف فيلم"
+ ],
+ answer:2
+},
+
+{
+ q:"إذا فاطمة زعلانة، وش يسوي عمر؟",
+ options:[
+   "ينام",
+   "يتجاهلها",
+   "يسوي لها كل شيء عشان يراضيها ❤️",
+   "يضحك"
+ ],
+ answer:2
+},
+
+{
+ q:"وش أكثر شيء يخاف عمر يخسره؟",
+ options:[
+   "جواله",
+   "سيارته",
+   "فطومته ❤️",
+   "فلوسه"
+ ],
+ answer:2
+},
+
+{
+ q:"وش أكبر أمنية لعمر مع فاطمة؟",
+ options:[
+   "يسافر",
+   "يتزوجها 💍❤️",
+   "يلعب معها",
+   "يشوف مباراة"
+ ],
+ answer:1
+},
+
+{
+ q:"وش أكثر شيء يحبه عمر في شخصية فاطمة؟",
+ options:[
+   "عنادها",
+   "حنانها ❤️",
+   "هدوئها",
+   "مزحها"
+ ],
+ answer:1
+},
+
+{
+ q:"وش أكثر شيء يحبه عمر في شكل فاطمة؟",
+ options:[
+   "عيونها",
+   "ابتسامتها",
+   "شعرها",
+   "حبيتها بدون ما أشوفها ❤️"
+ ],
+ answer:3
+},
+
+{
+ q:"هل عمر قد جلس مع فاطمة وجهًا لوجه؟",
+ options:[
+   "نعم",
+   "لا ❤️",
+   "مرة واحدة",
+   "كثير"
+ ],
+ answer:1
+},
+
+{
+ q:"لو صار لعمر يوم كامل مع فاطمة، وش أول شيء يتمنى يسويه؟",
+ options:[
+   "يلعب",
+   "ينام",
+   "يحضر فيلم",
+   "يحُضنها 🫂❤️"
+ ],
+ answer:3
+},
+
+{
+ q:"وش أكثر شيء يتمنى عمر يسمعه من فاطمة؟",
+ options:[
+   "هلا",
+   "عمووووري أحبك ❤️",
+   "وينك",
+   "تصبح على خير"
+ ],
+ answer:1
+},
+
+{
+ q:"لو فاطمة أعطت عمر أمنية واحدة، وش يختار؟",
+ options:[
+   "سفرة",
+   "هدية",
+   "ينام بحضنها 🫂",
+   "سيارة"
+ ],
+ answer:2
+},
+
+{
+ q:"إذا فاطمة زعلانة، وش يسوي عمر؟",
+ options:[
+   "يسكت",
+   "ينام",
+   "يسوي لها اللي تبيه ❤️",
+   "يطلع"
+ ],
+ answer:2
+},
+
+{
+ q:"وش أكثر شيء مستحيل عمر يمل منه؟",
+ options:[
+   "الألعاب",
+   "الأكل",
+   "سوالف فاطمة ❤️",
+   "النوم"
+ ],
+ answer:2
+},
+
+{
+ q:"إذا فاطمة ما كلمت عمر يوم كامل، وش يحس؟",
+ options:[
+   "عادي",
+   "يرتاح",
+   "يومه ناقص 😔❤️",
+   "ينام"
+ ],
+ answer:2
+},
+
+{
+ q:"إذا قابل عمر فاطمة لأول مرة، وش أكثر شيء بيحس؟",
+ options:[
+   "ما يصدق إنهم تقابلوا 🥹",
+   "بيضحك",
+   "بيسكت",
+   "بيمشي"
+ ],
+ answer:0
+},
+
+{
+ q:"وش أكثر اسم يحب عمر ينادي فاطمة فيه؟",
+ options:[
+   "فاطمة",
+   "فطومتي 💕👑",
+   "فطوم",
+   "فاطم"
+ ],
+ answer:1
+},
+
+{
+ q:"وش فاطمة بالنسبة لعمر؟",
+ options:[
+   "صديقة",
+   "شخص عزيز",
+   "كل شيء ❤️",
+   "معرفة"
+ ],
+ answer:2
+},
+
+{
+ q:"وش الشيء اللي يخلي عمر يبتسم غصب؟",
+ options:[
+   "رسالة",
+   "صوت فاطمة ❤️",
+   "لعبة",
+   "فيلم"
+ ],
+ answer:1
+},
+
+{
+ q:"ليش عمر يحب كلمة «ما يستوي» من فاطمة؟",
+ options:[
+   "لأنها مضحكة",
+   "لأنها كلمة منها غير ❤️",
+   "لأنها قصيرة",
+   "لأنها مشهورة"
+ ],
+ answer:1
+},
+
+{
+ q:"متى يشتاق عمر لفاطمة؟",
+ options:[
+   "إذا غابت",
+   "إذا نامت",
+   "حتى وهم يسولفون مع بعض ❤️",
+   "وقت الليل فقط"
+ ],
+ answer:2
+},
+
+{
+ q:"إذا قالت فاطمة: «أنا تعبت اليوم»، وش يقول عمر؟",
+ options:[
+   "نامي",
+   "مين تعبك يا قلبي؟ الدنيا ما تسوى رجلك ❤️",
+   "عادي",
+   "بكرة أحسن"
+ ],
+ answer:1
+},
+
+{
+ q:"وش أكثر شيء يتمنى عمر يشوفه على وجه فاطمة؟",
+ options:[
+   "حزنها",
+   "سكوتها",
+   "ضحكتها ❤️",
+   "تفكيرها"
+ ],
+ answer:2
+},
+
+{
+ q:"وش الرسالة اللي يبي عمر يقولها لفاطمة؟",
+ options:[
+   "أحبك شوي",
+   "أحبك بكل ذرة فالأرض ❤️",
+   "أشتاق لك",
+   "وينك"
+ ],
+ answer:1
+},
+
+{
+ q:"وش الشيء اللي يتمنى عمر فاطمة تعرفه؟",
+ options:[
+   "إنه ما قد حب أحد زيها ❤️",
+   "إنه يحب الألعاب",
+   "إنه يحب النوم",
+   "إنه يحب السفر"
+ ],
+ answer:0
+},
+
+{
+ q:"لو تغير كل شيء، وش تقول عمر لفاطمة؟",
+ options:[
+   "بنشوف",
+   "ما أدري",
+   "أنتِ كل شيء بالنسبة لي ❤️",
+   "يمكن"
+ ],
+ answer:2
+},
+
+{
+ q:"وش أكبر أمنية لعمر مع فاطمة؟",
+ options:[
+   "يسافر معها",
+   "يتزوجها 🥹💍",
+   "يشتري لها هدية",
+   "يشوفها فقط"
+ ],
+ answer:1
+},
+
+{
+ q:"لو فاطمة قدام عمر الآن، وش بيقول لها؟",
+ options:[
+   "هلا",
+   "اشتقت لك",
+   "أ ح ب ك ❤️",
+   "كيفك"
+ ],
+ answer:2
+}
+
+];
+
+
+/* =========================
+   المتغيرات
+========================= */
+
+let current=0;
+let score=0;
+
+
+/* =========================
+   بداية الاختبار
+========================= */
+
+function startQuiz(){
 
   document
-    .getElementById(id)
+    .getElementById("start")
     .classList
     .add("hidden");
 
-}
-
-
-/* =========================
-   إظهار
-========================= */
-
-function show(id){
-
   document
-    .getElementById(id)
+    .getElementById("quiz")
     .classList
     .remove("hidden");
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+  showQuestion();
 
 }
 
 
 /* =========================
-   البداية
+   عرض السؤال
 ========================= */
 
-function openFirst(){
+function showQuestion(){
 
-  hide("start");
+  const item=questions[current];
 
-  show("page1");
+  document.getElementById("number").innerText=
+    "السؤال "+
+    (current+1)+
+    " من 30";
+
+  document.getElementById("question").innerText=
+    item.q;
+
+  document.getElementById("progress").style.width=
+    ((current)/30*100)+"%";
+
+
+  const options=
+    document.getElementById("options");
+
+  options.innerHTML="";
+
+
+  item.options.forEach(
+    function(option,index){
+
+      const btn=
+        document.createElement("button");
+
+      btn.className="option";
+
+      btn.innerText=option;
+
+      btn.onclick=function(){
+
+        chooseAnswer(index,btn);
+
+      };
+
+      options.appendChild(btn);
+
+    }
+  );
 
 }
 
 
 /* =========================
-   الصفحة الثانية
+   اختيار الإجابة
 ========================= */
 
-function openSecond(){
+function chooseAnswer(index,button){
 
-  hide("page1");
+  const correct=
+    questions[current].answer;
 
-  show("page2");
+  const all=
+    document.querySelectorAll(".option");
+
+
+  all.forEach(
+    function(btn){
+      btn.disabled=true;
+    }
+  );
+
+
+  if(index===correct){
+
+    score++;
+
+    button.classList.add("correct");
+
+  }else{
+
+    button.classList.add("wrong");
+
+    all[correct].classList.add("correct");
+
+  }
+
+
+  setTimeout(
+    function(){
+
+      current++;
+
+      if(current<questions.length){
+
+        showQuestion();
+
+      }else{
+
+        showResult();
+
+      }
+
+    },
+    650
+  );
 
 }
 
 
 /* =========================
-   المقلب
+   النتيجة
 ========================= */
 
-function openTruth(){
-
-  hide("page2");
-
-  show("truth");
-
-}
-
-
-/* =========================
-   التحول للحب
-========================= */
-
-function turnLove(){
-
-  hide("truth");
+function showResult(){
 
   document
-    .body
+    .getElementById("quiz")
     .classList
-    .add("loveMode");
+    .add("hidden");
 
-  show("lovePage");
-
-  massiveHearts();
-
-  sparkles();
-
-}
+  document
+    .getElementById("result")
+    .classList
+    .remove("hidden");
 
 
-/* =========================
-   النهاية
-========================= */
-
-function finalSurprise(){
-
-  hide("lovePage");
-
-  show("finalPage");
-
-  massiveHearts();
-
-  sparkles();
-
-}
+  document
+    .getElementById("score")
+    .innerText=
+      score;
 
 
-/* =========================
-   قلوب كثيرة
-========================= */
-
-function massiveHearts(){
-
-  for(
-    let i=0;
-    i<120;
-    i++
-  ){
-
-    setTimeout(function(){
-
-      const heart =
-        document.createElement("div");
-
-      heart.className =
-        "floatingHeart";
+  const text=
+    document.getElementById("resultText");
 
 
-      const icons = [
+  if(score===30){
 
-        "❤️",
-        "💖",
-        "💕",
-        "💗",
-        "💓",
-        "💞",
-        "💘",
-        "🌹",
-        "✨"
+    text.innerText=
+      "ياااا فطومتي 😭❤️ 30/30! تعرفين عمر أكثر مما يعرف نفسه 😂👑";
 
-      ];
+  }
 
+  else if(score>=25){
 
-      heart.innerText =
-        icons[
-          Math.floor(
-            Math.random() *
-            icons.length
-          )
-        ];
+    text.innerText=
+      "واااو 🥹❤️ واضح إنك تعرفين عمر بشكل مو طبيعي!";
 
+  }
 
-      heart.style.left =
-        Math.random() * 100 +
-        "vw";
+  else if(score>=18){
 
+    text.innerText=
+      "حلووو 😂❤️ بس باقي شوي وتوصلين لقلب عمر كامل.";
 
-      heart.style.fontSize =
-        (
-          18 +
-          Math.random() * 35
-        ) +
-        "px";
+  }
 
+  else if(score>=10){
 
-      heart.style.animationDuration =
-        (
-          3 +
-          Math.random() * 5
-        ) +
-        "s";
+    text.innerText=
+      "ههههه تحتاجين تدرسين عمر أكثر 😂❤️";
 
+  }
 
-      document.body.appendChild(
-        heart
-      );
+  else{
 
-
-      setTimeout(function(){
-
-        heart.remove();
-
-      },9000);
-
-    },i*30);
+    text.innerText=
+      "شكل عمر يحتاج يسوي لك اختبار ثاني 😂❤️";
 
   }
 
@@ -912,51 +917,88 @@ function massiveHearts(){
 
 
 /* =========================
-   اللمعات
+   مفاجأة القلوب
 ========================= */
 
-function sparkles(){
+function makeItRain(){
 
   for(
     let i=0;
-    i<40;
+    i<120;
     i++
   ){
 
-    setTimeout(function(){
+    setTimeout(
+      function(){
 
-      const sparkle =
-        document.createElement("div");
+        const heart=
+          document.createElement("div");
 
-      sparkle.className =
-        "sparkle";
-
-      sparkle.innerText =
-        "✨";
+        heart.className=
+          "floatingHeart";
 
 
-      sparkle.style.left =
-        Math.random() * 100 +
-        "vw";
+        const icons=[
+          "❤️",
+          "💖",
+          "💕",
+          "💗",
+          "💓",
+          "💞",
+          "💘",
+          "🌹",
+          "✨"
+        ];
 
 
-      sparkle.style.top =
-        Math.random() * 100 +
-        "vh";
+        heart.innerText=
+          icons[
+            Math.floor(
+              Math.random()*
+              icons.length
+            )
+          ];
 
 
-      document.body.appendChild(
-        sparkle
-      );
+        heart.style.left=
+          Math.random()*100+
+          "vw";
 
 
-      setTimeout(function(){
+        heart.style.fontSize=
+          (
+            18+
+            Math.random()*35
+          )+
+          "px";
 
-        sparkle.remove();
 
-      },1000);
+        heart.style.animationDuration=
+          (
+            3+
+            Math.random()*5
+          )+
+          "s";
 
-    },i*50);
+
+        document.body.appendChild(
+          heart
+        );
+
+
+        setTimeout(
+          function(){
+
+            heart.remove();
+
+          },
+          9000
+        );
+
+
+      },
+      i*30
+    );
 
   }
 
