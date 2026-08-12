@@ -46,6 +46,10 @@ body{
   animation:appear .6s ease;
 }
 
+.hidden{
+  display:none!important;
+}
+
 @keyframes appear{
   from{
     opacity:0;
@@ -56,10 +60,6 @@ body{
     opacity:1;
     transform:translateY(0);
   }
-}
-
-.hidden{
-  display:none!important;
 }
 
 h1{
@@ -361,7 +361,7 @@ button:active{
 
     <br><br>
 
-    **أ ح ب ك** ❤️‍🔥
+    <strong>أ ح ب ك</strong> ❤️‍🔥
 
   </div>
 
@@ -375,10 +375,6 @@ button:active{
 
 
 <script>
-
-/* =========================
-   الأسئلة
-========================= */
 
 const questions = [
 
@@ -419,7 +415,7 @@ const questions = [
  q:"وش أكثر كلمة يحب عمر يسمعها من فاطمة؟",
  options:[
    "هلا",
-   "تفضقضلي ❤️",
+   "يا حياتي ❤️",
    "باي",
    "تصبح على خير"
  ],
@@ -680,7 +676,7 @@ const questions = [
 },
 
 {
- q:"لو تغير كل شيء، وش تقول عمر لفاطمة؟",
+ q:"لو تغير كل شيء، وش يقول عمر لفاطمة؟",
  options:[
    "بنشوف",
    "ما أدري",
@@ -715,17 +711,9 @@ const questions = [
 ];
 
 
-/* =========================
-   المتغيرات
-========================= */
-
 let current=0;
 let score=0;
 
-
-/* =========================
-   بداية الاختبار
-========================= */
 
 function startQuiz(){
 
@@ -743,10 +731,6 @@ function startQuiz(){
 
 }
 
-
-/* =========================
-   عرض السؤال
-========================= */
 
 function showQuestion(){
 
@@ -793,10 +777,6 @@ function showQuestion(){
 
 }
 
-
-/* =========================
-   اختيار الإجابة
-========================= */
 
 function chooseAnswer(index,button){
 
@@ -850,10 +830,6 @@ function chooseAnswer(index,button){
 
 }
 
-
-/* =========================
-   النتيجة
-========================= */
 
 function showResult(){
 
@@ -915,10 +891,6 @@ function showResult(){
 
 }
 
-
-/* =========================
-   مفاجأة القلوب
-========================= */
 
 function makeItRain(){
 
