@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>كم تعرفين عمر؟ ❤️</title>
+<title>تصبحين على خير يا فطومتي 🌙❤️</title>
 
 <style>
 *{
@@ -13,44 +13,64 @@
   padding:0;
 }
 
+html,body{
+  width:100%;
+  min-height:100%;
+}
+
 body{
   min-height:100vh;
-  font-family:Arial,sans-serif;
-  color:#fff;
   overflow-x:hidden;
+  font-family:Arial,Tahoma,sans-serif;
+  color:white;
 
   background:
-    radial-gradient(circle at top,#3a1025,#090909 70%);
+    radial-gradient(
+      circle at 50% 10%,
+      #4b1837 0%,
+      #1b0b19 45%,
+      #070508 100%
+    );
 }
 
 .container{
   width:100%;
-  max-width:500px;
+  max-width:520px;
   margin:auto;
-  padding:25px 15px 70px;
+  padding:25px 16px 70px;
 }
 
 .card{
-  background:rgba(255,255,255,.09);
-  border:1px solid rgba(255,255,255,.15);
-  border-radius:30px;
-  padding:30px 20px;
+  width:100%;
   margin-top:20px;
+  padding:30px 20px;
+
   text-align:center;
+
+  border-radius:30px;
+
+  background:
+    rgba(255,255,255,.08);
+
+  border:
+    1px solid
+    rgba(255,255,255,.14);
+
+  box-shadow:
+    0 20px 70px
+    rgba(0,0,0,.45);
 
   backdrop-filter:blur(15px);
   -webkit-backdrop-filter:blur(15px);
 
-  box-shadow:0 20px 60px rgba(0,0,0,.4);
-
-  animation:appear .6s ease;
+  animation:show .7s ease;
 }
 
 .hidden{
-  display:none!important;
+  display:none !important;
 }
 
-@keyframes appear{
+@keyframes show{
   from{
     opacity:0;
     transform:translateY(25px);
@@ -62,14 +82,28 @@ body{
   }
 }
 
-h1{
-  font-size:30px;
-  margin-bottom:20px;
+.moon{
+  font-size:75px;
+  margin-bottom:15px;
+
+  animation:
+    float 3s ease-in-out infinite;
 }
 
-h2{
-  font-size:25px;
-  margin-bottom:20px;
+@keyframes float{
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+}
+
+h1{
+  font-size:29px;
+  line-height:1.5;
+  margin-bottom:18px;
 }
 
 p{
@@ -78,17 +112,230 @@ p{
 }
 
 .small{
-  opacity:.7;
   font-size:14px;
+  opacity:.65;
+}
+
+button{
+  width:100%;
+  border:0;
+  border-radius:50px;
+
+  padding:16px;
+  margin-top:22px;
+
+  color:white;
+  background:
+    linear-gradient(
+      135deg,
+      #ff477e,
+      #a90042
+    );
+
+  font-size:18px;
+  font-weight:bold;
+
+  cursor:pointer;
+
+  box-shadow:
+    0 8px 25px
+    rgba(255,50,120,.25);
+
+  transition:.2s;
+}
+
+button:active{
+  transform:scale(.94);
+}
+
+
+/* الظرف */
+
+.envelope{
+  position:relative;
+
+  width:260px;
+  height:175px;
+
+  margin:35px auto;
+
+  cursor:pointer;
+
+  filter:
+    drop-shadow(
+      0 15px 25px
+      rgba(0,0,0,.35)
+    );
+}
+
+.envelopeBack{
+  position:absolute;
+
+  width:100%;
+  height:100%;
+
+  background:#b91f50;
+
+  border-radius:10px;
+}
+
+.envelopeLeft{
+  position:absolute;
+
+  bottom:0;
+  left:0;
+
+  width:0;
+  height:0;
+
+  border-top:88px solid transparent;
+  border-bottom:88px solid transparent;
+  border-left:130px solid #d93667;
+}
+
+.envelopeRight{
+  position:absolute;
+
+  bottom:0;
+  right:0;
+
+  width:0;
+  height:0;
+
+  border-top:88px solid transparent;
+  border-bottom:88px solid transparent;
+  border-right:130px solid #d93667;
+}
+
+.envelopeBottom{
+  position:absolute;
+
+  bottom:0;
+  left:0;
+
+  width:0;
+  height:0;
+
+  border-left:130px solid transparent;
+  border-right:130px solid transparent;
+  border-bottom:105px solid #a91646;
+}
+
+.envelopeTop{
+  position:absolute;
+
+  top:0;
+  left:0;
+
+  width:0;
+  height:0;
+
+  border-left:130px solid transparent;
+  border-right:130px solid transparent;
+  border-top:105px solid #ed4a79;
+
+  transform-origin:top;
+
+  transition:.7s;
+
+  z-index:5;
+}
+
+.envelope.open .envelopeTop{
+  transform:
+    rotateX(180deg);
+
+}
+
+.seal{
+  position:absolute;
+
+  z-index:10;
+
+  top:68px;
+  left:50%;
+
+  transform:
+    translateX(-50%);
+
+  width:48px;
+  height:48px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:#ffcfdf;
+
+  color:#a90042;
+
+  font-size:24px;
+
+  box-shadow:
+    0 5px 15px
+    rgba(0,0,0,.25);
+
+  transition:.5s;
+}
+
+.envelope.open .seal{
+  opacity:0;
+  transform:
+    translateX(-50%)
+    scale(0);
+}
+
+
+/* الرسالة */
+
+.message{
+  margin-top:25px;
+
+  padding:25px 20px;
+
+  border-radius:25px;
+
+  background:
+    rgba(255,255,255,.1);
+
+  border:
+    1px solid
+    rgba(255,255,255,.12);
+
+  font-size:19px;
+
+  line-height:2.2;
+
+  animation:show .8s ease;
+}
+
+.name{
+  color:#ffabc5;
+  font-weight:bold;
+  font-size:25px;
+}
+
+.final{
+  margin-top:25px;
+
+  font-size:22px;
+
+  line-height:2.2;
+
+  color:#ffd2e0;
 }
 
 .heart{
-  font-size:100px;
-  margin:20px;
-  animation:pulse 1.3s infinite;
+  font-size:70px;
+  margin:20px 0;
+
+  animation:
+    heartbeat 1.3s infinite;
 }
 
-@keyframes pulse{
+@keyframes heartbeat{
   0%,100%{
     transform:scale(1);
   }
@@ -98,133 +345,20 @@ p{
   }
 }
 
-button{
-  width:100%;
-  border:0;
-  border-radius:50px;
-  padding:16px;
-  margin-top:15px;
 
-  color:white;
-  font-size:17px;
-  font-weight:bold;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ff477e,
-      #a90042
-    );
-
-  cursor:pointer;
-  transition:.2s;
-}
-
-button:active{
-  transform:scale(.95);
-}
-
-.option{
-  width:100%;
-  padding:16px;
-  margin:10px 0;
-
-  border-radius:20px;
-
-  background:rgba(255,255,255,.1);
-
-  border:1px solid rgba(255,255,255,.12);
-
-  color:white;
-
-  font-size:17px;
-
-  cursor:pointer;
-
-  transition:.2s;
-}
-
-.option:hover{
-  background:rgba(255,255,255,.2);
-}
-
-.option.correct{
-  background:#159447;
-}
-
-.option.wrong{
-  background:#a71935;
-}
-
-.progress{
-  width:100%;
-  height:9px;
-
-  background:rgba(255,255,255,.15);
-
-  border-radius:20px;
-
-  margin:20px 0;
-  overflow:hidden;
-}
-
-.progressBar{
-  height:100%;
-  width:0%;
-
-  background:
-    linear-gradient(
-      90deg,
-      #ff477e,
-      #ffb1c9
-    );
-
-  transition:.4s;
-}
-
-.questionNumber{
-  color:#ffabc5;
-  font-weight:bold;
-  margin-bottom:10px;
-}
-
-.question{
-  font-size:23px;
-  font-weight:bold;
-  line-height:1.7;
-  margin-bottom:20px;
-}
-
-.resultNumber{
-  font-size:70px;
-  font-weight:bold;
-  color:#ffabc5;
-
-  text-shadow:
-    0 0 25px
-    rgba(255,70,130,.7);
-}
-
-.finalMessage{
-  margin-top:25px;
-  padding:25px;
-
-  border-radius:25px;
-
-  background:rgba(255,255,255,.12);
-
-  font-size:20px;
-  line-height:2.2;
-}
+/* القلوب */
 
 .floatingHeart{
   position:fixed;
-  top:-50px;
+
+  top:-60px;
+
+  z-index:999;
 
   pointer-events:none;
-  z-index:1000;
 
-  animation:fall linear forwards;
+  animation:
+    fall linear forwards;
 }
 
 @keyframes fall{
@@ -237,20 +371,51 @@ button:active{
   }
 }
 
-@media(max-width:500px){
 
-  h1{
-    font-size:27px;
+/* نجوم */
+
+.star{
+  position:fixed;
+
+  z-index:998;
+
+  pointer-events:none;
+
+  animation:
+    twinkle 1.5s ease forwards;
+}
+
+@keyframes twinkle{
+  0%{
+    opacity:1;
+    transform:scale(.5);
   }
 
-  .question{
-    font-size:21px;
+  100%{
+    opacity:0;
+    transform:scale(1.5);
+  }
+}
+
+@media(max-width:400px){
+
+  h1{
+    font-size:26px;
+  }
+
+  .envelope{
+    transform:scale(.88);
+    margin-top:25px;
+    margin-bottom:25px;
+  }
+
+  p{
+    font-size:17px;
   }
 
 }
 </style>
 </head>
-
 
 <body>
 
@@ -261,112 +426,113 @@ button:active{
 
 <div class="card" id="start">
 
-  <div class="heart">
-    ❤️
+  <div class="moon">
+    🌙
   </div>
 
   <h1>
-    اختبار عمر وفاطمة 👑❤️
+    قبل لا تنامين يا فطومتي ❤️
   </h1>
 
   <p>
-    نشوف فطومتي تعرف عمر
-    قد إيش؟ 👀
+    عندي لك شيء صغير...
+    <br>
+    بس أبيك تفتحينه بنفسك 🥹
   </p>
-
-  <br>
 
   <p class="small">
-    30 سؤال... وكل سؤال يكشف
-    شيء عن عمر 🥹
+    لا تستعجلين... افتحي الظرف 💌
   </p>
 
-  <button onclick="startQuiz()">
-    يلا نبدأ ❤️
+  <div
+    class="envelope"
+    id="envelope"
+    onclick="openEnvelope()"
+  >
+
+    <div class="envelopeBack"></div>
+
+    <div class="envelopeLeft"></div>
+
+    <div class="envelopeRight"></div>
+
+    <div class="envelopeBottom"></div>
+
+    <div class="envelopeTop"></div>
+
+    <div class="seal">
+      ❤️
+    </div>
+
+  </div>
+
+  <button onclick="openEnvelope()">
+    افتحي رسالتي 💌
   </button>
 
 </div>
 
 
-<!-- الاختبار -->
+<!-- الرسالة -->
 
-<div class="card hidden" id="quiz">
+<div class="card hidden" id="letter">
 
-  <div class="questionNumber" id="number">
-    السؤال 1 من 30
+  <div class="moon">
+    🌙✨
   </div>
 
-  <div class="progress">
-    <div
-      class="progressBar"
-      id="progress"
-    ></div>
+  <h1>
+    تصبحين على خير
+    <br>
+    <span class="name">يا فطومتي ❤️</span>
+  </h1>
+
+  <div class="message">
+
+    نامي وأنتِ مرتاحة،
+    <br>
+    ولا تفكرين بشي يزعلك. 🤍
+
+    <br><br>
+
+    يمكن أنا الحين جوالي بيطفي
+    وبنام...
+
+    <br><br>
+
+    بس آخر شخص بيكون في بالي
+    قبل أنام هو أنتِ 🥹❤️
+
+    <br><br>
+
+    وإذا صحيتِ،
+    تذكري إن فيه عمر يحبك
+    ويشتاق لك حتى وهو نايم.
+
   </div>
-
-  <div
-    class="question"
-    id="question"
-  ></div>
-
-  <div id="options"></div>
-
-</div>
-
-
-<!-- النتيجة -->
-
-<div class="card hidden" id="result">
 
   <div class="heart">
     ❤️
   </div>
 
-  <h1>
-    النتيجة يا فطومتي 🥹
-  </h1>
+  <div class="final">
 
-  <div class="resultNumber">
-    <span id="score">
-      0
-    </span>/30
-  </div>
+    أحلام سعيدة يا حياتي 🌙💕
 
-  <p id="resultText"></p>
+    <br>
 
-  <div class="finalMessage">
+    تصبحين على خير يا فطومتي 👑
+
+    <br><br>
 
     <strong>
-      وفي النهاية...
+      أحبككككككك 🥹❤️
     </strong>
-
-    <br><br>
-
-    حتى لو ما عرفتي كل الإجابات،
-
-    <br>
-
-    فيه شيء واحد مستحيل يختلف:
-
-    <br><br>
-
-    ❤️ <strong>أحبك بكل ذرة فالأرض</strong> ❤️
-
-    <br><br>
-
-    ما قد حبيت أحد زيك،
-
-    <br>
-
-    وأنتِ كل شيء بالنسبة لي 🥹
-
-    <br><br>
-
-    <strong>أ ح ب ك</strong> ❤️‍🔥
 
   </div>
 
-  <button onclick="makeItRain()">
-    اضغطي للمفاجأة ❤️
+  <button onclick="sendHearts()">
+    آخر شيء قبل تنامين ❤️
   </button>
 
 </div>
@@ -376,527 +542,62 @@ button:active{
 
 <script>
 
-const questions = [
-
-{
- q:"وش أكثر شيء يحبه عمر في الدنيا؟",
- options:[
-   "النوم 😴",
-   "الأكل 🍔",
-   "الألعاب 🎮",
-   "فاطمة ❤️"
- ],
- answer:3
-},
-
-{
- q:"وش أكثر شيء يفرّح عمر إذا سوته فاطمة؟",
- options:[
-   "تضحك 😂",
-   "تقول له: عموررري ❤️",
-   "ترسل صورة",
-   "تنام"
- ],
- answer:1
-},
-
-{
- q:"وش أكثر شيء يزعّل عمر من فاطمة؟",
- options:[
-   "إذا ما ردت",
-   "إذا تأخرت",
-   "ولا شيء ❤️",
-   "إذا نامت"
- ],
- answer:2
-},
-
-{
- q:"وش أكثر كلمة يحب عمر يسمعها من فاطمة؟",
- options:[
-   "هلا",
-   "يا حياتي ❤️",
-   "باي",
-   "تصبح على خير"
- ],
- answer:1
-},
-
-{
- q:"وش أكثر شيء يحب عمر يسويه مع فاطمة؟",
- options:[
-   "يلعب معها",
-   "يسافر معها",
-   "يسألها عن يومها ويسمع تفاصيله ❤️",
-   "يشوف فيلم"
- ],
- answer:2
-},
-
-{
- q:"إذا فاطمة زعلانة، وش يسوي عمر؟",
- options:[
-   "ينام",
-   "يتجاهلها",
-   "يسوي لها كل شيء عشان يراضيها ❤️",
-   "يضحك"
- ],
- answer:2
-},
-
-{
- q:"وش أكثر شيء يخاف عمر يخسره؟",
- options:[
-   "جواله",
-   "سيارته",
-   "فطومته ❤️",
-   "فلوسه"
- ],
- answer:2
-},
-
-{
- q:"وش أكبر أمنية لعمر مع فاطمة؟",
- options:[
-   "يسافر",
-   "يتزوجها 💍❤️",
-   "يلعب معها",
-   "يشوف مباراة"
- ],
- answer:1
-},
-
-{
- q:"وش أكثر شيء يحبه عمر في شخصية فاطمة؟",
- options:[
-   "عنادها",
-   "حنانها ❤️",
-   "هدوئها",
-   "مزحها"
- ],
- answer:1
-},
-
-{
- q:"وش أكثر شيء يحبه عمر في شكل فاطمة؟",
- options:[
-   "عيونها",
-   "ابتسامتها",
-   "شعرها",
-   "حبيتها بدون ما أشوفها ❤️"
- ],
- answer:3
-},
-
-{
- q:"هل عمر قد جلس مع فاطمة وجهًا لوجه؟",
- options:[
-   "نعم",
-   "لا ❤️",
-   "مرة واحدة",
-   "كثير"
- ],
- answer:1
-},
-
-{
- q:"لو صار لعمر يوم كامل مع فاطمة، وش أول شيء يتمنى يسويه؟",
- options:[
-   "يلعب",
-   "ينام",
-   "يحضر فيلم",
-   "يحُضنها 🫂❤️"
- ],
- answer:3
-},
-
-{
- q:"وش أكثر شيء يتمنى عمر يسمعه من فاطمة؟",
- options:[
-   "هلا",
-   "عمووووري أحبك ❤️",
-   "وينك",
-   "تصبح على خير"
- ],
- answer:1
-},
-
-{
- q:"لو فاطمة أعطت عمر أمنية واحدة، وش يختار؟",
- options:[
-   "سفرة",
-   "هدية",
-   "ينام بحضنها 🫂",
-   "سيارة"
- ],
- answer:2
-},
-
-{
- q:"إذا فاطمة زعلانة، وش يسوي عمر؟",
- options:[
-   "يسكت",
-   "ينام",
-   "يسوي لها اللي تبيه ❤️",
-   "يطلع"
- ],
- answer:2
-},
-
-{
- q:"وش أكثر شيء مستحيل عمر يمل منه؟",
- options:[
-   "الألعاب",
-   "الأكل",
-   "سوالف فاطمة ❤️",
-   "النوم"
- ],
- answer:2
-},
-
-{
- q:"إذا فاطمة ما كلمت عمر يوم كامل، وش يحس؟",
- options:[
-   "عادي",
-   "يرتاح",
-   "يومه ناقص 😔❤️",
-   "ينام"
- ],
- answer:2
-},
-
-{
- q:"إذا قابل عمر فاطمة لأول مرة، وش أكثر شيء بيحس؟",
- options:[
-   "ما يصدق إنهم تقابلوا 🥹",
-   "بيضحك",
-   "بيسكت",
-   "بيمشي"
- ],
- answer:0
-},
-
-{
- q:"وش أكثر اسم يحب عمر ينادي فاطمة فيه؟",
- options:[
-   "فاطمة",
-   "فطومتي 💕👑",
-   "فطوم",
-   "فاطم"
- ],
- answer:1
-},
-
-{
- q:"وش فاطمة بالنسبة لعمر؟",
- options:[
-   "صديقة",
-   "شخص عزيز",
-   "كل شيء ❤️",
-   "معرفة"
- ],
- answer:2
-},
-
-{
- q:"وش الشيء اللي يخلي عمر يبتسم غصب؟",
- options:[
-   "رسالة",
-   "صوت فاطمة ❤️",
-   "لعبة",
-   "فيلم"
- ],
- answer:1
-},
-
-{
- q:"ليش عمر يحب كلمة «ما يستوي» من فاطمة؟",
- options:[
-   "لأنها مضحكة",
-   "لأنها كلمة منها غير ❤️",
-   "لأنها قصيرة",
-   "لأنها مشهورة"
- ],
- answer:1
-},
-
-{
- q:"متى يشتاق عمر لفاطمة؟",
- options:[
-   "إذا غابت",
-   "إذا نامت",
-   "حتى وهم يسولفون مع بعض ❤️",
-   "وقت الليل فقط"
- ],
- answer:2
-},
-
-{
- q:"إذا قالت فاطمة: «أنا تعبت اليوم»، وش يقول عمر؟",
- options:[
-   "نامي",
-   "مين تعبك يا قلبي؟ الدنيا ما تسوى رجلك ❤️",
-   "عادي",
-   "بكرة أحسن"
- ],
- answer:1
-},
-
-{
- q:"وش أكثر شيء يتمنى عمر يشوفه على وجه فاطمة؟",
- options:[
-   "حزنها",
-   "سكوتها",
-   "ضحكتها ❤️",
-   "تفكيرها"
- ],
- answer:2
-},
-
-{
- q:"وش الرسالة اللي يبي عمر يقولها لفاطمة؟",
- options:[
-   "أحبك شوي",
-   "أحبك بكل ذرة فالأرض ❤️",
-   "أشتاق لك",
-   "وينك"
- ],
- answer:1
-},
-
-{
- q:"وش الشيء اللي يتمنى عمر فاطمة تعرفه؟",
- options:[
-   "إنه ما قد حب أحد زيها ❤️",
-   "إنه يحب الألعاب",
-   "إنه يحب النوم",
-   "إنه يحب السفر"
- ],
- answer:0
-},
-
-{
- q:"لو تغير كل شيء، وش يقول عمر لفاطمة؟",
- options:[
-   "بنشوف",
-   "ما أدري",
-   "أنتِ كل شيء بالنسبة لي ❤️",
-   "يمكن"
- ],
- answer:2
-},
-
-{
- q:"وش أكبر أمنية لعمر مع فاطمة؟",
- options:[
-   "يسافر معها",
-   "يتزوجها 🥹💍",
-   "يشتري لها هدية",
-   "يشوفها فقط"
- ],
- answer:1
-},
-
-{
- q:"لو فاطمة قدام عمر الآن، وش بيقول لها؟",
- options:[
-   "هلا",
-   "اشتقت لك",
-   "أ ح ب ك ❤️",
-   "كيفك"
- ],
- answer:2
-}
-
-];
+let opened=false;
 
 
-let current=0;
-let score=0;
+/* فتح الظرف */
 
+function openEnvelope(){
 
-function startQuiz(){
+  if(opened) return;
 
-  document
-    .getElementById("start")
-    .classList
-    .add("hidden");
+  opened=true;
 
-  document
-    .getElementById("quiz")
-    .classList
-    .remove("hidden");
+  const envelope=
+    document.getElementById(
+      "envelope"
+    );
 
-  showQuestion();
-
-}
-
-
-function showQuestion(){
-
-  const item=questions[current];
-
-  document.getElementById("number").innerText=
-    "السؤال "+
-    (current+1)+
-    " من 30";
-
-  document.getElementById("question").innerText=
-    item.q;
-
-  document.getElementById("progress").style.width=
-    ((current)/30*100)+"%";
-
-
-  const options=
-    document.getElementById("options");
-
-  options.innerHTML="";
-
-
-  item.options.forEach(
-    function(option,index){
-
-      const btn=
-        document.createElement("button");
-
-      btn.className="option";
-
-      btn.innerText=option;
-
-      btn.onclick=function(){
-
-        chooseAnswer(index,btn);
-
-      };
-
-      options.appendChild(btn);
-
-    }
+  envelope.classList.add(
+    "open"
   );
-
-}
-
-
-function chooseAnswer(index,button){
-
-  const correct=
-    questions[current].answer;
-
-  const all=
-    document.querySelectorAll(".option");
-
-
-  all.forEach(
-    function(btn){
-      btn.disabled=true;
-    }
-  );
-
-
-  if(index===correct){
-
-    score++;
-
-    button.classList.add("correct");
-
-  }else{
-
-    button.classList.add("wrong");
-
-    all[correct].classList.add("correct");
-
-  }
 
 
   setTimeout(
     function(){
 
-      current++;
+      document
+        .getElementById("start")
+        .classList
+        .add("hidden");
 
-      if(current<questions.length){
+      document
+        .getElementById("letter")
+        .classList
+        .remove("hidden");
 
-        showQuestion();
+      window.scrollTo({
+        top:0,
+        behavior:"smooth"
+      });
 
-      }else{
-
-        showResult();
-
-      }
+      createHearts(20);
+      createStars(15);
 
     },
-    650
+    800
   );
 
 }
 
 
-function showResult(){
+/* قلوب */
 
-  document
-    .getElementById("quiz")
-    .classList
-    .add("hidden");
-
-  document
-    .getElementById("result")
-    .classList
-    .remove("hidden");
-
-
-  document
-    .getElementById("score")
-    .innerText=
-      score;
-
-
-  const text=
-    document.getElementById("resultText");
-
-
-  if(score===30){
-
-    text.innerText=
-      "ياااا فطومتي 😭❤️ 30/30! تعرفين عمر أكثر مما يعرف نفسه 😂👑";
-
-  }
-
-  else if(score>=25){
-
-    text.innerText=
-      "واااو 🥹❤️ واضح إنك تعرفين عمر بشكل مو طبيعي!";
-
-  }
-
-  else if(score>=18){
-
-    text.innerText=
-      "حلووو 😂❤️ بس باقي شوي وتوصلين لقلب عمر كامل.";
-
-  }
-
-  else if(score>=10){
-
-    text.innerText=
-      "ههههه تحتاجين تدرسين عمر أكثر 😂❤️";
-
-  }
-
-  else{
-
-    text.innerText=
-      "شكل عمر يحتاج يسوي لك اختبار ثاني 😂❤️";
-
-  }
-
-}
-
-
-function makeItRain(){
+function createHearts(amount){
 
   for(
     let i=0;
-    i<120;
+    i<amount;
     i++
   ){
 
@@ -904,11 +605,12 @@ function makeItRain(){
       function(){
 
         const heart=
-          document.createElement("div");
+          document.createElement(
+            "div"
+          );
 
         heart.className=
           "floatingHeart";
-
 
         const icons=[
           "❤️",
@@ -917,11 +619,8 @@ function makeItRain(){
           "💗",
           "💓",
           "💞",
-          "💘",
-          "🌹",
-          "✨"
+          "🌹"
         ];
-
 
         heart.innerText=
           icons[
@@ -931,48 +630,107 @@ function makeItRain(){
             )
           ];
 
-
         heart.style.left=
           Math.random()*100+
           "vw";
 
-
         heart.style.fontSize=
           (
             18+
-            Math.random()*35
+            Math.random()*30
           )+
           "px";
-
 
         heart.style.animationDuration=
           (
             3+
-            Math.random()*5
+            Math.random()*4
           )+
           "s";
-
 
         document.body.appendChild(
           heart
         );
 
-
         setTimeout(
           function(){
-
             heart.remove();
-
           },
-          9000
+          8000
         );
 
-
       },
-      i*30
+      i*80
     );
 
   }
+
+}
+
+
+/* نجوم */
+
+function createStars(amount){
+
+  for(
+    let i=0;
+    i<amount;
+    i++
+  ){
+
+    setTimeout(
+      function(){
+
+        const star=
+          document.createElement(
+            "div"
+          );
+
+        star.className="star";
+
+        star.innerText="✨";
+
+        star.style.left=
+          Math.random()*100+
+          "vw";
+
+        star.style.top=
+          Math.random()*100+
+          "vh";
+
+        star.style.fontSize=
+          (
+            15+
+            Math.random()*20
+          )+
+          "px";
+
+        document.body.appendChild(
+          star
+        );
+
+        setTimeout(
+          function(){
+            star.remove();
+          },
+          1500
+        );
+
+      },
+      i*100
+    );
+
+  }
+
+}
+
+
+/* المفاجأة الأخيرة */
+
+function sendHearts(){
+
+  createHearts(100);
+  createStars(50);
 
 }
 
