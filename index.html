@@ -2,9 +2,9 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>صباحك يا فطومتي ❤️</title>
+<title>لفطومتي ❤️</title>
 
 <style>
 *{
@@ -13,56 +13,38 @@
   padding:0;
 }
 
-html{
-  scroll-behavior:smooth;
-}
-
 body{
   min-height:100vh;
-  overflow-x:hidden;
   font-family:Arial,Tahoma,sans-serif;
   color:white;
+  overflow-x:hidden;
 
   background:
-    radial-gradient(
-      circle at top,
-      #54203d,
-      #160b18 55%,
-      #070509 100%
-    );
+    radial-gradient(circle at top,#571a3b,#170914 55%,#050407);
 }
 
 .container{
   width:100%;
   max-width:520px;
   margin:auto;
-  padding:25px 16px 80px;
+  padding:25px 15px 70px;
 }
 
 .card{
-  width:100%;
   margin-top:20px;
   padding:30px 20px;
-
   text-align:center;
 
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
   border-radius:30px;
-
-  background:
-    rgba(255,255,255,.08);
-
-  border:
-    1px solid
-    rgba(255,255,255,.15);
-
-  box-shadow:
-    0 20px 70px
-    rgba(0,0,0,.5);
 
   backdrop-filter:blur(15px);
   -webkit-backdrop-filter:blur(15px);
 
-  animation:show .7s ease;
+  box-shadow:0 20px 70px rgba(0,0,0,.5);
+
+  animation:show .6s ease;
 }
 
 .hidden{
@@ -81,27 +63,15 @@ body{
   }
 }
 
-.moon{
-  font-size:70px;
-  margin-bottom:15px;
-
-  animation:float 3s ease-in-out infinite;
-}
-
-@keyframes float{
-  0%,100%{
-    transform:translateY(0);
-  }
-
-  50%{
-    transform:translateY(-10px);
-  }
-}
-
 h1{
-  font-size:30px;
-  line-height:1.5;
-  margin-bottom:18px;
+  font-size:29px;
+  line-height:1.6;
+  margin-bottom:20px;
+}
+
+h2{
+  font-size:23px;
+  margin-bottom:20px;
 }
 
 p{
@@ -109,9 +79,21 @@ p{
   line-height:2;
 }
 
-.small{
-  font-size:14px;
-  opacity:.65;
+.emoji{
+  font-size:75px;
+  margin:10px 0 20px;
+
+  animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+  0%,100%{
+    transform:scale(1);
+  }
+
+  50%{
+    transform:scale(1.1);
+  }
 }
 
 button{
@@ -120,25 +102,17 @@ button{
   border-radius:50px;
 
   padding:16px;
-  margin-top:20px;
+  margin-top:15px;
 
   color:white;
 
   background:
-    linear-gradient(
-      135deg,
-      #ff477e,
-      #a90042
-    );
+    linear-gradient(135deg,#ff477e,#a90042);
 
-  font-size:18px;
+  font-size:17px;
   font-weight:bold;
 
   cursor:pointer;
-
-  box-shadow:
-    0 8px 25px
-    rgba(255,50,120,.25);
 
   transition:.2s;
 }
@@ -147,301 +121,51 @@ button:active{
   transform:scale(.94);
 }
 
+.option{
+  width:100%;
+  padding:17px;
+  margin:9px 0;
 
-/* الظرف */
+  border-radius:22px;
 
-.envelope{
-  position:relative;
+  color:white;
 
-  width:260px;
-  height:175px;
+  background:rgba(255,255,255,.1);
 
-  margin:35px auto;
+  border:1px solid rgba(255,255,255,.13);
+
+  font-size:17px;
 
   cursor:pointer;
-
-  filter:
-    drop-shadow(
-      0 15px 25px
-      rgba(0,0,0,.35)
-    );
 }
 
-.envBack{
-  position:absolute;
-  inset:0;
-
-  background:#b91f50;
-
-  border-radius:12px;
+.option:hover{
+  background:rgba(255,255,255,.18);
 }
-
-.envLeft{
-  position:absolute;
-
-  bottom:0;
-  left:0;
-
-  width:0;
-  height:0;
-
-  border-top:88px solid transparent;
-  border-bottom:88px solid transparent;
-  border-left:130px solid #d93667;
-}
-
-.envRight{
-  position:absolute;
-
-  bottom:0;
-  right:0;
-
-  width:0;
-  height:0;
-
-  border-top:88px solid transparent;
-  border-bottom:88px solid transparent;
-  border-right:130px solid #d93667;
-}
-
-.envBottom{
-  position:absolute;
-
-  bottom:0;
-  left:0;
-
-  width:0;
-  height:0;
-
-  border-left:130px solid transparent;
-  border-right:130px solid transparent;
-  border-bottom:105px solid #a91646;
-}
-
-.envTop{
-  position:absolute;
-
-  top:0;
-  left:0;
-
-  width:0;
-  height:0;
-
-  border-left:130px solid transparent;
-  border-right:130px solid transparent;
-  border-top:105px solid #ed4a79;
-
-  transform-origin:top;
-
-  transition:.7s;
-
-  z-index:5;
-}
-
-.envelope.open .envTop{
-  transform:rotateX(180deg);
-}
-
-.seal{
-  position:absolute;
-
-  z-index:10;
-
-  top:68px;
-  left:50%;
-
-  transform:translateX(-50%);
-
-  width:50px;
-  height:50px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  border-radius:50%;
-
-  background:#ffd5e3;
-
-  color:#a90042;
-
-  font-size:24px;
-
-  transition:.5s;
-}
-
-.envelope.open .seal{
-  opacity:0;
-
-  transform:
-    translateX(-50%)
-    scale(0);
-}
-
-
-/* الرسالة */
 
 .message{
-  margin-top:25px;
-
-  padding:25px 20px;
+  margin-top:22px;
+  padding:24px 18px;
 
   border-radius:25px;
 
-  background:
-    rgba(255,255,255,.1);
-
-  border:
-    1px solid
-    rgba(255,255,255,.12);
+  background:rgba(255,255,255,.1);
 
   font-size:19px;
-
   line-height:2.2;
-
-  animation:show .7s ease;
 }
 
 .name{
-  color:#ffabc5;
-
-  font-weight:bold;
-
+  color:#ffb4ca;
   font-size:26px;
-}
-
-.final{
-  margin-top:25px;
-
-  font-size:21px;
-
-  line-height:2.3;
-
-  color:#ffd5e3;
-}
-
-
-/* الهدايا */
-
-.gift{
-  padding:20px;
-
-  margin-top:15px;
-
-  border-radius:25px;
-
-  background:
-    rgba(255,255,255,.09);
-
-  border:
-    1px solid
-    rgba(255,255,255,.13);
-
-  cursor:pointer;
-
-  transition:.3s;
-}
-
-.gift:active{
-  transform:scale(.97);
-}
-
-.giftIcon{
-  display:block;
-
-  font-size:50px;
-
-  margin-bottom:8px;
-}
-
-.giftText{
-  font-size:18px;
   font-weight:bold;
 }
 
-.giftMessage{
-  margin-top:15px;
-
-  padding:20px;
-
-  border-radius:20px;
-
-  background:
-    rgba(255,255,255,.12);
-
-  line-height:2;
-
-  font-size:18px;
-
-  animation:show .5s ease;
-}
-
-
-/* القلب */
-
-.bigHeart{
-  position:relative;
-
-  width:220px;
-  height:200px;
-
-  margin:25px auto;
+.heart{
+  font-size:80px;
+  margin:15px 0;
 
   animation:heartbeat 1.3s infinite;
-}
-
-.bigHeart:before,
-.bigHeart:after{
-  content:"";
-
-  position:absolute;
-
-  top:0;
-
-  width:115px;
-  height:180px;
-
-  background:#ff285f;
-
-  border-radius:
-    115px 115px 0 0;
-}
-
-.bigHeart:before{
-  left:105px;
-
-  transform:rotate(45deg);
-
-  transform-origin:0 100%;
-}
-
-.bigHeart:after{
-  left:0;
-
-  transform:rotate(-45deg);
-
-  transform-origin:100% 100%;
-}
-
-.heartText{
-  position:absolute;
-
-  z-index:10;
-
-  top:78px;
-  left:50%;
-
-  transform:translateX(-50%);
-
-  font-size:22px;
-
-  font-weight:bold;
-
-  white-space:nowrap;
-
-  text-shadow:
-    0 2px 8px
-    rgba(0,0,0,.5);
 }
 
 @keyframes heartbeat{
@@ -450,20 +174,39 @@ button:active{
   }
 
   50%{
-    transform:scale(1.08);
+    transform:scale(1.12);
   }
 }
 
+.activity{
+  padding:20px;
+  margin:12px 0;
 
-/* القلوب */
+  border-radius:25px;
+
+  background:rgba(255,255,255,.09);
+
+  border:1px solid rgba(255,255,255,.12);
+
+  cursor:pointer;
+
+  transition:.25s;
+}
+
+.activity:active{
+  transform:scale(.96);
+}
+
+.activityEmoji{
+  font-size:45px;
+  display:block;
+  margin-bottom:8px;
+}
 
 .floatingHeart{
   position:fixed;
-
   top:-60px;
-
   z-index:999;
-
   pointer-events:none;
 
   animation:fall linear forwards;
@@ -478,50 +221,6 @@ button:active{
     opacity:0;
   }
 }
-
-
-/* النجوم */
-
-.star{
-  position:fixed;
-
-  z-index:998;
-
-  pointer-events:none;
-
-  animation:starMove 1.5s ease forwards;
-}
-
-@keyframes starMove{
-  0%{
-    opacity:1;
-    transform:scale(.5);
-  }
-
-  100%{
-    opacity:0;
-    transform:scale(1.5);
-  }
-}
-
-@media(max-width:400px){
-
-  h1{
-    font-size:27px;
-  }
-
-  .envelope{
-    transform:scale(.88);
-
-    margin-top:25px;
-    margin-bottom:25px;
-  }
-
-  p{
-    font-size:17px;
-  }
-
-}
 </style>
 </head>
 
@@ -534,181 +233,267 @@ button:active{
 
 <div class="card" id="start">
 
-  <div class="moon">
-    🌅
+  <div class="emoji">
+    🥺❤️
   </div>
 
   <h1>
-    صباح الخير يا فطومتي ❤️
+    فطومتي...
   </h1>
 
   <p>
-    إذا صحيتِ من النوم...
+    اليوم أحس إن في شيء مضايقك
     <br>
-    عندي لك شيء صغير 🥹
+    وأنا أبي أعرف وش في خاطرك.
   </p>
 
-  <p class="small">
-    افتحي الظرف بنفسك 💌
-  </p>
-
-  <div
-    class="envelope"
-    id="envelope"
-    onclick="openEnvelope()"
-  >
-
-    <div class="envBack"></div>
-    <div class="envLeft"></div>
-    <div class="envRight"></div>
-    <div class="envBottom"></div>
-    <div class="envTop"></div>
-
-    <div class="seal">
-      ❤️
-    </div>
-
-  </div>
-
-  <button onclick="openEnvelope()">
-    افتحي رسالتي 💌
+  <button onclick="question()">
+    قولي لي يا حياتي ❤️
   </button>
 
 </div>
 
 
-<!-- الرسالة -->
+<!-- السؤال -->
 
-<div class="card hidden" id="letter">
+<div class="card hidden" id="question">
 
-  <div class="moon">
-    🌤️
+  <div class="emoji">
+    🥹
   </div>
 
   <h1>
-    صباحك أجمل من كل شيء
-    <br>
-    <span class="name">
-      يا فطومتي ❤️
-    </span>
+    فطومتي وش اليوم مضايقك؟
+  </h1>
+
+  <p>
+    اختاري الشيء اللي قريب من اللي تحسين فيه
+    ❤️
+  </p>
+
+  <button class="option" onclick="veil()">
+    موضوع النقاب 🥺
+  </button>
+
+  <button class="option" onclick="other()">
+    شيء ثاني 💭
+  </button>
+
+  <button class="option" onclick="sad()">
+    ما أدري بس أنا متضايقة 😔
+  </button>
+
+</div>
+
+
+<!-- النقاب -->
+
+<div class="card hidden" id="veil">
+
+  <div class="emoji">
+    🥺❤️
+  </div>
+
+  <h1>
+    بس هذا اللي ضايق صدرك يا حياتي؟
   </h1>
 
   <div class="message">
 
-    يمكن أنا ما أكون موجود
-    لما تصحين...
+    إذا كان هذا اللي مضايقك...
 
     <br><br>
 
-    ويمكن جوالي يكون طافي...
+    أنا آسف إذا كلامي خلاك تحسين
+    إني ما أفهمك أو إني أضغط عليك.
 
     <br><br>
 
-    بس حبيت أترك لك شيء
-    تستقبلين فيه يومك 🥹❤️
+    ما أبي زعلك،
+    ولا أبي أشوفك متضايقة.
 
     <br><br>
 
-    أول شيء أبيك تعرفينه اليوم:
+    أهم شيء عندي إنك تكونين مرتاحة
+    ونتكلم مع بعض بهدوء ❤️
 
     <br><br>
 
     <strong>
-      فيه عمر يحبك كثير.
+      يا حياتي أحبككككك 🥹❤️
     </strong>
-
-    <br><br>
-
-    ويشتاق لك حتى وهو يسولف معك.
-
-    <br><br>
-
-    وصوتك لحاله
-    يقدر يغير مزاجه ❤️
 
   </div>
 
-  <button onclick="showGifts()">
-    عندي لك 3 هدايا 🎁
+  <button onclick="activities()">
+    طيب تعالي نغير جوك 😭❤️
   </button>
 
 </div>
 
 
-<!-- الهدايا -->
+<!-- شيء ثاني -->
 
-<div class="card hidden" id="gifts">
+<div class="card hidden" id="other">
+
+  <div class="emoji">
+    🫂❤️
+  </div>
 
   <h1>
-    3 هدايا لفطومتي 🎁❤️
+    تعالي يا حياتي
+  </h1>
+
+  <div class="message">
+
+    ما أعرف وش اللي مضايقك بالضبط،
+    بس أعرف شيء واحد...
+
+    <br><br>
+
+    ما أبيك تشيلين هم لحالك.
+
+    <br><br>
+
+    إذا تبين تفضفضين،
+    أنا أسمعك ❤️
+
+    <br><br>
+
+    وإذا ما تبين تتكلمين،
+    برضو أنا موجود.
+
+    <br><br>
+
+    <strong>
+      أحبك يا فطومتي 🥹❤️
+    </strong>
+
+  </div>
+
+  <button onclick="activities()">
+    نغير جو شوي؟ 🌷
+  </button>
+
+</div>
+
+
+<!-- زعلانة -->
+
+<div class="card hidden" id="sad">
+
+  <div class="emoji">
+    🫂
+  </div>
+
+  <h1>
+    تعالي هنا يا فطومتي
+  </h1>
+
+  <div class="message">
+
+    مو لازم تعرفين السبب دائمًا.
+
+    <br><br>
+
+    خذي نفس...
+
+    <br>
+
+    واهدَي شوي.
+
+    <br><br>
+
+    وأنا معك ❤️
+
+    <br><br>
+
+    <strong>
+      أحبك يا حياتي، ولا أبيك تزعلين 🥹
+    </strong>
+
+  </div>
+
+  <button onclick="activities()">
+    عندي خطة عشان أغير جوك 😌❤️
+  </button>
+
+</div>
+
+
+<!-- الفعاليات -->
+
+<div class="card hidden" id="activities">
+
+  <div class="emoji">
+    🎀❤️
+  </div>
+
+  <h1>
+    يلااا نغير جو فطومتي 😭❤️
   </h1>
 
   <p>
-    افتحيهم وحدة وحدة 👀
+    اختاري فعالية 👇
   </p>
 
 
-  <div
-    class="gift"
-    onclick="gift(1)"
-  >
+  <div class="activity" onclick="activity(1)">
 
-    <span class="giftIcon">
+    <span class="activityEmoji">
+      😂
+    </span>
+
+    <strong>
+      تحدي الضحك
+    </strong>
+
+  </div>
+
+
+  <div class="activity" onclick="activity(2)">
+
+    <span class="activityEmoji">
       💌
     </span>
 
-    <span class="giftText">
-      الهدية الأولى
-    </span>
+    <strong>
+      سؤال من عمر
+    </strong>
 
   </div>
 
 
-  <div
-    class="gift"
-    onclick="gift(2)"
-  >
+  <div class="activity" onclick="activity(3)">
 
-    <span class="giftIcon">
-      🥹
+    <span class="activityEmoji">
+      🎲
     </span>
 
-    <span class="giftText">
-      الهدية الثانية
-    </span>
+    <strong>
+      اختاري رقم
+    </strong>
 
   </div>
 
 
-  <div
-    class="gift"
-    onclick="gift(3)"
-  >
+  <div class="activity" onclick="activity(4)">
 
-    <span class="giftIcon">
+    <span class="activityEmoji">
       ❤️
     </span>
 
-    <span class="giftText">
-      الهدية الأخيرة
-    </span>
+    <strong>
+      جرعة حب
+    </strong>
 
   </div>
 
 
   <div
-    class="giftMessage hidden"
-    id="giftMessage"
-  ></div>
-
-
-  <button
-    id="finalButton"
-    class="hidden"
-    onclick="finalPage()"
-  >
-    آخر مفاجأة لفطومتي ❤️
-  </button>
+    class="message hidden"
+    id="activityMessage">
+  </div>
 
 </div>
 
@@ -717,62 +502,36 @@ button:active{
 
 <div class="card hidden" id="final">
 
-  <div class="bigHeart">
-
-    <div class="heartText">
-      فاطمة ❤️
-    </div>
-
+  <div class="heart">
+    ❤️
   </div>
 
   <h1>
-    صباحك حب يا فطومتي 🥹
+    فطومتي 👑
   </h1>
 
   <div class="message">
 
-    أتمنى يومك يبدأ بابتسامة
-    <br>
-    وتنتهي كل لحظاته وأنتِ مبسوطة.
+    خلاص ممنوع الزعل اليوم 😂❤️
 
     <br><br>
 
-    وتذكري دائمًا...
+    وإذا رجع الزعل...
+
+    <br>
+
+    تعالي لعمر على طول 🥹
 
     <br><br>
 
     <strong>
-      أنتِ مو شخص عادي بالنسبة لي.
+      أحبك يا حياتي،
+      وأبي أشوفك دايم مبسوطة ❤️
     </strong>
-
-    <br><br>
-
-    أنتِ كل شيء ❤️
-
-    <br><br>
-
-    وأتمنى اليوم اللي
-    أقدر فيه أشوفك قدامي
-    وأقول لك الكلام هذا
-    بدون شاشة بيننا 🥹
-
-    <br><br>
-
-    <strong>
-      أحبك بكل ذرة فالأرض ❤️
-    </strong>
-
-    <br><br>
-
-    فطومتي...
-
-    <br>
-
-    صباحك أنا ❤️👑
 
   </div>
 
-  <button onclick="loveRain()">
+  <button onclick="rain()">
     اضغطي هنا ❤️
   </button>
 
@@ -783,194 +542,86 @@ button:active{
 
 <script>
 
-/* ==========================
-   موسيقى أصلية هادئة
-========================== */
+function hideAll(){
 
-let audioContext=null;
-let musicStarted=false;
-
-function startMusic(){
-
-  if(musicStarted) return;
-
-  musicStarted=true;
-
-  audioContext=
-    new (
-      window.AudioContext ||
-      window.webkitAudioContext
-    )();
-
-  if(
-    audioContext.state==="suspended"
-  ){
-    audioContext.resume();
-  }
-
-  playMusic();
-}
-
-
-function note(
-  frequency,
-  duration,
-  delay,
-  volume
-){
-
-  setTimeout(function(){
-
-    const osc=
-      audioContext.createOscillator();
-
-    const gain=
-      audioContext.createGain();
-
-    osc.type="sine";
-
-    osc.frequency.value=
-      frequency;
-
-    gain.gain.setValueAtTime(
-      0,
-      audioContext.currentTime
-    );
-
-    gain.gain.linearRampToValueAtTime(
-      volume,
-      audioContext.currentTime+.08
-    );
-
-    gain.gain.exponentialRampToValueAtTime(
-      .001,
-      audioContext.currentTime+
-      duration
-    );
-
-    osc.connect(gain);
-    gain.connect(
-      audioContext.destination
-    );
-
-    osc.start();
-
-    osc.stop(
-      audioContext.currentTime+
-      duration
-    );
-
-  },delay);
-
-}
-
-
-function playMusic(){
-
-  const melody=[
-
-    261.63,
-    329.63,
-    392,
-    329.63,
-
-    293.66,
-    349.23,
-    440,
-    349.23,
-
-    261.63,
-    329.63,
-    392,
-    523.25,
-
-    392,
-    349.23,
-    329.63,
-    261.63
-
+  const ids=[
+    "start",
+    "question",
+    "veil",
+    "other",
+    "sad",
+    "activities",
+    "final"
   ];
 
-  melody.forEach(
-    function(freq,index){
-
-      note(
-        freq,
-        2.4,
-        index*650,
-        .035
-      );
-
-    }
-  );
-
-  setTimeout(
-    playMusic,
-    10400
-  );
-
-}
-
-
-/* ==========================
-   فتح الظرف
-========================== */
-
-let opened=false;
-
-function openEnvelope(){
-
-  if(opened) return;
-
-  opened=true;
-
-  startMusic();
-
-  document
-    .getElementById("envelope")
-    .classList
-    .add("open");
-
-
-  setTimeout(function(){
+  ids.forEach(function(id){
 
     document
-      .getElementById("start")
+      .getElementById(id)
       .classList
       .add("hidden");
 
-    document
-      .getElementById("letter")
-      .classList
-      .remove("hidden");
-
-    createHearts(20);
-
-    window.scrollTo({
-      top:0,
-      behavior:"smooth"
-    });
-
-  },800);
+  });
 
 }
 
 
-/* ==========================
-   الهدايا
-========================== */
+function question(){
 
-let openedGifts=0;
-
-function showGifts(){
+  hideAll();
 
   document
-    .getElementById("letter")
+    .getElementById("question")
     .classList
-    .add("hidden");
+    .remove("hidden");
+
+}
+
+
+function veil(){
+
+  hideAll();
 
   document
-    .getElementById("gifts")
+    .getElementById("veil")
+    .classList
+    .remove("hidden");
+
+  hearts(15);
+
+}
+
+
+function other(){
+
+  hideAll();
+
+  document
+    .getElementById("other")
+    .classList
+    .remove("hidden");
+
+}
+
+
+function sad(){
+
+  hideAll();
+
+  document
+    .getElementById("sad")
+    .classList
+    .remove("hidden");
+
+}
+
+
+function activities(){
+
+  hideAll();
+
+  document
+    .getElementById("activities")
     .classList
     .remove("hidden");
 
@@ -982,28 +633,31 @@ function showGifts(){
 }
 
 
-function gift(number){
+/* الفعاليات */
+
+function activity(number){
 
   const box=
     document.getElementById(
-      "giftMessage"
+      "activityMessage"
     );
 
-  box.classList.remove(
-    "hidden"
-  );
+  box.classList.remove("hidden");
 
 
   const messages={
 
     1:
-    "💌 الهدية الأولى: أتمنى أول شيء تشوفينه اليوم يكون شيء يخليك تبتسمين، حتى لو كان مجرد رسالة مني.",
+    "😂 تحدي اليوم: ممنوع الزعل لمدة 10 دقايق! وإذا ضحكتي، عمر يعتبر فاز ❤️",
 
     2:
-    "🥹 الهدية الثانية: يمكن ما قد جلست معك، بس قدرت أحبك وأشتاق لك بطريقة ما توقعتها.",
+    "💌 سؤال عمر: وش الشيء البسيط اللي لو سواه لك شخص تحبينه، يخليك تبتسمين طول اليوم؟",
 
     3:
-    "❤️ الهدية الأخيرة: أحبك يا فطومتي، وأتمنى يوم من الأيام يكون صباحنا مع بعض مو خلف شاشة."
+    "🎲 اختاري رقم من 1 إلى 5، وكل رقم له مفاجأة من عمر 😭❤️",
+
+    4:
+    "❤️ جرعة الحب: فطومتي، أحبك بكل ذرة فالأرض، وودي أشوفك مبسوطة أكثر من أي شيء ثاني."
 
   };
 
@@ -1012,53 +666,27 @@ function gift(number){
     messages[number];
 
 
-  openedGifts++;
+  if(number===4){
 
+    setTimeout(function(){
 
-  if(openedGifts>=3){
+      document
+        .getElementById("final")
+        .classList
+        .remove("hidden");
 
-    document
-      .getElementById("finalButton")
-      .classList
-      .remove("hidden");
+      hearts(30);
+
+    },1500);
 
   }
 
 }
 
 
-/* ==========================
-   النهاية
-========================== */
+/* القلوب */
 
-function finalPage(){
-
-  document
-    .getElementById("gifts")
-    .classList
-    .add("hidden");
-
-  document
-    .getElementById("final")
-    .classList
-    .remove("hidden");
-
-  createHearts(70);
-  createStars(40);
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
-}
-
-
-/* ==========================
-   القلوب
-========================== */
-
-function createHearts(amount){
+function hearts(amount){
 
   for(
     let i=0;
@@ -1069,9 +697,7 @@ function createHearts(amount){
     setTimeout(function(){
 
       const heart=
-        document.createElement(
-          "div"
-        );
+        document.createElement("div");
 
       heart.className=
         "floatingHeart";
@@ -1089,109 +715,37 @@ function createHearts(amount){
       heart.innerText=
         icons[
           Math.floor(
-            Math.random()*
-            icons.length
+            Math.random()*icons.length
           )
         ];
 
       heart.style.left=
-        Math.random()*100+
-        "vw";
+        Math.random()*100+"vw";
 
       heart.style.fontSize=
-        (
-          18+
-          Math.random()*35
-        )+
-        "px";
+        (18+Math.random()*35)+"px";
 
       heart.style.animationDuration=
-        (
-          3+
-          Math.random()*5
-        )+
-        "s";
+        (3+Math.random()*5)+"s";
 
       document.body.appendChild(
         heart
       );
 
       setTimeout(function(){
-
         heart.remove();
-
       },9000);
 
-    },i*45);
+    },i*50);
 
   }
 
 }
 
 
-/* ==========================
-   النجوم
-========================== */
+function rain(){
 
-function createStars(amount){
-
-  for(
-    let i=0;
-    i<amount;
-    i++
-  ){
-
-    setTimeout(function(){
-
-      const star=
-        document.createElement(
-          "div"
-        );
-
-      star.className="star";
-
-      star.innerText="✨";
-
-      star.style.left=
-        Math.random()*100+
-        "vw";
-
-      star.style.top=
-        Math.random()*100+
-        "vh";
-
-      star.style.fontSize=
-        (
-          15+
-          Math.random()*20
-        )+
-        "px";
-
-      document.body.appendChild(
-        star
-      );
-
-      setTimeout(function(){
-
-        star.remove();
-
-      },1500);
-
-    },i*80);
-
-  }
-
-}
-
-
-/* ==========================
-   مطر الحب
-========================== */
-
-function loveRain(){
-
-  createHearts(150);
-  createStars(80);
+  hearts(150);
 
 }
 
