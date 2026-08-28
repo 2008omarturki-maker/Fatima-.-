@@ -2,12 +2,10 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>لفطومتي ❤️</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>كون فاطمة 🌌❤️</title>
 
 <style>
-
 *{
   box-sizing:border-box;
   margin:0;
@@ -16,258 +14,47 @@
 
 body{
   min-height:100vh;
+  overflow:hidden;
   font-family:Arial,Tahoma,sans-serif;
+  background:#02030d;
   color:white;
-  overflow-x:hidden;
-
-  background:
-  radial-gradient(circle at top,#5a183b,#170914 55%,#050407);
 }
 
-.container{
-  width:100%;
-  max-width:520px;
-  margin:auto;
-  padding:25px 15px 70px;
-}
-
-.card{
-  margin-top:20px;
-  padding:30px 20px;
-  text-align:center;
-
-  background:rgba(255,255,255,.08);
-
-  border:1px solid rgba(255,255,255,.15);
-
-  border-radius:30px;
-
-  backdrop-filter:blur(15px);
-  -webkit-backdrop-filter:blur(15px);
-
-  box-shadow:0 20px 70px rgba(0,0,0,.5);
-
-  animation:show .6s ease;
-}
-
-.hidden{
-  display:none!important;
-}
-
-@keyframes show{
-
-  from{
-    opacity:0;
-    transform:translateY(25px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-
-}
-
-h1{
-  font-size:29px;
-  line-height:1.6;
-  margin-bottom:20px;
-}
-
-p{
-  font-size:18px;
-  line-height:2;
-}
-
-.emoji{
-  font-size:70px;
-  margin:10px 0 20px;
-
-  animation:pulse 1.5s infinite;
-}
-
-@keyframes pulse{
-
-  0%,100%{
-    transform:scale(1);
-  }
-
-  50%{
-    transform:scale(1.1);
-  }
-
-}
-
-button{
-  width:100%;
-  border:0;
-  border-radius:50px;
-
-  padding:16px;
-  margin-top:15px;
-
-  color:white;
-
-  background:
-  linear-gradient(135deg,#ff477e,#a90042);
-
-  font-size:17px;
-  font-weight:bold;
-
-  cursor:pointer;
-
-  transition:.2s;
-}
-
-button:active{
-  transform:scale(.94);
-}
-
-.option{
-  width:100%;
-  padding:17px;
-  margin:9px 0;
-
-  border-radius:22px;
-
-  color:white;
-
-  background:rgba(255,255,255,.1);
-
-  border:1px solid rgba(255,255,255,.13);
-
-  font-size:17px;
-
-  cursor:pointer;
-}
-
-.message{
-  margin-top:22px;
-  padding:24px 18px;
-
-  border-radius:25px;
-
-  background:rgba(255,255,255,.1);
-
-  font-size:19px;
-
-  line-height:2.2;
-}
-
-.activity{
-  padding:20px;
-  margin:12px 0;
-
-  border-radius:25px;
-
-  background:rgba(255,255,255,.09);
-
-  border:1px solid rgba(255,255,255,.12);
-
-  cursor:pointer;
-
-  transition:.25s;
-}
-
-.activity:active{
-  transform:scale(.96);
-}
-
-.activityEmoji{
-  display:block;
-  font-size:45px;
-  margin-bottom:8px;
-}
-
-
-/* =========================
-   عالم فطومتي
-========================= */
-
-.sky{
-
+.space{
   position:relative;
-
-  width:100%;
-  height:500px;
-
+  width:100vw;
+  height:100vh;
   overflow:hidden;
 
-  border-radius:30px;
-
   background:
-  linear-gradient(
-    180deg,
-    #02030d,
-    #09102c,
-    #182347
+  radial-gradient(
+    circle at 50% 45%,
+    #1c1740 0%,
+    #090b25 38%,
+    #02030d 78%
   );
-
-  box-shadow:
-  inset 0 0 80px rgba(0,0,0,.7);
-
 }
 
+/* القمر الواحد */
 
-/* النجوم كثيرة */
-
-.stars{
+.moon{
   position:absolute;
-  inset:0;
-}
-
-.star{
-  position:absolute;
-
-  color:white;
-
-  animation:
-  twinkle 1.5s ease-in-out infinite;
-
-  text-shadow:
-  0 0 8px white;
-}
-
-@keyframes twinkle{
-
-  0%,100%{
-    opacity:.25;
-    transform:scale(.7);
-  }
-
-  50%{
-    opacity:1;
-    transform:scale(1.3);
-  }
-
-}
-
-
-/* القمر واحد */
-
-.oneMoon{
-
-  position:absolute;
-
-  top:40px;
+  top:55px;
   right:30px;
-
   font-size:65px;
-
-  z-index:5;
+  z-index:3;
 
   filter:
   drop-shadow(
-    0 0 20px
+    0 0 25px
     rgba(255,255,220,.9)
   );
 
   animation:
-  moonMove 4s ease-in-out infinite;
+  moonFloat 4s ease-in-out infinite;
 }
 
-@keyframes moonMove{
-
+@keyframes moonFloat{
   0%,100%{
     transform:translateY(0);
   }
@@ -275,98 +62,130 @@ button:active{
   50%{
     transform:translateY(-10px);
   }
-
 }
 
+/* النجوم */
+
+.star{
+  position:absolute;
+  z-index:4;
+
+  font-size:18px;
+
+  cursor:pointer;
+
+  user-select:none;
+
+  transition:
+  transform .25s,
+  filter .25s;
+
+  animation:
+  twinkle 2s ease-in-out infinite;
+}
+
+.star:hover{
+  transform:scale(1.8);
+  filter:
+  drop-shadow(
+    0 0 12px white
+  );
+}
+
+@keyframes twinkle{
+
+  0%,100%{
+    opacity:.35;
+  }
+
+  50%{
+    opacity:1;
+  }
+}
+
+/* العنوان */
+
+.title{
+  position:absolute;
+  top:50px;
+  left:50%;
+  transform:translateX(-50%);
+
+  width:90%;
+
+  text-align:center;
+
+  z-index:5;
+
+  font-size:25px;
+
+  text-shadow:
+  0 0 15px
+  rgba(255,255,255,.5);
+}
+
+.title span{
+  color:#ff9dbc;
+}
 
 /* الرسالة */
 
-.finalText{
-
+.message{
   position:absolute;
 
-  z-index:10;
-
-  top:150px;
-
+  top:50%;
   left:50%;
 
   width:88%;
+  max-width:450px;
 
-  transform:translateX(-50%);
+  transform:
+  translate(-50%,-50%)
+  scale(.7);
 
-  padding:25px 15px;
+  opacity:0;
+
+  padding:30px 20px;
 
   text-align:center;
 
   border-radius:30px;
 
-  background:rgba(0,0,0,.3);
+  background:
+  rgba(10,8,30,.78);
 
   border:
   1px solid
-  rgba(255,255,255,.15);
+  rgba(255,255,255,.18);
 
-  backdrop-filter:blur(8px);
+  backdrop-filter:blur(15px);
 
-  animation:
-  textFloat 4s ease-in-out infinite;
+  z-index:20;
+
+  pointer-events:none;
+
+  transition:
+  .4s ease;
 }
 
-@keyframes textFloat{
+.message.show{
+  opacity:1;
 
-  0%,100%{
-    transform:
-    translateX(-50%)
-    translateY(0);
-  }
+  transform:
+  translate(-50%,-50%)
+  scale(1);
 
-  50%{
-    transform:
-    translateX(-50%)
-    translateY(-7px);
-  }
-
+  pointer-events:auto;
 }
 
-.finalText h1{
-
-  color:#ffd5e3;
-
-  font-size:32px;
-
-}
-
-.finalText p{
-
-  font-size:22px;
-
-  line-height:2.2;
-
-}
-
-.love{
-
-  margin-top:15px;
-
-  color:#ff6f9c;
-
-  font-size:25px;
-
-  font-weight:bold;
-
-}
-
-.bigHeart{
-
+.message .heart{
   font-size:55px;
 
   animation:
-  heartbeat 1.3s infinite;
+  heartbeat 1.2s infinite;
 }
 
 @keyframes heartbeat{
-
   0%,100%{
     transform:scale(1);
   }
@@ -374,650 +193,436 @@ button:active{
   50%{
     transform:scale(1.15);
   }
-
 }
 
+.message h2{
+  margin:15px 0;
 
-/* قلب يتحرك */
+  color:#ffb1c9;
 
-.movingHeart{
+  font-size:27px;
+}
 
+.message p{
+  font-size:19px;
+  line-height:2;
+}
+
+.close{
+  margin-top:20px;
+
+  padding:12px 30px;
+
+  border:0;
+  border-radius:30px;
+
+  color:white;
+
+  background:
+  linear-gradient(
+    135deg,
+    #ff4f83,
+    #a90045
+  );
+
+  font-size:16px;
+}
+
+/* النهاية */
+
+.final{
   position:absolute;
 
-  z-index:15;
+  inset:0;
 
-  bottom:90px;
+  z-index:50;
 
-  left:5%;
+  display:flex;
 
-  font-size:40px;
+  align-items:center;
+  justify-content:center;
 
-  animation:
-  moveHeart 10s linear infinite;
-}
+  text-align:center;
 
-@keyframes moveHeart{
-
-  0%{
-    left:5%;
-  }
-
-  25%{
-    left:30%;
-  }
-
-  50%{
-    left:55%;
-  }
-
-  75%{
-    left:75%;
-  }
-
-  100%{
-    left:95%;
-  }
-
-}
-
-
-/* الأرض */
-
-.ground{
-
-  position:absolute;
-
-  bottom:-40px;
-
-  left:-5%;
-
-  width:110%;
-
-  height:130px;
+  padding:25px;
 
   background:
   radial-gradient(
-    ellipse,
-    #203b20,
-    #091209
+    circle,
+    rgba(31,19,69,.97),
+    rgba(2,3,13,.99)
   );
 
-  border-radius:
-  50% 50% 0 0;
+  opacity:0;
 
-  z-index:6;
+  pointer-events:none;
+
+  transition:
+  opacity 1s ease;
+}
+
+.final.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.finalBox{
+  max-width:500px;
+}
+
+.finalBox .bigHeart{
+  font-size:85px;
+
+  animation:
+  heartbeat 1.3s infinite;
+}
+
+.finalBox h1{
+  font-size:40px;
+
+  color:#ffb0c9;
+
+  margin:15px 0;
+}
+
+.finalBox p{
+  font-size:22px;
+
+  line-height:2;
+}
+
+.finalBox strong{
+  color:#ff759d;
+}
+
+/* قلوب النهاية */
+
+.fallingHeart{
+  position:fixed;
+
+  top:-50px;
+
+  z-index:100;
+
+  pointer-events:none;
+
+  animation:
+  fall 5s linear forwards;
+}
+
+@keyframes fall{
+
+  to{
+    transform:
+    translateY(110vh)
+    rotate(360deg);
+
+    opacity:0;
+  }
+
 }
 
 </style>
 </head>
 
-
 <body>
 
-<div class="container">
+<div class="space" id="space">
 
-
-<!-- البداية -->
-
-<div class="card" id="start">
-
-  <div class="emoji">
-    🥺❤️
+  <div class="title">
+    🌌 اضغطي على النجوم يا
+    <span>فطومتي</span>
+    ❤️
   </div>
 
-  <h1>
-    فطومتي...
-  </h1>
-
-  <p>
-    اليوم أحس إن في شيء مضايقك
-    <br>
-    وأنا أبي أعرف وش في خاطرك.
-  </p>
-
-  <button onclick="showQuestion()">
-    قولي لي يا حياتي ❤️
-  </button>
-
-</div>
-
-
-<!-- السؤال -->
-
-<div class="card hidden" id="question">
-
-  <div class="emoji">
-    🥹
+  <!-- القمر الواحد -->
+  <div class="moon">
+    🌙
   </div>
 
-  <h1>
-    فطومتي وش اليوم مضايقك؟
-  </h1>
+  <!-- النجوم تتولد هنا -->
+  <div id="stars"></div>
 
-  <p>
-    اختاري اللي تحسين إنه قريب منك ❤️
-  </p>
 
-  <button class="option" onclick="showVeil()">
-    موضوع النقاب 🥺
-  </button>
+  <!-- الرسالة -->
+  <div class="message" id="message">
 
-  <button class="option" onclick="showOther()">
-    شيء ثاني 💭
-  </button>
-
-  <button class="option" onclick="showSad()">
-    ما أدري بس أنا متضايقة 😔
-  </button>
-
-</div>
-
-
-<!-- النقاب -->
-
-<div class="card hidden" id="veil">
-
-  <div class="emoji">
-    🥺❤️
-  </div>
-
-  <h1>
-    ولا يهمك، بس هذا اللي مضايق صدرك يا حياتي؟ 🥺❤️
-  </h1>
-
-  <div class="message">
-
-    إذا كان هذا اللي مضايقك...
-
-    <br><br>
-
-    أنا آسف إذا كلامي خلاك تحسين
-    إني أضغط عليك.
-
-    <br><br>
-
-    ما أبي أشوفك متضايقة،
-    وأهم شيء عندي إنك تكونين مرتاحة
-    ومبسوطة ❤️
-
-    <br><br>
-
-    <strong>
-      أحبك يا حياتي 🥹❤️
-    </strong>
-
-  </div>
-
-  <button onclick="showActivities()">
-    تعالي نغير جوك 😭❤️
-  </button>
-
-</div>
-
-
-<!-- شيء ثاني -->
-
-<div class="card hidden" id="other">
-
-  <div class="emoji">
-    🫂
-  </div>
-
-  <h1>
-    تعالي يا حياتي
-  </h1>
-
-  <div class="message">
-
-    إذا في شيء ثاني مضايقك،
-    أنا هنا أسمعك ❤️
-
-    <br><br>
-
-    ما راح أضغط عليك.
-
-    <br><br>
-
-    <strong>
-      أحبك يا فطومتي 🥹❤️
-    </strong>
-
-  </div>
-
-  <button onclick="showActivities()">
-    نغير جو شوي؟ 🌷
-  </button>
-
-</div>
-
-
-<!-- زعلانة -->
-
-<div class="card hidden" id="sad">
-
-  <div class="emoji">
-    🫂❤️
-  </div>
-
-  <h1>
-    تعالي هنا يا فطومتي
-  </h1>
-
-  <div class="message">
-
-    مو لازم تعرفين السبب.
-
-    <br><br>
-
-    خذي نفس واهدَي شوي.
-
-    <br><br>
-
-    أنا معك ❤️
-
-    <br><br>
-
-    <strong>
-      أحبك يا حياتي 🥹
-    </strong>
-
-  </div>
-
-  <button onclick="showActivities()">
-    عندي شيء يغير جوك 😌❤️
-  </button>
-
-</div>
-
-
-<!-- الفعاليات -->
-
-<div class="card hidden" id="activities">
-
-  <div class="emoji">
-    🎀
-  </div>
-
-  <h1>
-    يلا نغير جو فطومتي ❤️
-  </h1>
-
-  <p>
-    اختاري فعالية 👇
-  </p>
-
-  <div class="activity" onclick="activity1()">
-
-    <span class="activityEmoji">
-      😂
-    </span>
-
-    تحدي الضحك
-
-  </div>
-
-  <div class="activity" onclick="activity2()">
-
-    <span class="activityEmoji">
-      💌
-    </span>
-
-    سؤال من عمر
-
-  </div>
-
-  <div class="activity" onclick="openWorld()">
-
-    <span class="activityEmoji">
-      🌙✨
-    </span>
-
-    عالم فطومتي ❤️
-
-  </div>
-
-  <div class="message hidden" id="activityMessage"></div>
-
-</div>
-
-
-<!-- عالم فطومتي -->
-
-<div class="card hidden" id="final">
-
-  <div class="sky">
-
-    <!-- النجوم يتم توليدها بالجافاسكربت -->
-
-    <div class="stars" id="stars"></div>
-
-
-    <!-- القمر الوحيد -->
-
-    <div class="oneMoon">
-      🌙
+    <div class="heart">
+      ❤️
     </div>
 
+    <h2 id="messageTitle">
+      فطومتي
+    </h2>
 
-    <!-- الرسالة -->
+    <p id="messageText">
+    </p>
 
-    <div class="finalText">
+    <button
+      class="close"
+      onclick="closeMessage()"
+    >
+      كملي استكشاف 🌌
+    </button>
+
+  </div>
+
+
+  <!-- النهاية -->
+
+  <div class="final" id="final">
+
+    <div class="finalBox">
 
       <div class="bigHeart">
         ❤️
       </div>
 
       <h1>
-        فطومتي
+        فاطمة
       </h1>
 
       <p>
 
-        النجوم كثيرة
+        النجوم كثيرة...
         <br>
 
-        والقمر واحد
+        والقمر واحد...
         <br><br>
 
+        لكن
         <strong>
-          وفطومتي وحدة بقلبي ❤️
+          فطومتي وحدة بقلبي
         </strong>
+        ❤️
+
+        <br><br>
+
+        أحبك يا حياتي 🥹❤️
 
       </p>
 
-      <div class="love">
-        أحبك يا حياتي 🥹❤️
-      </div>
-
     </div>
-
-
-    <!-- قلب يتحرك -->
-
-    <div class="movingHeart">
-      ❤️
-    </div>
-
-
-    <!-- الأرض -->
-
-    <div class="ground"></div>
 
   </div>
-
-
-  <button onclick="loveRain()">
-    اضغطي هنا يا فطومتي ❤️
-  </button>
-
-</div>
 
 </div>
 
 
 <script>
 
+/* رسائل النجوم */
 
-/* إخفاء كل الصفحات */
+const messages=[
 
-function hideAll(){
+  "أحب ضحكتك أكثر مما تتخيلين 😂❤️",
 
-  const pages=[
-    "start",
-    "question",
-    "veil",
-    "other",
-    "sad",
-    "activities",
-    "final"
+  "صوتك من الأشياء اللي ما أمل منها أبدًا 🥹💕",
+
+  "حتى لو تكلمنا كل يوم، أشتاق لك ❤️",
+
+  "فطومتي، وجودك بحياتي يعني لي كثير 🌷",
+
+  "ما قد حبيت أحد بالطريقة اللي حبيتك فيها ❤️",
+
+  "أبيك دايم مرتاحة ومبسوطة يا حياتي 🫂",
+
+  "لو كان الشوق ينشاف، كان عرفتي قد إيش أشتاق لك 🥺",
+
+  "أنتِ مو شخص عادي بالنسبة لي... أنتِ كل شيء ❤️",
+
+  "فطومتي، أحبك بكل ذرة في الأرض 🌎❤️",
+
+  "أجمل شيء في يومي لما أشوف منك رسالة 🥹",
+
+  "حتى سكوتك له مكان بقلبي ❤️",
+
+  "ودي أكون سبب ابتسامتك كل يوم 🌹"
+
+];
+
+
+/* إنشاء النجوم */
+
+const starsContainer=
+document.getElementById("stars");
+
+for(let i=0;i<70;i++){
+
+  const star=
+  document.createElement("div");
+
+  star.className="star";
+
+  star.innerText=
+  Math.random()>0.5
+  ? "⭐"
+  : "✨";
+
+  star.style.left=
+  Math.random()*96+"%";
+
+  star.style.top=
+  (10+Math.random()*80)+"%";
+
+  star.style.fontSize=
+  (8+Math.random()*14)+"px";
+
+  star.style.animationDelay=
+  Math.random()*2+"s";
+
+  star.dataset.message=
+  messages[
+    Math.floor(
+      Math.random()*messages.length
+    )
   ];
 
-  pages.forEach(function(id){
+  star.onclick=function(){
 
-    document
-    .getElementById(id)
-    .classList
-    .add("hidden");
+    showMessage(
+      this.dataset.message
+    );
 
-  });
+    this.style.transform=
+    "scale(2)";
+
+    setTimeout(()=>{
+
+      this.style.transform=
+      "";
+
+    },300);
+
+  };
+
+  starsContainer.appendChild(star);
 
 }
 
 
-/* السؤال */
+/* عرض الرسالة */
 
-function showQuestion(){
-
-  hideAll();
+function showMessage(text){
 
   document
-  .getElementById("question")
-  .classList
-  .remove("hidden");
-
-}
-
-
-/* النقاب */
-
-function showVeil(){
-
-  hideAll();
+  .getElementById("messageText")
+  .innerText=text;
 
   document
-  .getElementById("veil")
+  .getElementById("message")
   .classList
-  .remove("hidden");
-
-  createHearts(20);
+  .add("show");
 
 }
 
 
-/* شيء ثاني */
+/* إغلاق الرسالة */
 
-function showOther(){
-
-  hideAll();
+function closeMessage(){
 
   document
-  .getElementById("other")
+  .getElementById("message")
   .classList
-  .remove("hidden");
+  .remove("show");
 
 }
 
 
-/* زعلانة */
+/* بعد الضغط على النجوم */
 
-function showSad(){
+let clickedStars=0;
 
-  hideAll();
+document
+.getElementById("stars")
+.addEventListener(
+  "click",
+  function(e){
 
-  document
-  .getElementById("sad")
-  .classList
-  .remove("hidden");
+    if(
+      e.target.classList
+      .contains("star")
+    ){
 
-}
+      clickedStars++;
 
+      if(clickedStars>=12){
 
-/* الفعاليات */
+        setTimeout(
+          showFinal,
+          500
+        );
 
-function showActivities(){
+      }
 
-  hideAll();
+    }
 
-  document
-  .getElementById("activities")
-  .classList
-  .remove("hidden");
-
-}
-
-
-/* فعالية الضحك */
-
-function activity1(){
-
-  const box=
-  document.getElementById(
-    "activityMessage"
-  );
-
-  box.classList.remove("hidden");
-
-  box.innerHTML=
-  "😂 ممنوع الزعل لمدة 10 دقايق!<br><br>" +
-  "وإذا ضحكتي... عمر فاز ❤️";
-
-}
+  }
+);
 
 
-/* سؤال عمر */
+/* النهاية */
 
-function activity2(){
-
-  const box=
-  document.getElementById(
-    "activityMessage"
-  );
-
-  box.classList.remove("hidden");
-
-  box.innerHTML=
-  "💌 سؤال عمر:<br><br>" +
-  "وش الشيء البسيط اللي يخليك تبتسمين طول اليوم؟ ❤️";
-
-}
-
-
-/* فتح العالم */
-
-function openWorld(){
-
-  hideAll();
+function showFinal(){
 
   document
   .getElementById("final")
   .classList
-  .remove("hidden");
+  .add("show");
 
-  createStars();
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
-}
-
-
-/* إنشاء نجوم كثيرة */
-
-function createStars(){
-
-  const container=
-  document.getElementById("stars");
-
-  container.innerHTML="";
-
-  for(
-    let i=0;
-    i<180;
-    i++
-  ){
-
-    const star=
-    document.createElement("span");
-
-    star.className="star";
-
-    star.innerText=
-    Math.random()>.5
-    ? "⭐"
-    : "✨";
-
-    star.style.left=
-    Math.random()*100+"%";
-
-    star.style.top=
-    Math.random()*80+"%";
-
-    star.style.fontSize=
-    (5+Math.random()*13)+"px";
-
-    star.style.animationDelay=
-    Math.random()*2+"s";
-
-    container.appendChild(star);
-
-  }
+  heartRain();
 
 }
 
 
 /* مطر القلوب */
 
-function loveRain(){
-
-  createHearts(150);
-
-}
-
-
-/* إنشاء القلوب */
-
-function createHearts(amount){
+function heartRain(){
 
   for(
     let i=0;
-    i<amount;
+    i<120;
     i++
   ){
 
-    setTimeout(function(){
+    setTimeout(()=>{
 
       const heart=
       document.createElement("div");
 
-      heart.innerText="❤️";
+      heart.className=
+      "fallingHeart";
 
-      heart.style.position="fixed";
-
-      heart.style.top="-50px";
+      heart.innerText=
+      [
+        "❤️",
+        "💖",
+        "💕",
+        "💗"
+      ][
+        Math.floor(
+          Math.random()*4
+        )
+      ];
 
       heart.style.left=
       Math.random()*100+"vw";
 
       heart.style.fontSize=
-      (18+Math.random()*30)+"px";
+      (15+Math.random()*30)+"px";
 
-      heart.style.zIndex="999";
-
-      heart.style.pointerEvents="none";
-
-      heart.style.transition=
-      "transform 5s linear, opacity 5s";
+      heart.style.animationDuration=
+      (3+Math.random()*4)+"s";
 
       document.body.appendChild(
         heart
       );
 
-      setTimeout(function(){
-
-        heart.style.transform=
-        "translateY(110vh)";
-
-        heart.style.opacity="0";
-
-      },50);
-
-      setTimeout(function(){
+      setTimeout(()=>{
 
         heart.remove();
 
-      },5500);
+      },8000);
 
     },i*35);
 
