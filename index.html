@@ -4,1090 +4,285 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>فاطمة ضد عمر 🎮❤️</title>
+<title>لفطومتي ❤️</title>
 
 <style>
-
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
 body{
-  min-height:100vh;
-
-  font-family:
-  Arial,
-  Tahoma,
-  sans-serif;
-
-  color:white;
-
-  background:
-  linear-gradient(
-    135deg,
-    #100719,
-    #2b0d2f,
-    #090515
-  );
+    min-height:100vh;
+    background:linear-gradient(135deg,#fff0f4,#ffdce6);
+    font-family:Arial,Tahoma,sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    color:#43232c;
 }
 
-.game{
-  width:100%;
-  max-width:500px;
-
-  min-height:100vh;
-
-  margin:auto;
-
-  padding:20px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.screen{
-  width:100%;
-
-  padding:25px 20px;
-
-  text-align:center;
-
-  border-radius:30px;
-
-  background:
-  rgba(255,255,255,.08);
-
-  border:
-  1px solid
-  rgba(255,255,255,.15);
-
-  backdrop-filter:blur(15px);
-
-  box-shadow:
-  0 25px 80px
-  rgba(0,0,0,.55);
-
-  animation:
-  appear .6s ease;
-}
-
-.hidden{
-  display:none!important;
+.card{
+    width:92%;
+    max-width:430px;
+    min-height:620px;
+    padding:30px 23px;
+    border-radius:32px;
+    background:rgba(255,255,255,.93);
+    box-shadow:0 20px 60px rgba(80,20,40,.2);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    animation:appear .7s ease;
 }
 
 @keyframes appear{
-
-  from{
-    opacity:0;
-    transform:
-    translateY(25px)
-    scale(.95);
-  }
-
-  to{
-    opacity:1;
-    transform:
-    translateY(0)
-    scale(1);
-  }
-
+    from{
+        opacity:0;
+        transform:scale(.85) translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
 }
 
-.logo{
-  font-size:75px;
-
-  animation:
-  bounce 1.5s infinite;
+.emoji{
+    font-size:75px;
+    margin-bottom:20px;
+    animation:float 2s ease-in-out infinite;
 }
 
-@keyframes bounce{
-
-  0%,100%{
-    transform:translateY(0);
-  }
-
-  50%{
-    transform:translateY(-10px);
-  }
-
+@keyframes float{
+    50%{transform:translateY(-8px)}
 }
 
 h1{
-  margin:15px 0;
-
-  font-size:30px;
-
-  color:#ffb5ca;
-}
-
-h2{
-  font-size:23px;
-
-  line-height:1.6;
-
-  margin-bottom:15px;
+    font-size:31px;
+    margin-bottom:18px;
 }
 
 p{
-  font-size:17px;
-
-  line-height:2;
+    font-size:19px;
+    line-height:2;
+    margin-bottom:25px;
 }
 
-.startButton,
-.nextButton{
-
-  width:100%;
-
-  padding:17px;
-
-  margin-top:20px;
-
-  border:0;
-
-  border-radius:50px;
-
-  color:white;
-
-  background:
-  linear-gradient(
-    135deg,
-    #ff4f83,
-    #a60045
-  );
-
-  font-size:18px;
-
-  font-weight:bold;
-
-  cursor:pointer;
-
-  transition:.2s;
+button{
+    border:none;
+    border-radius:50px;
+    padding:16px 28px;
+    font-size:18px;
+    font-weight:bold;
+    color:white;
+    background:#e94f72;
+    box-shadow:0 8px 25px rgba(233,79,114,.3);
+    cursor:pointer;
+    transition:.2s;
 }
 
-.startButton:active,
-.nextButton:active{
-  transform:scale(.94);
+button:active{
+    transform:scale(.92);
 }
 
-
-/* معلومات اللعبة */
-
-.info{
-
-  display:flex;
-
-  justify-content:space-between;
-
-  gap:10px;
-
-  margin-bottom:20px;
+.note{
+    margin-top:18px;
+    font-size:14px;
+    opacity:.55;
 }
 
-.infoBox{
-
-  flex:1;
-
-  padding:12px 5px;
-
-  border-radius:18px;
-
-  background:
-  rgba(255,255,255,.08);
-
-  font-size:15px;
-}
-
-.infoBox strong{
-
-  display:block;
-
-  color:#ff91b1;
-
-  font-size:22px;
-
-  margin-top:4px;
-}
-
-
-/* شريط الوقت */
-
-.timerBar{
-
-  width:100%;
-
-  height:9px;
-
-  margin-bottom:20px;
-
-  overflow:hidden;
-
-  border-radius:20px;
-
-  background:
-  rgba(255,255,255,.1);
-}
-
-.timerFill{
-
-  width:100%;
-
-  height:100%;
-
-  border-radius:20px;
-
-  background:#ff5c8a;
-
-  transition:
-  width 1s linear;
-}
-
-
-/* السؤال */
-
-.questionNumber{
-
-  color:#ff9fbb;
-
-  font-size:14px;
-
-  margin-bottom:8px;
-}
-
-.question{
-
-  font-size:23px;
-
-  line-height:1.6;
-
-  margin-bottom:20px;
-}
-
-
-/* الإجابات */
-
-.answers{
-
-  display:flex;
-
-  flex-direction:column;
-
-  gap:10px;
-}
-
-.answer{
-
-  width:100%;
-
-  padding:15px;
-
-  border-radius:20px;
-
-  border:
-  1px solid
-  rgba(255,255,255,.12);
-
-  background:
-  rgba(255,255,255,.08);
-
-  color:white;
-
-  font-size:16px;
-
-  cursor:pointer;
-
-  transition:.2s;
-}
-
-.answer:active{
-
-  transform:
-  scale(.96);
-
-}
-
-.answer.correct{
-
-  background:
-  rgba(50,200,100,.35);
-
-  border-color:
-  #65ff9a;
-}
-
-.answer.wrong{
-
-  background:
-  rgba(255,50,80,.3);
-
-  border-color:
-  #ff6680;
-}
-
-
-/* النتيجة */
-
-.feedback{
-
-  min-height:35px;
-
-  margin-top:15px;
-
-  font-size:17px;
-
-  font-weight:bold;
-}
-
-
-/* النهاية */
-
-.finalIcon{
-
-  font-size:85px;
-
-  animation:
-  heartbeat 1.2s infinite;
+.bigHeart{
+    font-size:70px;
+    animation:heartbeat 1.1s infinite;
 }
 
 @keyframes heartbeat{
-
-  0%,100%{
-    transform:scale(1);
-  }
-
-  50%{
-    transform:scale(1.15);
-  }
-
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.15)}
 }
 
-.score{
-
-  margin:20px 0;
-
-  font-size:28px;
-
-  color:#ffabc3;
+.box{
+    background:#fff6f8;
+    border:1px solid #ffd0da;
+    padding:20px;
+    border-radius:22px;
+    width:100%;
+    margin-bottom:22px;
 }
 
-.finalMessage{
-
-  padding:20px;
-
-  border-radius:25px;
-
-  background:
-  rgba(255,255,255,.08);
-
-  font-size:19px;
-
-  line-height:2;
+.red{
+    color:#e94f72;
+    font-weight:bold;
 }
-
-.finalMessage strong{
-
-  color:#ff719c;
-
-}
-
-
-/* القلوب */
-
-.heart{
-
-  position:fixed;
-
-  top:-50px;
-
-  z-index:100;
-
-  pointer-events:none;
-
-  animation:
-  fall 5s linear forwards;
-}
-
-@keyframes fall{
-
-  to{
-
-    transform:
-    translateY(110vh)
-    rotate(360deg);
-
-    opacity:0;
-
-  }
-
-}
-
-
-/* اهتزاز */
-
-.shake{
-
-  animation:
-  shake .35s ease;
-}
-
-@keyframes shake{
-
-  0%,100%{
-    transform:translateX(0);
-  }
-
-  25%{
-    transform:translateX(-8px);
-  }
-
-  50%{
-    transform:translateX(8px);
-  }
-
-  75%{
-    transform:translateX(-5px);
-  }
-
-}
-
 </style>
 </head>
 
 <body>
 
+<div class="card" id="card">
 
-<div class="game">
+    <div class="emoji">🥺❤️</div>
 
+    <h1>فطومتي...</h1>
 
-<!-- البداية -->
+    <p>
+        عندي شيء أبي أقوله لك،
+        بس تكفين لا تستعجلين بالحكم علي 😭
+    </p>
 
-<div class="screen" id="start">
+    <button onclick="next()">وش عندك؟ 👀</button>
 
-  <div class="logo">
-    🎮❤️
-  </div>
-
-  <h1>
-    فاطمة ضد عمر
-  </h1>
-
-  <p>
-    تحدي فطومتي الحقيقي 😏
-    <br>
-    عندك 30 ثانية...
-    <br>
-    أثبتي إنك تعرفين عمر ❤️
-  </p>
-
-  <button
-    class="startButton"
-    onclick="startGame()"
-  >
-    ابدئي التحدي 🎮
-  </button>
+    <div class="note">من عمر ❤️</div>
 
 </div>
-
-
-<!-- اللعبة -->
-
-<div class="screen hidden" id="gameScreen">
-
-  <div class="info">
-
-    <div class="infoBox">
-      ❤️ النقاط
-      <strong id="score">
-        0
-      </strong>
-    </div>
-
-    <div class="infoBox">
-      ⏱️ الوقت
-      <strong id="time">
-        30
-      </strong>
-    </div>
-
-  </div>
-
-
-  <div class="timerBar">
-
-    <div
-      class="timerFill"
-      id="timerFill"
-    ></div>
-
-  </div>
-
-
-  <div
-    class="questionNumber"
-    id="questionNumber"
-  >
-    السؤال 1
-  </div>
-
-
-  <div
-    class="question"
-    id="question"
-  >
-  </div>
-
-
-  <div
-    class="answers"
-    id="answers"
-  >
-  </div>
-
-
-  <div
-    class="feedback"
-    id="feedback"
-  >
-  </div>
-
-
-  <button
-    class="nextButton hidden"
-    id="nextButton"
-    onclick="nextQuestion()"
-  >
-    السؤال التالي ❤️
-  </button>
-
-</div>
-
-
-<!-- النهاية -->
-
-<div class="screen hidden" id="final">
-
-  <div class="finalIcon">
-    ❤️
-  </div>
-
-  <h1>
-    خلص التحدي! 🎉
-  </h1>
-
-  <div class="score">
-    نقاطك:
-    <span id="finalScore">
-      0
-    </span>
-  </div>
-
-  <div
-    class="finalMessage"
-    id="finalMessage"
-  >
-  </div>
-
-  <button
-    class="startButton"
-    onclick="restartGame()"
-  >
-    أعيد التحدي 🔄❤️
-  </button>
-
-</div>
-
-
-</div>
-
 
 <script>
 
+let step = 0;
 
-/* الأسئلة */
+function next(){
 
-const questions=[
+    step++;
 
-  {
-    q:"وش أكثر شيء يحب عمر يسمعه من فطومتي؟",
-    a:[
-      "عموري ❤️",
-      "يا ولد 😂",
-      "ولا شيء 😭",
-      "يا أخوي"
-    ],
-    correct:0
-  },
+    const card = document.getElementById("card");
 
-  {
-    q:"إذا فطومتي قالت لعموررري، وش يصير؟",
-    a:[
-      "يفرح ❤️",
-      "يزعل",
-      "ينام",
-      "يهرب 😂"
-    ],
-    correct:0
-  },
+    if(step === 1){
 
-  {
-    q:"وش أكثر شيء يشتاق له عمر؟",
-    a:[
-      "سوالف فطومتي ❤️",
-      "الألعاب",
-      "النوم",
-      "الأكل 😂"
-    ],
-    correct:0
-  },
+        card.innerHTML = `
+            <div class="emoji">🤨</div>
 
-  {
-    q:"مين الشخص اللي عمر يقول عنه: فطومتي؟",
-    a:[
-      "فاطمة 👑❤️",
-      "صديقه",
-      "مدرسه",
-      "ولا أحد"
-    ],
-    correct:0
-  },
+            <h1>اسمعي...</h1>
 
-  {
-    q:"وش الشيء اللي يخلي يوم عمر أحلى؟",
-    a:[
-      "رسالة من فطومتي 💌",
-      "القهوة",
-      "النوم",
-      "الجوال"
-    ],
-    correct:0
-  },
+            <p>
+                أنا يوم قلت لك:
+                <br><br>
+                <span class="red">"صوتك تغيّر..."</span>
+            </p>
 
-  {
-    q:"لو عمر شاف فطومتي قدامه، وش أول شيء بيبيه؟",
-    a:[
-      "حضن 🫂❤️",
-      "يمشي",
-      "ينام",
-      "يهرب 😂"
-    ],
-    correct:0
-  },
-
-  {
-    q:"كم يحب عمر فطومتي؟",
-    a:[
-      "بكل ذرة فيه ❤️",
-      "شوي",
-      "نص نص",
-      "ما يحب"
-    ],
-    correct:0
-  },
-
-  {
-    q:"وش اسمها عند عمر؟",
-    a:[
-      "فطومتي 👑",
-      "فاطمة فقط",
-      "صديقتي",
-      "ولا شيء"
-    ],
-    correct:0
-  }
-
-];
-
-
-let current=0;
-
-let score=0;
-
-let time=30;
-
-let timer;
-
-
-/* بداية اللعبة */
-
-function startGame(){
-
-  document
-  .getElementById("start")
-  .classList
-  .add("hidden");
-
-  document
-  .getElementById("gameScreen")
-  .classList
-  .remove("hidden");
-
-  current=0;
-
-  score=0;
-
-  time=30;
-
-  document
-  .getElementById("score")
-  .innerText=score;
-
-  document
-  .getElementById("time")
-  .innerText=time;
-
-  showQuestion();
-
-  startTimer();
-
-}
-
-
-/* المؤقت */
-
-function startTimer(){
-
-  clearInterval(timer);
-
-  timer=
-  setInterval(function(){
-
-    time--;
-
-    document
-    .getElementById("time")
-    .innerText=time;
-
-    document
-    .getElementById("timerFill")
-    .style.width=
-    (time/30*100)+"%";
-
-
-    if(time<=0){
-
-      clearInterval(timer);
-
-      finishGame();
+            <button onclick="next()">وبعدين؟ 😭</button>
+        `;
 
     }
 
-  },1000);
+    else if(step === 2){
 
-}
+        card.innerHTML = `
+            <div class="emoji">😳</div>
 
+            <h1>لحظة لحظة!</h1>
 
-/* عرض السؤال */
+            <p>
+                لا تحكمين علي من أول جملة 😂
+                <br><br>
+                <b>ما خلصت كلامي أصلاً 😭</b>
+            </p>
 
-function showQuestion(){
-
-  const q=
-  questions[current];
-
-
-  document
-  .getElementById("questionNumber")
-  .innerText=
-  "السؤال "+
-  (current+1)+
-  " من "+
-  questions.length;
-
-
-  document
-  .getElementById("question")
-  .innerText=
-  q.q;
-
-
-  const answers=
-  document.getElementById(
-    "answers"
-  );
-
-  answers.innerHTML="";
-
-
-  document
-  .getElementById("feedback")
-  .innerText="";
-
-
-  document
-  .getElementById("nextButton")
-  .classList
-  .add("hidden");
-
-
-  q.a.forEach(
-    function(answer,index){
-
-      const button=
-      document.createElement(
-        "button"
-      );
-
-      button.className=
-      "answer";
-
-      button.innerText=
-      answer;
-
-      button.onclick=
-      function(){
-
-        checkAnswer(
-          index,
-          button
-        );
-
-      };
-
-      answers.appendChild(
-        button
-      );
+            <button onclick="next()">كمّل 😂</button>
+        `;
 
     }
-  );
 
-}
+    else if(step === 3){
 
+        card.innerHTML = `
+            <div class="emoji">🥹❤️</div>
 
-/* التحقق */
+            <h1>كنت أبي أقول...</h1>
 
-function checkAnswer(
-  index,
-  button
-){
+            <div class="box">
+                <p>
+                    "صوتك تغيّر...
+                    <br>
+                    <b>ما عاد حلو..."</b>
+                </p>
+            </div>
 
-  const all=
-  document.querySelectorAll(
-    ".answer"
-  );
+            <button onclick="next()">وبعدين؟ 👀</button>
+        `;
 
-  all.forEach(
-    b=>b.disabled=true
-  );
+    }
 
+    else if(step === 4){
 
-  const q=
-  questions[current];
+        card.innerHTML = `
+            <div class="bigHeart">❤️</div>
 
+            <h1>الحين صار يخبل 😭</h1>
 
-  if(index===q.correct){
+            <p>
+                هذا هو الكلام اللي كنت أبي أوصله لك 😂❤️
+                <br><br>
+                بس أنتِ ما عطيتيني مجال أكمل 😭
+            </p>
 
-    score++;
+            <button onclick="next()">آخر شيء لفطومتي ❤️</button>
+        `;
 
-    document
-    .getElementById("score")
-    .innerText=score;
+    }
 
-    button.classList
-    .add("correct");
+    else if(step === 5){
 
-    document
-    .getElementById("feedback")
-    .innerText=
-    "صحححح! فطومتي تعرف عمر 😭❤️";
+        card.innerHTML = `
+            <div class="emoji">🫂❤️</div>
 
-    createHearts(10);
+            <h1>فطومتي يا حياتي</h1>
 
-  }else{
+            <p>
+                والله ما كان قصدي أجرحك أو أقول إن صوتك مو حلو.
+                <br><br>
+                بالعكس...
+                <br>
+                <b>صوتك من الأشياء اللي أحب أسمعها منك ❤️</b>
+            </p>
 
-    button.classList
-    .add("wrong");
+            <button onclick="next()">كمّل 🥺</button>
+        `;
 
-    all[q.correct]
-    .classList
-    .add("correct");
+    }
 
-    document
-    .getElementById("feedback")
-    .innerText=
-    "قريبة 😂❤️ بس مو هذي الإجابة";
+    else if(step === 6){
 
-  }
+        card.innerHTML = `
+            <div class="emoji">🥺</div>
 
+            <h1>سامحيني؟</h1>
 
-  document
-  .getElementById("nextButton")
-  .classList
-  .remove("hidden");
+            <p>
+                يمكن المزحة ما وصلت مثل ما كنت أبي،
+                وأنا آسف إذا ضايقتك.
+                <br><br>
+                ما أبيك تزعلين مني يا فطومتي.
+            </p>
 
-}
+            <button onclick="next()">❤️</button>
+        `;
 
+    }
 
-/* السؤال التالي */
+    else{
 
-function nextQuestion(){
+        card.innerHTML = `
+            <div class="bigHeart">❤️</div>
 
-  current++;
+            <h1>وهذي الحقيقة</h1>
 
-  if(
-    current>=questions.length
-  ){
+            <p>
+                صوتك حلو...
+                <br>
+                وضحكتك أحلى...
+                <br>
+                وفطومتي كلها على بعضها تخبل 😭❤️
+            </p>
 
-    finishGame();
-
-    return;
-
-  }
-
-  showQuestion();
-
-}
-
-
-/* النهاية */
-
-function finishGame(){
-
-  clearInterval(timer);
-
-  document
-  .getElementById("gameScreen")
-  .classList
-  .add("hidden");
-
-  document
-  .getElementById("final")
-  .classList
-  .remove("hidden");
-
-
-  document
-  .getElementById("finalScore")
-  .innerText=
-  score+
-  " / "+
-  questions.length;
-
-
-  let message="";
-
-
-  if(score===questions.length){
-
-    message=
-    "يااااا فطومتي 😭❤️<br><br>"+
-    "طلعتِ تعرفين عمر أكثر من نفسه 😂<br><br>"+
-    "<strong>الجائزة: حضن كبير من عمر 🫂❤️</strong>";
-
-  }else if(score>=5){
-
-    message=
-    "ما شاء الله عليكِ يا فطومتي 🥹❤️<br><br>"+
-    "واضح إنك تعرفين عمر زين.<br><br>"+
-    "<strong>بس باقي لك شوي وتاخذين لقب خبيرة عمر 👑</strong>";
-
-  }else{
-
-    message=
-    "😂😂 واضح إن عمر يحتاج يسوي لك تدريب إضافي.<br><br>"+
-    "بس عادي...<br>"+
-    "<strong>عمر يحب فطومتي بكل الحالات ❤️</strong>";
-
-  }
-
-
-  document
-  .getElementById("finalMessage")
-  .innerHTML=
-  message;
-
-
-  createHearts(80);
-
-}
-
-
-/* إعادة */
-
-function restartGame(){
-
-  document
-  .getElementById("final")
-  .classList
-  .add("hidden");
-
-  startGame();
-
-}
-
-
-/* قلوب */
-
-function createHearts(amount){
-
-  for(
-    let i=0;
-    i<amount;
-    i++
-  ){
-
-    setTimeout(
-      function(){
-
-        const heart=
-        document.createElement(
-          "div"
-        );
-
-        heart.className=
-        "heart";
-
-        heart.innerText=
-        [
-          "❤️",
-          "💖",
-          "💕",
-          "💗"
-        ][
-          Math.floor(
-            Math.random()*4
-          )
-        ];
-
-        heart.style.left=
-        Math.random()*100+
-        "vw";
-
-        heart.style.fontSize=
-        (
-          18+
-          Math.random()*30
-        )+
-        "px";
-
-        heart.style.animationDuration=
-        (
-          3+
-          Math.random()*4
-        )+
-        "s";
-
-
-        document.body.appendChild(
-          heart
-        );
-
-
-        setTimeout(
-          function(){
-
-            heart.remove();
-
-          },
-          8000
-        );
-
-      },
-      i*40
-    );
-
-  }
+            <p>
+                <b>أحبك يا فطومتي 🫂❤️</b>
+            </p>
+        `;
+    }
 
 }
 
